@@ -17,6 +17,15 @@ public func configure(_ app: Application) throws {
 
     app.migrations.add(CreateTodo())
     app.migrations.add(CreateInterestGroup())
+    app.migrations.add(User.Migration())
+    app.migrations.add(Tag.Migration())
+    app.migrations.add(UserTag.Migration())
+    
+    #if DEBUG
+    print("DEBUG: Automigrate Start")
+    try app.autoMigrate().wait()
+    print("DEBUG: Automigrate Done")
+    #endif
 
     // register routes
     try routes(app)
