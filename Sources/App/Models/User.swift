@@ -40,11 +40,10 @@ extension User {
     struct Public: Content {
         var id: UUID? = nil
         var name: String
-        var email: String
     }
     
     func publicValue() -> User.Public {
-        .init(id: self.id, name: self.name, email: self.email)
+        .init(id: self.id, name: self.name)
     }
 }
 

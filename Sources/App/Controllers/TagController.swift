@@ -4,6 +4,7 @@ import Vapor
 final class TagController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let tags = routes.grouped("tags")
+            .grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
         tags.get(use: index)
         tags.post(use: create)
         tags.group(":tagID") { tag in
@@ -39,6 +40,9 @@ final class TagController: RouteCollection {
     }
     
     func attachUser(req: Request) async throws -> HTTPStatus {
+        guard try await req.isAdmin() else {
+            throw Abort(.unauthorized)
+        }
         guard let tagString = req.parameters.get("tagID"),
               let tagID = UUID(uuidString: tagString),
               let userString = req.parameters.get("userID"),
