@@ -36,6 +36,7 @@ func databaseMigrations(on app: Application) throws {
     app.migrations.add(User.Migration())
     app.migrations.add(Tag.Migration())
     app.migrations.add(UserTag.Migration())
+    app.migrations.add(AddSuperUser())
     
     #if DEBUG
     print("DEBUG: Automigrate Start")

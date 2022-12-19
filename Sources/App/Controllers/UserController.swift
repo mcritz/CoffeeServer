@@ -6,13 +6,14 @@ struct UserController: RouteCollection {
         let users = routes.grouped("users")
         let basicProtectd = users.grouped(UserBasicAuthenticator())
         let protectedUsers = users.grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
-
+        
         users.post(use: create)
         
         basicProtectd.get("login", use: login)
         
         protectedUsers.get(use: index)
         protectedUsers.get(":userID", use: fetch)
+        protectedUsers.delete(":userID", use: delete)
         protectedUsers.get("me", use: fetchSelf)
         protectedUsers.get(":userID", "tags", use: getTags)
     }
@@ -55,6 +56,34 @@ struct UserController: RouteCollection {
         return user.publicValue()
     }
     
+    func delete(_ req: Request) async throws -> HTTPStatus {
+        let payload = try req.jwt.verify(as: SessionJWTToken.self)
+        guard let requestingUser = try await User.find(payload.userId, on: req.db) else {
+            req.logger.info("Unauthorized user delete attempt\n\(req)")
+            throw Abort(.unauthorized)
+        }
+        guard let userIdString = req.parameters.get("userID"),
+              let userIdToDelete = UUID(userIdString),
+                let user = try await User.find(userIdToDelete, on: req.db) else {
+            throw Abort(.badRequest, reason: "Cannot find userID")
+        }
+        if try requestingUser.requireID() == userIdToDelete {
+            try await user.delete(on: req.db)
+            req.logger.info("User requests to self-delete. UserID \(userIdString)")
+            return .noContent
+        }
+        if try await req.isAdmin() {
+            req.logger.info("Admin delete of user \(userIdString)")
+            try await user.delete(on: req.db)
+            return .noContent
+        }
+        req.logger.info("Unauthorized attempt to delete user\n\(req)")
+        return .unauthorized
+    }
+}
+
+// MARK: - Auth
+extension UserController {
     func login(_ req: Request) async throws -> [String : String] {
         do {
             let user = try req.auth.require(User.self)
@@ -77,7 +106,10 @@ struct UserController: RouteCollection {
             ]
         }
     }
-    
+}
+
+// MARK: - Tags
+extension UserController {
     func getTags(_ req: Request) async throws -> [Tag] {
         guard try await req.isAdmin() else {
             throw Abort(.unauthorized)

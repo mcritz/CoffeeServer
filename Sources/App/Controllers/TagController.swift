@@ -35,6 +35,9 @@ final class TagController: RouteCollection {
         guard let tag = try await Tag.find(req.parameters.get("tagID"), on: req.db) else {
             throw Abort(.notFound)
         }
+        guard tag.name != "admin" else {
+            throw Abort(.unauthorized, reason: "Admin tag must not be deleted")
+        }
         try await tag.delete(on: req.db)
         return .noContent
     }
