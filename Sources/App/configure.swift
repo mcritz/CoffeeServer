@@ -1,5 +1,8 @@
 import Fluent
 import FluentPostgresDriver
+#if DEBUG
+import FluentSQLiteDriver
+#endif
 import Vapor
 import JWT
 
@@ -21,13 +24,17 @@ public func configure(_ app: Application) throws {
 }
 
 func configureDatabase(on app: Application) {
-    app.databases.use(.postgres(
-        hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-        port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
-        username: Environment.get("DATABASE_USERNAME") ?? "mcritz",
-        password: Environment.get("DATABASE_PASSWORD") ?? "",
-        database: Environment.get("DATABASE_NAME") ?? "mcritz"
-    ), as: .psql)
+    if app.environment.name != Environment.testing.name {
+        app.databases.use(.postgres(
+            hostname: Environment.get("DATABASE_HOST") ?? "localhost",
+            port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
+            username: Environment.get("DATABASE_USERNAME") ?? "mcritz",
+            password: Environment.get("DATABASE_PASSWORD") ?? "",
+            database: Environment.get("DATABASE_NAME") ?? "mcritz"
+        ), as: .psql)
+    } else {
+        app.databases.use(.sqlite(.memory), as: .sqlite)
+    }
 }
 
 func databaseMigrations(on app: Application) throws {

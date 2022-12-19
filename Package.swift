@@ -11,6 +11,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/fluent.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/jwt.git", .upToNextMajor(from: "4.2.1"))
     ],
     targets: [
@@ -20,6 +21,7 @@ let package = Package(
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
+                .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
                 .product(name: "JWT", package: "jwt"),
             ],
             swiftSettings: [
