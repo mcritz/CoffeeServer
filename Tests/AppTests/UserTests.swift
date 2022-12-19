@@ -8,7 +8,7 @@ final class UserTests: XCTestCase {
     let userNameGood = "Test McTesterface"
     let userEmailGood = "mctesterface@example.com"
     let passwordGood = "Super 5trong passw0rd!"
-    var loginJWT = "FAIL"
+    var userJWT: String?
     var headers = HTTPHeaders(dictionaryLiteral: ("Content-Type", "application/json"))
     
     override func setUpWithError() throws {
@@ -31,6 +31,7 @@ final class UserTests: XCTestCase {
             XCTAssertEqual(result.name, userNameGood)
         }
         try login()
+        try getSelf()
     }
     
     func login() throws {
@@ -38,6 +39,21 @@ final class UserTests: XCTestCase {
         headers.basicAuthorization = basicAuth
         try app.test(.GET, "users/login", headers: headers) { res in
             XCTAssertEqual(res.status, .ok)
+            let resultBody = try res.content.decode([String : String].self)
+            XCTAssertEqual(resultBody["error"], "false")
+            userJWT = resultBody["jwt-token"]
+            XCTAssertNotNil(userJWT)
+        }
+    }
+    
+    func getSelf() throws {
+        let jwtAuth = BearerAuthorization(token: userJWT!)
+        headers = HTTPHeaders()
+        headers.bearerAuthorization  = jwtAuth
+        try app.test(.GET, "users/me", headers: headers) { res in
+            XCTAssertEqual(res.status, .ok)
+            let publicUser = try res.content.decode(User.Public.self)
+            XCTAssertEqual(publicUser.name, userNameGood)
         }
     }
 }
