@@ -3,10 +3,13 @@ import Vapor
 
 struct InterestGroupController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let groups = routes.grouped("groups")
-        groups.get(use: index)
-        groups.post(use: create)
-        groups.group(":groupID") { group in
+        let groupsHTML = routes.grouped("groups")
+        groupsHTML.get(use: webView)
+        
+        let groupsAPI = routes.grouped("api", "v1", "groups")
+        groupsAPI.get(use: index)
+        groupsAPI.post(use: create)
+        groupsAPI.group(":groupID") { group in
             group.delete(use: delete)
         }
     }
@@ -35,5 +38,20 @@ struct InterestGroupController: RouteCollection {
         }
         try await group.delete(on: req.db)
         return .noContent
+    }
+}
+
+import Plot
+// MARK: - WebView
+extension InterestGroupController {
+    func webView(req: Request) async throws -> Response {
+        let allGroups = try await InterestGroup.query(on: req.db).all()
+        let list = Node.body(
+            .h2("Groups"),
+            .ul(.forEach(allGroups) { group in
+                .li(.class("group-name"), .text(group.name))
+            })
+        )
+        return WebPage(body: list).response()
     }
 }
