@@ -3,15 +3,15 @@ import Vapor
 
 final class TagController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let tags = routes.grouped("tags")
+        let tagsAPI = routes.grouped("api", "v1", "tags")
             .grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
-        tags.get(use: index)
-        tags.post(use: create)
-        tags.group(":tagID") { tag in
+        tagsAPI.get(use: index)
+        tagsAPI.post(use: create)
+        tagsAPI.group(":tagID") { tag in
             tag.get(use: fetch)
             tag.delete(use: delete)
         }
-        tags.post(":tagID", "attach", ":userID", use: attachUser)
+        tagsAPI.post(":tagID", "attach", ":userID", use: attachUser)
     }
     
     func index(req: Request) async throws -> [Tag] {

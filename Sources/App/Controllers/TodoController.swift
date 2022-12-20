@@ -3,10 +3,10 @@ import Vapor
 
 struct TodoController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let todos = routes.grouped("todos")
-        todos.get(use: index)
-        todos.post(use: create)
-        todos.group(":todoID") { todo in
+        let todosAPI = routes.grouped("api", "v1", "todos")
+        todosAPI.get(use: index)
+        todosAPI.post(use: create)
+        todosAPI.group(":todoID") { todo in
             todo.delete(use: delete)
         }
     }
