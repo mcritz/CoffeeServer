@@ -21,4 +21,5 @@ func routes(_ app: Application) throws {
     try app.register(collection: UserController())
     try app.register(collection: TagController())
     try app.register(collection: EventController())
+    try app.register(collection: VenueController())
 }
