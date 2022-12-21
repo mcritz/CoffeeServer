@@ -3,7 +3,7 @@ import Vapor
 
 struct UserController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let usersAPI = routes.grouped("api", "v1", "users")
+        let usersAPI = routes.grouped("api", "v2", "users")
         let basicProtectd = usersAPI.grouped(UserBasicAuthenticator())
         let protectedUsers = usersAPI.grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
         

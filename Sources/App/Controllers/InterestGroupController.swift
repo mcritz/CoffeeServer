@@ -6,11 +6,12 @@ struct InterestGroupController: RouteCollection {
         let groupsHTML = routes.grouped("groups")
         groupsHTML.get(use: webView)
         
-        let groupsAPI = routes.grouped("api", "v1", "groups")
+        let groupsAPI = routes.grouped("api", "v2", "groups")
         groupsAPI.get(use: index)
         groupsAPI.post(use: create)
         groupsAPI.group(":groupID") { group in
             group.delete(use: delete)
+            group.get("events", use: groupEvents)
         }
     }
 
@@ -38,5 +39,24 @@ struct InterestGroupController: RouteCollection {
         }
         try await group.delete(on: req.db)
         return .noContent
+    }
+    
+    func groupEvents(req: Request) async throws -> [EventData] {
+        guard let groupIDString = req.parameters.get("groupID"),
+        let groupID = UUID(groupIDString) else {
+            throw Abort(.badRequest)
+        }
+        guard let group = try await InterestGroup.find(groupID, on: req.db) else {
+            throw Abort(.notFound)
+        }
+        let eventsSortedByStartAt = try await group.$events
+            .get(on: req.db)
+            .map {
+                $0.publicData()
+            }
+            .sorted {
+                $0.startAt < $1.startAt
+            }
+        return eventsSortedByStartAt
     }
 }

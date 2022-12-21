@@ -10,6 +10,9 @@ final class InterestGroup: Model, Content {
     @Field(key: "name")
     var name: String
     
+    @Children(for: \.$group)
+    var events: [Event]
+    
     init() { }
 
     internal init(id: UUID? = nil, name: String) {

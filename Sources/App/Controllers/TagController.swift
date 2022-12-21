@@ -3,7 +3,7 @@ import Vapor
 
 final class TagController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let tagsAPI = routes.grouped("api", "v1", "tags")
+        let tagsAPI = routes.grouped("api", "v2", "tags")
             .grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
         tagsAPI.get(use: index)
         tagsAPI.post(use: create)
