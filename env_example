@@ -1,7 +1,11 @@
 # COFFEE SERVER ENV
+# You’ll need to copy this file to `.env` with the values in place for production
 # Super User Configuration (required for first migraiton)
-SERVER_ADMIN_PASSWORD=Super 5ecret Password!
-SERVER_ADMIN_EMAIL=admin.email@example.com
+SERVER_ADMIN_PASSWORD=
+SERVER_ADMIN_EMAIL=
+
+# JWT secret
+JWT_SIGNING_SECRET=
 
 # Postgres Configuration
 DATABASE_USERNAME=

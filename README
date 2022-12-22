@@ -12,4 +12,4 @@
 4. Build and run
 5. Explore the API using [RapidAPI for Mac](https://paw.cloud). Open the CoffeeServer.paw file to find various routes. Many routes are admin protected. You’ll need that info from step 3
 
-On the first run, the super user will be created
+On the first run, the super user will be created. You’ll need the super user account to do most create update and delete actions.
