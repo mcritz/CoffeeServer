@@ -6,6 +6,7 @@ struct EventData: Codable {
     var name: String
     var groupID: UUID?
     var venueID: UUID?
+    var venue: Venue?
     var imageURL: URL?
     var startAt: Date
     var endAt: Date

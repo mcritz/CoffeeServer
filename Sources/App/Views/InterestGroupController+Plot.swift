@@ -16,24 +16,37 @@ extension InterestGroup: Hashable, Equatable {
 extension InterestGroupController {
     func webView(req: Request) async throws -> Response {
         let allGroups = try await InterestGroup.query(on: req.db).all()
-        async let groupEvents: [InterestGroup : [EventData]] = withThrowingTaskGroup(of: (InterestGroup, [EventData]).self) { taskGroup in
+        async let groupEvents: [InterestGroup : [EventData]] = withThrowingTaskGroup(of: [InterestGroup : [EventData]].self) { taskGroup in
             for interestGroup in allGroups {
                 taskGroup.addTask {
-                    let events = try await interestGroup.$events.get(on: req.db)
-                    let eventDatas = events.map { $0.publicData() }
-                    return (interestGroup, eventDatas)
+                    let eventModels = try await interestGroup.$events.get(on: req.db)
+                    var eventDatas = [EventData]()
+                    for eventModel in eventModels {
+                        let venue = try await eventModel.$venue.get(on: req.db)
+                        var eventData = eventModel.publicData()
+                        eventData.venue = venue
+                        eventDatas.append(eventData)
+                    }
+                    eventDatas.sort { $0.startAt < $1.startAt }
+                    return [interestGroup : eventDatas]
                 }
             }
-            var childResults = [InterestGroup: [EventData]]()
+            var allResults = [InterestGroup: [EventData]]()
             for try await childResult in taskGroup {
-                childResults[childResult.0] = childResult.1
+                for key in childResult.keys {
+                    allResults[key] = childResult[key]
+                }
             }
-            return childResults
+            return allResults
         }
         
-        let list = try await Node.body(
+        let sortedGroupEvents = try await groupEvents.sorted(by: { lhs, rhs in
+            lhs.0.name < rhs.0.name
+        })
+        
+        let list = Node.body(
             .h2("Groups"),
-            .ul(.forEach(groupEvents) { group, events in
+            .ul(.forEach(sortedGroupEvents) { group, events in
                 .li(.class("group-name"), .div(
                     .text(group.name),
                     .if(events.count < 1,
@@ -47,6 +60,13 @@ extension InterestGroupController {
                                 ),
                                 .div(
                                     .text(event.startAt.formatted())
+                                ),
+                                .div(
+                                    .text(event.venue?.name ?? "No Venue")
+                                ),
+                                .div(
+                                    .text("\(event.venue?.location.latitude ?? 0.0)"),
+                                    .text("\(event.venue?.location.longitude ?? 0.0)")
                                 )
                             )
                         })
