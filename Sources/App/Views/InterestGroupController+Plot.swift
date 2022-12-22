@@ -45,6 +45,7 @@ extension InterestGroupController {
         })
         
         let list = Node.body(
+            .h1("Coffee!"),
             .h2("Groups"),
             .ul(.forEach(sortedGroupEvents) { group, events in
                 .li(.class("group-name"), .div(

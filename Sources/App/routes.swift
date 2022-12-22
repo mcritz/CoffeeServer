@@ -3,8 +3,9 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        WebPage(body: home).response()
+    let interestGroupController = InterestGroupController()
+    app.get { req async throws in
+        try await interestGroupController.webView(req: req)
     }
 
     app.get("healthcheck") { req async -> String in
@@ -17,7 +18,7 @@ func routes(_ app: Application) throws {
     }
 
     try app.register(collection: TodoController())
-    try app.register(collection: InterestGroupController())
+    try app.register(collection: interestGroupController)
     try app.register(collection: UserController())
     try app.register(collection: TagController())
     try app.register(collection: EventController())
