@@ -1,0 +1,10 @@
+# COFFEE SERVER ENV
+# Super User Configuration (required for first migraiton)
+SERVER_ADMIN_PASSWORD=Super 5ecret Password!
+SERVER_ADMIN_EMAIL=admin.email@example.com
+
+# Postgres Configuration
+DATABASE_USERNAME=
+DATABASE_NAME=
+DATABASE_HOST=
+DATABASE_PORT=

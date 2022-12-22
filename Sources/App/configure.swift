@@ -25,12 +25,18 @@ public func configure(_ app: Application) throws {
 
 func configureDatabase(on app: Application) {
     if app.environment.name != Environment.testing.name {
+        guard let username = Environment.get("DATABASE_USERNAME"),
+              let database = Environment.get("DATABASE_NAME") else {
+            preconditionFailure("""
+            Environment values are not set
+            """)
+        }
         app.databases.use(.postgres(
             hostname: Environment.get("DATABASE_HOST") ?? "localhost",
             port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
-            username: Environment.get("DATABASE_USERNAME") ?? "mcritz",
+            username: username,
             password: Environment.get("DATABASE_PASSWORD") ?? "",
-            database: Environment.get("DATABASE_NAME") ?? "mcritz"
+            database: database
         ), as: .psql)
     } else {
         app.databases.use(.sqlite(.memory), as: .sqlite)
