@@ -1,4 +1,3 @@
-import Foundation.NSDate
 import Fluent
 import Vapor
 
@@ -23,9 +22,6 @@ func routes(_ app: Application) throws {
        OK.
        
        Database Check: \(dbHealthText)
-       
-       \(currentDate.formatted())
-       \(currentDate)
        """
     }
 
