@@ -10,8 +10,20 @@ func routes(_ app: Application) throws {
 
     app.get("healthcheck") { req async -> String in
         let currentDate = Date()
+        let eventCount = try? await Event.query(on: req.db).count()
+        let dbHealthText = {
+            switch eventCount {
+            case .some(let count):
+                return "Event count = \(count)"
+            default:
+                return "DATABASE ERROR"
+            }
+        }()
         return """
        OK.
+       
+       Database Check: \(dbHealthText)
+       
        \(currentDate.formatted())
        \(currentDate)
        """
