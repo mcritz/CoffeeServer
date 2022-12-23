@@ -26,5 +26,5 @@ final class Venue: Content, Model {
 }
 
 struct Location: Codable {
-    let latitude, longitude: Double?
+    let latitude, longitude: Double
 }

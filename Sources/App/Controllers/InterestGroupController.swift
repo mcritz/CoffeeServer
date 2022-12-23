@@ -5,6 +5,9 @@ struct InterestGroupController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let groupsHTML = routes.grouped("groups")
         groupsHTML.get(use: webView)
+        groupsHTML.group(":groupID") { group in
+            group.get("calendar", use: calendar)
+        }
         
         let groupsAPI = routes.grouped("api", "v2", "groups")
         groupsAPI.get(use: index)

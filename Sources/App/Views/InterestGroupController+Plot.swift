@@ -50,6 +50,9 @@ extension InterestGroupController {
             .ul(.forEach(sortedGroupEvents) { group, events in
                 .li(.class("group-name"), .div(
                     .text(group.name),
+                    .a(.href("/groups/\(group.id!.uuidString)/calendar"),
+                       "Subscribe to Calendar"
+                      ),
                     .if(events.count < 1,
                         .ul(.li(.text("No Events")))
                     ),

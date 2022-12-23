@@ -14,6 +14,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/jwt.git", .upToNextMajor(from: "4.2.1")),
         .package(url: "https://github.com/JohnSundell/Plot.git", .upToNextMajor(from: "0.9.0")),
+        .package(url: "https://github.com/swift-calendar/icalendarkit.git", .upToNextMajor(from: "1.0.2")),
     ],
     targets: [
         .target(
@@ -25,6 +26,7 @@ let package = Package(
                 .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
                 .product(name: "JWT", package: "jwt"),
                 .product(name: "Plot", package: "Plot"),
+                .product(name: "ICalendarKit", package: "ICalendarKit"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
