@@ -48,36 +48,57 @@ extension InterestGroupController {
             .h1("Coffee!"),
             .h2("Groups"),
             .ul(.forEach(sortedGroupEvents) { group, events in
-                .li(.class("group-name"), .div(
-                    .text(group.name),
-                    .a(.href("/groups/\(group.id!.uuidString)/calendar"),
-                       "Subscribe to Calendar"
-                      ),
-                    .if(events.count < 1,
-                        .ul(.li(.text("No Events")))
-                    ),
-                    .if(events.count > 0,
-                        .ul(.forEach(events) { event in
-                            .li(.class("event-name"),
-                                .div(
-                                    .text(event.name)
-                                ),
-                                .div(
-                                    .text(event.startAt.formatted())
-                                ),
-                                .div(
-                                    .text(event.venue?.name ?? "No Venue")
-                                ),
-                                .div(
-                                    .text("\(event.venue?.location.latitude ?? 0.0)"),
-                                    .text("\(event.venue?.location.longitude ?? 0.0)")
-                                )
-                            )
-                        })
-                    )
-                ))
+                .li(.class("group-name"),
+                    GroupView(group: group, events: events).convertToNode()
+                )
             })
         )
         return WebPage(body: list).response()
+    }
+}
+
+
+struct GroupView: Component {
+    let group: InterestGroup
+    let events: [EventData]
+
+    var body: Component {
+        Div {
+            Text(group.name)
+            Link("Subscribe to Calendar", url: "/groups/\(group.id!.uuidString)/calendar")
+            if(events.count < 1) {
+                List {
+                    ListItem {
+                        Text("No Events")
+                    }
+                }.listStyle(.unordered)
+            } else {
+                List {
+                    for event in events {
+                        ListItem {
+                            EventSummaryView(event: event)
+                        }.class("event-name")
+                    }
+                }.listStyle(.unordered)
+            }
+        }
+    }
+}
+
+struct EventSummaryView: Component {
+    let event: EventData
+    
+    var body: Component {
+        Div {
+            Text(event.name)
+            Div {
+                Text(event.startAt.formatted())
+            }
+            if let venue = event.venue {
+                Div {
+                    Text(venue.name)
+                }
+            }
+        }
     }
 }
