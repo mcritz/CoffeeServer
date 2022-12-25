@@ -33,11 +33,16 @@ func configureDatabase(on app: Application) throws {
             hostname: Environment.get("DATABASE_HOST") ?? "localhost",
             port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
             username: username,
-            password: Environment.get("DATABASE_PASSWORD") ?? "",
+            password: Environment.get("DATABASE_SECRET") ?? "",
             database: database
         ), as: .psql)
-    } else { // Environment is testing. Use in-memory sqlite.
+    } else {
+        #if DEBUG
+        // Environment is testing. Use in-memory sqlite.
         app.databases.use(.sqlite(.memory), as: .sqlite)
+        #else
+        preconditionFailure("Incompatible enivornment: \(app.environment.name)")
+        #endif
     }
 }
 

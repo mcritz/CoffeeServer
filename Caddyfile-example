@@ -1,0 +1,4 @@
+# You will need to rename this to `Caddyfile` for production
+# Change this to your domain name
+example.com
+reverse_proxy app:8080

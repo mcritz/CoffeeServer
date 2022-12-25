@@ -23,7 +23,6 @@ func routes(_ app: Application) throws {
        
        Database Check: \(dbHealthText)
        
-       \(currentDate.formatted())
        \(currentDate)
        """
     }
