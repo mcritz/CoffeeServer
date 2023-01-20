@@ -12,8 +12,9 @@ fileprivate enum ConfigureError: Error {
 
 // configures your application
 public func configure(_ app: Application) throws {
-    // uncomment to serve files from /Public folder
-    // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+    configureCORS(on: app)
+    
+    app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
     
     try configureDatabase(on: app)
     try databaseMigrations(on: app)
@@ -21,6 +22,15 @@ public func configure(_ app: Application) throws {
     try configureJWT(on: app)
     
     try routes(app)
+}
+
+func configureCORS(on app: Application) {
+    let corsConfig = CORSMiddleware.Configuration(
+        allowedOrigin: .all,
+        allowedMethods: [.GET, .POST, .PUT, .OPTIONS, .DELETE, .PATCH],
+        allowedHeaders: [.accept, .authorization, .contentType, .origin, .xRequestedWith, .userAgent, .accessControlAllowOrigin])
+    let cors = CORSMiddleware(configuration: corsConfig)
+    app.middleware.use(cors, at: .beginning)
 }
 
 func configureDatabase(on app: Application) throws {
@@ -37,12 +47,12 @@ func configureDatabase(on app: Application) throws {
             database: database
         ), as: .psql)
     } else {
-        #if DEBUG
+#if DEBUG
         // Environment is testing. Use in-memory sqlite.
         app.databases.use(.sqlite(.memory), as: .sqlite)
-        #else
+#else
         preconditionFailure("Incompatible enivornment: \(app.environment.name)")
-        #endif
+#endif
     }
 }
 
@@ -57,11 +67,11 @@ func databaseMigrations(on app: Application) throws {
     app.migrations.add(CreateEvent())
     
     // Always automigrate dev/test
-    #if DEBUG
+#if DEBUG
     print("DEBUG: Automigrate Start")
     try app.autoMigrate().wait()
     print("DEBUG: Automigrate Done")
-    #endif
+#endif
 }
 
 func configureJWT(on app: Application) throws {

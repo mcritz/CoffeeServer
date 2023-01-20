@@ -44,6 +44,7 @@ A request to your service will first reach Caddy which knows that your server na
     - Open `.env` in your text editor and add your values for each value
 7. Boot the service
     - If this is the **first run** then you’ll need to build the app image: `docker compose up --build -d`
+        - If the build fails for any reason, you can build on your local machine and push to docker hub. Your dev sandbox is also likely a great deal faster than a typical web host.
     - In standard operation `docker compose up -d`
 8. Run any migrations
     - If this is the **first run** then you **must** run the database migrations: `docker compose run migrate`

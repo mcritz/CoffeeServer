@@ -46,7 +46,10 @@ extension InterestGroupController {
             if let venue {
                 icEvent.description = "See you at \(venue.name)!"
                 icEvent.location = venue.name
-                icEvent.geo = .init(latitude: venue.location.latitude, longitude: venue.location.longitude)
+                if let lat = venue.location?.latitude,
+                   let lon = venue.location?.longitude {
+                    icEvent.geo = .init(latitude: lat, longitude: lon)
+                }
             }
             icEvents.append(icEvent)
         }
