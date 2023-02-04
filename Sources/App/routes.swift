@@ -26,6 +26,25 @@ func routes(_ app: Application) throws {
        \(currentDate)
        """
     }
+    
+    app.get("render") { req async throws -> String in
+        let uri = URI(scheme: .http, host: "127.0.0.1", port: 8080, path: "groups", query: nil, fragment: nil)
+        let groupsPage = try await app.client.get(uri)
+        guard let pageBody = groupsPage.body else {
+            return "No body?"
+        }
+        let dataString = try writeToDisk(pageBody, path: "/groups")
+        return dataString
+    }
+    
+    func writeToDisk(_ buffer: ByteBuffer, path: String) throws -> String {
+        let publicDirectory = app.directory.publicDirectory
+        let groupsData = Data(buffer: buffer, byteTransferStrategy: .automatic)
+        let dataString = String(data: groupsData, encoding: .utf8) ?? "No String"
+        let groupsPath = publicDirectory + path
+        try dataString.write(toFile: groupsPath, atomically: true, encoding: .utf8)
+        return dataString
+    }
 
     try app.register(collection: TodoController())
     try app.register(collection: interestGroupController)

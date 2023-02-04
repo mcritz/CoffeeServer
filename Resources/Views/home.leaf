@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head><title>The Coffee</title><meta name="twitter:title" content="The Coffee"><meta name="og:title" content="The Coffee"><link rel="stylesheet" href="/style.css" type="text/css"></head>
+<body>
+    <h1>Coffee!</h1>
+    <h2>Groups</h2>
+    <ul>
+    #for(group in sortedGroupEvents):
+    <li class="group-view-wrapper">
+    <div>
+    #(group.name)
+    <a href="webcal://localhost:1337/groups/#(group.id!.uuidString)/calendar.ics">Subscribe to Calendar</a>
+    #if(events.count < 1)
+    <ul><li>No Events</li></ul>
+    #else
+    <ul>
+    #for(event in events):
+    <li class="event-name">
+    <div>
+    #(event.name)
+    </div>
+    </li>
+    #endfor
+    </ul>
+    </div>
+    </li>
+    #endfpr
+    </ul>
+</body>
+</html>
+

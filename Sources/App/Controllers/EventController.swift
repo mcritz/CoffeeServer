@@ -8,6 +8,7 @@ struct EventController: RouteCollection {
         
         let eventsAPI = routes.grouped("api", "v2", "events")
         eventsAPI.get(use: index)
+        eventsAPI.get("upcoming", use: future)
         eventsAPI.post(use: create)
         eventsAPI.group(":eventID") { event in
             event.delete(use: delete)
@@ -16,7 +17,17 @@ struct EventController: RouteCollection {
     }
     
     func index(req: Request) async throws -> [Event] {
-        try await Event.query(on: req.db).all()
+        return try await Event.query(on: req.db)
+            .sort(\.$endAt, .ascending)
+            .all()
+    }
+    
+    func future(req: Request) async throws -> [Event] {
+        let now = Date.now
+        return try await Event.query(on: req.db)
+            .filter(\.$endAt, .greaterThan, now)
+            .sort(\.$endAt, .ascending)
+            .all()
     }
     
     func fetchEvent(req: Request) async throws -> Event {

@@ -45,13 +45,19 @@ extension InterestGroupController {
         })
         
         let list = Node.body(
-            .h1("Coffee!"),
-            .h2("Groups"),
-            .ul(.forEach(sortedGroupEvents) { group, events in
-                .li(.class("group-name"),
-                    GroupView(group: group, events: events).convertToNode()
-                )
-            })
+            .div(
+                .h1("Coffee!"),
+                .h2("Groups"),
+                .ul(
+                    .forEach(sortedGroupEvents) { group, events in
+                    .li(.class("group-view-wrapper"),
+                        GroupView(group: group, events: events).convertToNode()
+                    )
+                },
+                    .class("group-ul")
+                ),
+                .class("wrapper")
+            )
         )
         return WebPage(body: list).response()
     }

@@ -7,7 +7,7 @@ struct GroupView: Component {
     var body: Component {
         Div {
             Text(group.name)
-            Link("Subscribe to Calendar", url: "/groups/\(group.id!.uuidString)/calendar")
+            Link("Subscribe to Calendar", url: "/groups/\(group.id!.uuidString)/calendar.ics")
             if(events.count < 1) {
                 List {
                     ListItem {
@@ -24,5 +24,6 @@ struct GroupView: Component {
                 }.listStyle(.unordered)
             }
         }
+        .class("group-view")
     }
 }

@@ -5,6 +5,7 @@ import FluentSQLiteDriver
 #endif
 import Vapor
 import JWT
+import Leaf
 
 fileprivate enum ConfigureError: Error {
     case environmentNotSet(reason: String)
@@ -20,6 +21,7 @@ public func configure(_ app: Application) throws {
     try databaseMigrations(on: app)
     
     try configureJWT(on: app)
+    app.views.use(.leaf)
     
     try routes(app)
 }

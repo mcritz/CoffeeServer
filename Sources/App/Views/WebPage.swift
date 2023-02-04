@@ -11,13 +11,24 @@ struct WebPage {
     }
     
     public func response(status: HTTPResponseStatus = .ok, headers: HTTPHeaders = .defaultHeaders) -> Response {
-        let body = HTML(body: buildBody).render()
-        return Response(status: status, headers: headers, body: .init(string: body))
+        let body = HTML(
+            .head(
+                .title("The Coffee"),
+                .stylesheet("/style.css")
+            ),
+            .body(buildBody)
+        )
+            .render()
+        let resposneHeaders: HTTPHeaders = HTTPHeaders(dictionaryLiteral:
+            ("Content-Type", "text/html"),
+            ("ETag", "bean_\(body.hashValue)")
+        )
+        return Response(status: status, headers: resposneHeaders, body: .init(string: body))
     }
     
     private let body: Component
     
     private func buildBody() -> Component {
-        self.body
+        self.body.class("dark")
     }
 }

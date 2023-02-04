@@ -1,0 +1,40 @@
+body {
+    background: #fafafa;
+    color: #e1e1e1;
+    font-family: system-ui, sans-serif;
+}
+
+body.dark {
+    background: #1e1e1e;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: leading;
+    flex-direction: column;
+    max-width: 90vw;
+}
+
+h1, h2 {
+    font-stretch: extra-expanded;
+}
+
+.group-ul {
+    display: flex;
+    max-width: 80vw;
+    list-style: none;
+    wrap: flex;
+    overflow: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.group-ul .group-view-wrapper {
+    display: flex;
+    min-height: 160px;
+    background: #323232;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
