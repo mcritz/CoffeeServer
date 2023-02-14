@@ -4,12 +4,12 @@ import Vapor
 struct UserController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let usersAPI = routes.grouped("api", "v2", "users")
-        let basicProtectd = usersAPI.grouped(UserBasicAuthenticator())
+        let basicProtected = usersAPI.grouped(UserBasicAuthenticator())
         let protectedUsers = usersAPI.grouped(SessionJWTToken.authenticator(), SessionJWTToken.guardMiddleware())
         
         usersAPI.post(use: create)
         
-        basicProtectd.get("login", use: login)
+        basicProtected.post("login", use: login)
         
         protectedUsers.get(use: index)
         protectedUsers.get(":userID", use: fetch)

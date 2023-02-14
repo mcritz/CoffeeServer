@@ -2,6 +2,7 @@ import Fluent
 import Vapor
 
 struct InterestGroupController: RouteCollection {
+    let hostURL: String
     func boot(routes: RoutesBuilder) throws {
         let groupsHTML = routes.grouped("groups")
         groupsHTML.get(use: webView)

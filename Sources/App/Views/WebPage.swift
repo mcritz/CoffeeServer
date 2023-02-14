@@ -6,13 +6,16 @@ fileprivate extension HTTPHeaders {
 }
 
 struct WebPage {
-    init(body: Component) {
-        self.body = body
+    private let content: Component
+    
+    init(_ content: Component) {
+        self.content = Node.body { content }
     }
     
     public func response(status: HTTPResponseStatus = .ok, headers: HTTPHeaders = .defaultHeaders) -> Response {
         let body = HTML(
             .head(
+                .encoding(.utf8),
                 .title("The Coffee"),
                 .stylesheet("/style.css")
             ),
@@ -26,9 +29,8 @@ struct WebPage {
         return Response(status: status, headers: resposneHeaders, body: .init(string: body))
     }
     
-    private let body: Component
     
     private func buildBody() -> Component {
-        self.body.class("dark")
+        self.content.class("dark")
     }
 }

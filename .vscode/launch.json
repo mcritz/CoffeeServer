@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Run",
+            "program": "${workspaceFolder:CoffeeServer}/.build/debug/Run",
+            "args": [],
+            "env": {
+                "SERVER_ADMIN_PASSWORD": "password",
+                "SERVER_ADMIN_EMAIL": "email@example.com",
+                "JWT_SIGNING_SECRET": "secret",
+                "DATABASE_USERNAME": "mcritz",
+                "DATBASE_SECRET": "",
+                "DATABASE_NAME": "mcritz",
+            },
+            "cwd": "${workspaceFolder:CoffeeServer}",
+            "preLaunchTask": "swift: Build Debug Run"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release Run",
+            "program": "${workspaceFolder:CoffeeServer}/.build/release/Run",
+            "args": [],
+            "cwd": "${workspaceFolder:CoffeeServer}",
+            "preLaunchTask": "swift: Build Release Run"
+        }
+    ]
+}

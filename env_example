@@ -1,5 +1,8 @@
 # COFFEE SERVER ENV
 # You’ll need to copy this file to `.env` with the values in place for production
+# Server configuration
+BASE_URL=
+
 # Super User Configuration (required for first migraiton)
 SERVER_ADMIN_PASSWORD=
 SERVER_ADMIN_EMAIL=

@@ -14,9 +14,11 @@ extension InterestGroup: Hashable, Equatable {
 
 // MARK: - WebView
 extension InterestGroupController {
-    func webView(req: Request) async throws -> Response {
+    
+    public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
         let allGroups = try await InterestGroup.query(on: req.db).all()
-        async let groupEvents: [InterestGroup : [EventData]] = withThrowingTaskGroup(of: [InterestGroup : [EventData]].self) { taskGroup in
+        let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(of: [(InterestGroup, [EventData])].self) { taskGroup in
+            var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
                     let eventModels = try await interestGroup.$events.get(on: req.db)
@@ -28,37 +30,42 @@ extension InterestGroupController {
                         eventDatas.append(eventData)
                     }
                     eventDatas.sort { $0.startAt < $1.startAt }
-                    return [interestGroup : eventDatas]
+                    return [(interestGroup, eventDatas)]
                 }
             }
-            var allResults = [InterestGroup: [EventData]]()
-            for try await childResult in taskGroup {
-                for key in childResult.keys {
-                    allResults[key] = childResult[key]
-                }
+            for try await element in taskGroup {
+                rawGroupsAndEvents.append(contentsOf: element)
             }
-            return allResults
+            let sortedGroupEvents = rawGroupsAndEvents.sorted { alpha, bravo in
+                guard let alphaMostRecentEvent = alpha.1.first?.endAt,
+                      let bravoMostRecentEvent = bravo.1.first?.endAt else { return false }
+                return alphaMostRecentEvent < bravoMostRecentEvent
+            }
+            return sortedGroupEvents
         }
         
-        let sortedGroupEvents = try await groupEvents.sorted(by: { lhs, rhs in
+        let sortedGroupEvents =  groupEvents.sorted(by: { lhs, rhs in
             lhs.0.name < rhs.0.name
         })
-        
-        let list = Node.body(
-            .div(
-                .h1("Coffee!"),
-                .h2("Groups"),
-                .ul(
-                    .forEach(sortedGroupEvents) { group, events in
-                    .li(.class("group-view-wrapper"),
-                        GroupView(group: group, events: events).convertToNode()
-                    )
-                },
-                    .class("group-ul")
-                ),
-                .class("wrapper")
-            )
-        )
-        return WebPage(body: list).response()
+        return sortedGroupEvents
+    }
+    
+    func webView(req: Request) async throws -> Response {
+        let sortedGroupEvents = try await interestGroupsAndEvents(req: req)
+        guard sortedGroupEvents.count > 0 else {
+            return WebPage(NoGroupsView()).response()
+        }
+        let list = Div {
+                H1("Coffee!")
+                List(sortedGroupEvents) { group, events in
+                    ListItem {
+                        GroupView(hostURL: hostURL, group: group, events: events)
+                    }
+                    .class("group-view-wrapper")
+                }
+                .class("group-ul")
+            }
+            .class("wrapper")
+        return WebPage(list).response()
     }
 }

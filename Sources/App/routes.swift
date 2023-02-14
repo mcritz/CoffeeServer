@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    let interestGroupController = InterestGroupController()
+    let interestGroupController = InterestGroupController(hostURL: hostURL())
     app.get { req async throws in
         try await interestGroupController.webView(req: req)
     }
@@ -35,6 +35,19 @@ func routes(_ app: Application) throws {
         }
         let dataString = try writeToDisk(pageBody, path: "/groups")
         return dataString
+    }
+    
+    func hostURL() -> String {
+        #if DEBUG
+        let uriProtocol = "http://"
+        #else
+        let uriProtocol = "webcal://"
+        #endif
+        let hostName = app.http.server
+            .configuration.hostname
+        let hostPort = app.http.server
+            .configuration.port
+        return uriProtocol + hostName + ":" + String(hostPort)
     }
     
     func writeToDisk(_ buffer: ByteBuffer, path: String) throws -> String {

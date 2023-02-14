@@ -1,13 +1,20 @@
 import Plot
+import Vapor
 
 struct GroupView: Component {
+    let hostURL: String
     let group: InterestGroup
     let events: [EventData]
+    
+    func calendarURLString() -> String {
+        return hostURL
+        + "/groups/\(group.id!.uuidString)/calendar.ics"
+    }
 
     var body: Component {
         Div {
             Text(group.name)
-            Link("Subscribe to Calendar", url: "/groups/\(group.id!.uuidString)/calendar.ics")
+            Link("Calendar", url: calendarURLString())
             if(events.count < 1) {
                 List {
                     ListItem {
