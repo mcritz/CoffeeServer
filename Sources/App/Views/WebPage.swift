@@ -1,10 +1,6 @@
 import Plot
 import Vapor
 
-fileprivate extension HTTPHeaders {
-    static let defaultHeaders = HTTPHeaders(dictionaryLiteral: ("Content-Type", "text/html"))
-}
-
 struct WebPage {
     private let content: Component
     

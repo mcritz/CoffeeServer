@@ -42,8 +42,18 @@ extension User {
         var name: String
     }
     
+    struct Private: Content {
+        var id: UUID?
+        var name: String
+        var email: String
+    }
+    
     func publicValue() -> User.Public {
         .init(id: self.id, name: self.name)
+    }
+    
+    func privateValue() -> User.Private {
+        .init(id: self.id, name: self.name, email: self.email)
     }
 }
 

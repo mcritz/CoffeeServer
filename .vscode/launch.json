@@ -7,12 +7,12 @@
             "program": "${workspaceFolder:CoffeeServer}/.build/debug/Run",
             "args": [],
             "env": {
-                "SERVER_ADMIN_PASSWORD": "password",
-                "SERVER_ADMIN_EMAIL": "email@example.com",
-                "JWT_SIGNING_SECRET": "secret",
-                "DATABASE_USERNAME": "mcritz",
+                "SERVER_ADMIN_PASSWORD": "",
+                "SERVER_ADMIN_EMAIL": "",
+                "JWT_SIGNING_SECRET": "",
+                "DATABASE_USERNAME": "",
                 "DATBASE_SECRET": "",
-                "DATABASE_NAME": "mcritz",
+                "DATABASE_NAME": "",
             },
             "cwd": "${workspaceFolder:CoffeeServer}",
             "preLaunchTask": "swift: Build Debug Run"

@@ -1,11 +1,13 @@
 body {
-    background: #fafafa;
+    background: #41231C;
     color: #e1e1e1;
     font-family: system-ui, sans-serif;
 }
 
 body.dark {
-    background: #1e1e1e;
+    background: #41231C;
+    background-image: radial-gradient(circle at 50% 0, rgba(108, 38, 229, 0.5), rgba(108, 38, 229, 0.41) 10%, rgba(225, 168, 121, 0.00) 98%, rgba(225, 168, 121, 0.00) 98%, rgba(225, 168, 121, 0) 98%);
+    background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -17,7 +19,9 @@ body.dark {
 }
 
 h1, h2 {
-    font-stretch: extra-expanded;
+    font-family: "SFCompactRounded-Heavy";
+    font-size: 48px;
+    font-weight: 900;
 }
 
 .group-ul {
