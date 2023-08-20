@@ -48,12 +48,12 @@ struct UserController: RouteCollection {
         return user.publicValue()
     }
     
-    func fetchSelf(_ req: Request) async throws -> User.Public {
+    func fetchSelf(_ req: Request) async throws -> User.Private {
         let payload = try req.jwt.verify(as: SessionJWTToken.self)
         guard let user = try await User.find(payload.userId, on: req.db) else {
             throw Abort(.badRequest)
         }
-        return user.publicValue()
+        return user.privateValue()
     }
     
     func delete(_ req: Request) async throws -> HTTPStatus {

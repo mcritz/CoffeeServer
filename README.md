@@ -2,7 +2,7 @@
 
 ## Find Coffee with Friends
 
-## Mac Dev Sandbox
+##  Dev Sandbox
 
 ### Installation
 
@@ -10,12 +10,16 @@
 2. Clone this repo
 3. Set up the enivronment variables found in `env_example`.
     - Be sure to remember the admin email and password for step 5
-    - You can set runtime environment variables by editting Xcode’s project scheme. 
+    - Xcode: You can set runtime environment variables by editting Xcode’s project scheme. 
         - Product > Scheme > Edit Scheme. Then go to Run > Arguments > Environment Variables
+    - Visual Studio Code: You can set the runtime environment variables by editting the `.vscode/launch.json`
+    - macOS: Note that by default Postgres will use your macOS login name as the database name and have no password
 4. Build and run
-5. Explore the API using [RapidAPI for Mac](https://paw.cloud). Open the CoffeeServer.paw file to find various routes. Many routes are admin protected. You’ll need your login info from step 3
+5. Explore the API using [RapidAPI for Mac](https://paw.cloud). 
+    - Open the CoffeeServer.paw file to find various routes. Many routes are admin protected. You’ll need your login info from step 3. 
+    - Be sure your RapidAPI Environment is using values from Step 3.
 
-On the first run, the super user will be created. You’ll need the super user account to do most create update and delete actions.
+On the first run, the super user will be created using the values from Step 3. You’ll need the super user account to do most create update and delete actions.
 
 ## Production Deployment
  
@@ -32,9 +36,13 @@ On the first run, the super user will be created. You’ll need the super user a
 
 The entire service fleet (app, database, and Caddy proxy) are configured with the `docker-compose` file.
 
+#### Service Fleet Overview
+
 From the outside in:
 
-A request to your service will first reach Caddy which knows that your server name — say, `CoffeeCoffee.world` — exists and should proxy the request to the app. The app is a Vapor server written in Swift 5.7. It connects to the database which is Postres to save and fetch data.
+A request to your service will first reach Caddy which knows that your server name — say, `https://CoffeeCoffee.world` — exists and should proxy the request to the app. Caddy also handles https. The app is a Vapor server written in Swift. It connects to the database which is Postres to save and fetch data.
+
+#### Configuration
 
 5. Configure the `Caddyfile`. 
     - Copy the example file `cp Caddyfile-example Caddyfile`
@@ -48,7 +56,7 @@ A request to your service will first reach Caddy which knows that your server na
     - In standard operation `docker compose up -d`
 8. Run any migrations
     - If this is the **first run** then you **must** run the database migrations: `docker compose run migrate`
-    - There is no effect to run migrations that have already been run
+    - Running migrations more than once will have no negative effect
     - The only time you won’t need to run migrations is if you’re *certain* that the data models haven’t changed
 
 ### Confirm Service Readiness
@@ -61,7 +69,7 @@ At this point the service fleet should be running and connected to the database.
     - `curl "http://127.0.0.1:8080/healthcheck"` should have output similiar to: `OK. Database Check: Event count = 0`
 11. Assert the service is reachable at your domain. Close your server ssh session and try…
     - `curl "http://EXAMPLE.COM/healthcheck"` should be OK.
-12. Finally, assert that [Let’s Encrypt](https://letsencrypt.org) Caddy server is working.
+12. Finally, assert that https is working.
     - `curl "https://EXAMPLE.COM/healthcheck"` should also be OK.
 
 At this point, using a web browser and opening your URL should see the “Coffee”.
