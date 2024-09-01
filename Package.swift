@@ -1,4 +1,4 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.10
 import PackageDescription
 
 let package = Package(
@@ -7,14 +7,13 @@ let package = Package(
        .macOS(.v12)
     ],
     dependencies: [
-        // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/fluent.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", .upToNextMajor(from: "2.0.0")),
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/vapor/jwt.git", .upToNextMajor(from: "4.2.1")),
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
-        .package(url: "https://github.com/JohnSundell/Plot.git", .upToNextMajor(from: "0.9.0")),
+        .package(url: "https://github.com/JohnSundell/Plot", .upToNextMajor(from: "0.14.0")),
         .package(url: "https://github.com/swift-calendar/icalendarkit.git", .upToNextMajor(from: "1.0.2")),
     ],
     targets: [
