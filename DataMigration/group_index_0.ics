@@ -1,0 +1,3087 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Coffee/Coffee/EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:SF iOS Coffee
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:2bac9dd7-e16e-409f-aa95-9a755b67132d
+DTSTART:20200624T163000Z
+DTEND:20200624T180000Z
+DESCRIPTION:Zoom Coffee
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:ef98aff6-a0d1-4934-ab32-28b71fdbf049
+DTSTART:20190717T153000Z
+DTEND:20190717T170000Z
+DESCRIPTION:Sean’s going away coffee
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:17076cfe-7db2-444e-b176-772e91daee42
+DTSTART:20190703T153000Z
+DTEND:20190703T170000Z
+DESCRIPTION:Ferry Building 🚣‍♂️ 
+LOCATION:Ferry Building\, San Francisco\, CA 94111\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee Kiosk
+URL:https://foursquare.com/v/521cf6af11d21968a3ce3498
+X-APPLE-STRUCTURED-LOCATION:Ferry Building\, San Francisco\, CA 94111\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:fde534c8-11db-43ce-8ff4-8d3f599ef50d
+DTSTART:20191113T163000Z
+DTEND:20191113T180000Z
+DESCRIPTION:Outside seating. Dress warm
+LOCATION:3086 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Haus Coffee
+URL:https://foursquare.com/v/4a188a97f964a520c5791fe3
+X-APPLE-STRUCTURED-LOCATION:3086 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:f19b442d-fc66-43ef-8450-51c658993658
+DTSTART:20191030T153000Z
+DTEND:20191030T170000Z
+DESCRIPTION:James is leaving us for no good reason
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:4f473fd0-7eb9-4358-8ff5-de580ddd2467
+DTSTART:20190213T170000Z
+DTEND:20190213T180000Z
+DESCRIPTION:Andytown's new place
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:f9bc1264-9c7d-441e-a916-d0e41c1dcaa4
+DTSTART:20180815T153000Z
+DTEND:20180815T170000Z
+DESCRIPTION:Four Barrel Coffee
+LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San Francisco\, CA 9410
+ 3\, United States
+SUMMARY:SF iOS Coffee at Four Barrel Coffee
+URL:https://foursquare.com/v/480d1a5ef964a520284f1fe3
+X-APPLE-STRUCTURED-LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San 
+ Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:bdcb8f8b-e97f-4703-bab9-5a5166efe208
+DTSTART:20180530T153000Z
+DTEND:20180530T170000Z
+DESCRIPTION:Saint Frank
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:bf6a86b6-caad-4fb4-936e-ad785b57d28a
+DTSTART:20200226T163000Z
+DTEND:20200226T180000Z
+DESCRIPTION:Mission by popular request
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:f8c7e344-f432-4fe1-b5ce-be436de34c76
+DTSTART:20191023T153000Z
+DTEND:20191023T170000Z
+DESCRIPTION:Our old stomping "grounds" ☕️
+LOCATION:505 Howard St (1st St)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5473ada4498e5d7a1971dc74
+X-APPLE-STRUCTURED-LOCATION:505 Howard St (1st St)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:ccea1d95-a753-49b9-be2b-7096d37a48f5
+DTSTART:20190619T153000Z
+DTEND:20190619T170000Z
+DESCRIPTION:The people have voted. Andytown again
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:f54554f2-4336-4766-9681-03b89751609d
+DTSTART:20200122T163000Z
+DTEND:20200122T180000Z
+DESCRIPTION:Back at Red Door
+LOCATION:505 Howard St (1st St)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5473ada4498e5d7a1971dc74
+X-APPLE-STRUCTURED-LOCATION:505 Howard St (1st St)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:d61172c8-5d10-445b-b076-c1268a7d9ffe
+DTSTART:20190925T153000Z
+DTEND:20190925T170000Z
+DESCRIPTION:🐍Ritual in Hayessssss 🐍
+LOCATION:432B Octavia St (at Hayes St)\, San Francisco\, CA 94102\, United 
+ States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/4dd94350e4cd37c893d8146f
+X-APPLE-STRUCTURED-LOCATION:432B Octavia St (at Hayes St)\, San Francisco\,
+  CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:d0ce1fe0-ffb6-42b7-a501-1d7475cf8606
+DTSTART:20190327T153000Z
+DTEND:20190327T170000Z
+DESCRIPTION:Still new-ish Blue Bottle
+LOCATION:168 2nd St (between Natoma St and Howard St)\, San Francisco\, CA 
+ 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St (between Natoma St and Howard St)\, 
+ San Francisco\, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:a4f3c14c-80bb-49c8-b484-115645878ea9
+DTSTART:20190116T163000Z
+DTEND:20190116T180000Z
+DESCRIPTION:Ritual Valencia
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:40ede381-3c51-4043-bd05-0c61c5f9a005
+DTSTART:20190306T163000Z
+DTEND:20190306T180000Z
+DESCRIPTION:Verve coffee for hope
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:b3bc0963-a642-4543-b819-927e9c1599e9
+DTSTART:20180131T163000Z
+DTEND:20180131T180000Z
+DESCRIPTION:Haus
+LOCATION:3086 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Haus Coffee
+URL:https://foursquare.com/v/4a188a97f964a520c5791fe3
+X-APPLE-STRUCTURED-LOCATION:3086 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:8d16e530-d90c-4c01-a07d-406e46bbd2ac
+DTSTART:20190410T153000Z
+DTEND:20190410T170000Z
+DESCRIPTION:Vive La Tarte 🥐
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:8744429b-4e86-46ce-92a6-b99e9ef9223f
+DTSTART:20180718T153000Z
+DTEND:20180718T170000Z
+DESCRIPTION:Red Door Coffee
+LOCATION:505 Howard St (1st St)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5473ada4498e5d7a1971dc74
+X-APPLE-STRUCTURED-LOCATION:505 Howard St (1st St)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:ee75bb01-9735-4a75-8c8e-065eb9122b93
+DTSTART:20181212T020000Z
+DTEND:20181212T050000Z
+DESCRIPTION:☃Holiday Party: Local Edition
+LOCATION:691 Market St (at 3rd St)\, San Francisco\, CA 94105\, United Stat
+ es
+SUMMARY:SF iOS Coffee at Local Edition
+URL:https://foursquare.com/v/4f7e77bfe4b0b58904177146
+X-APPLE-STRUCTURED-LOCATION:691 Market St (at 3rd St)\, San Francisco\, CA 
+ 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:85b199cf-0640-48cf-8d1c-7bd59d373b95
+DTSTART:20180411T153000Z
+DTEND:20180411T170000Z
+DESCRIPTION:Bluestone
+LOCATION:227 Front St\, San Francisco\, CA 94111\, United States
+SUMMARY:SF iOS Coffee at Bluestone Lane
+URL:https://foursquare.com/v/5a03ae7366f3cd6001ed55d7
+X-APPLE-STRUCTURED-LOCATION:227 Front St\, San Francisco\, CA 94111\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:9bb37fed-37d0-4a17-9568-5f8d8073c015
+DTSTART:20180328T153000Z
+DTEND:20180328T170000Z
+DESCRIPTION:Tartine Manufactory: Bye Harrison
+LOCATION:595 Alabama St (at 18th St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Tartine Manufactory
+URL:https://foursquare.com/v/57ac23c1498eef0851316d5e
+X-APPLE-STRUCTURED-LOCATION:595 Alabama St (at 18th St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:e8847784-2f90-41f6-b358-b12cdc7be5cc
+DTSTART:20171220T163000Z
+DTEND:20171220T180000Z
+DESCRIPTION:Sightglass Coffee on 7th
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:aaee1764-4a9b-4f5a-9d19-189751b3dd22
+DTSTART:20180905T153000Z
+DTEND:20180905T170000Z
+DESCRIPTION:Red Door / Transbay Terminal
+LOCATION:505 Howard St (1st St)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5473ada4498e5d7a1971dc74
+X-APPLE-STRUCTURED-LOCATION:505 Howard St (1st St)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:d07a3b36-36a8-4f36-83fe-3f0e6eef971e
+DTSTART:20180523T153000Z
+DTEND:20180523T170000Z
+DESCRIPTION:Sightglass on 7th
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:d2f88fda-8478-439d-9931-a1e023204954
+DTSTART:20190220T163000Z
+DTEND:20190220T180000Z
+DESCRIPTION:Blue Bottle at Market Square
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:d854aed1-4023-4e54-a997-587db9d271a2
+DTSTART:20180214T163000Z
+DTEND:20180214T180030Z
+DESCRIPTION:Blue Bottle at South Park
+LOCATION:2 South Park\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/582352764972292ad70ec0bd
+X-APPLE-STRUCTURED-LOCATION:2 South Park\, San Francisco\, CA 94107\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:90c706b6-ff0e-4249-9e92-209d1dc9ba9d
+DTSTART:20191002T153000Z
+DTEND:20191002T170000Z
+DESCRIPTION:One more time for summer weather
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:03544717-fd4d-41df-bd9b-75ce24f81fc5
+DTSTART:20180801T153000Z
+DTEND:20180801T170000Z
+DESCRIPTION:Contraband Soma
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:a079b9d5-3f75-4aa5-9854-ccf026b3f95f
+DTSTART:20191211T163000Z
+DTEND:20191211T180000Z
+DESCRIPTION:Tim said this was a good Blue Bottle!
+LOCATION:199 Sutter St (Kearny Street)\, San Francisco\, CA 94104\, United 
+ States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5daddd28a4f2c900078367c5
+X-APPLE-STRUCTURED-LOCATION:199 Sutter St (Kearny Street)\, San Francisco\,
+  CA 94104\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:1f803503-5c5b-4ab0-ba6f-4d6f00ea727f
+DTSTART:20190206T163000Z
+DTEND:20190206T180000Z
+DESCRIPTION:New Vive La Tarte in Noe
+LOCATION:4026 24th St (Noe)\, San Francisco\, CA 94114\, United States
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/5c4c85f14f0e58002cd2bdc6
+X-APPLE-STRUCTURED-LOCATION:4026 24th St (Noe)\, San Francisco\, CA 94114\,
+  United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:51a3b123-30ab-42d2-8bde-dce3dee84ddb
+DTSTART:20200212T163000Z
+DTEND:20200212T180000Z
+DESCRIPTION:Contra
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:2a724cf0-8701-4223-9923-5d2987737da2
+DTSTART:20200311T153000Z
+DTEND:20200311T170000Z
+DESCRIPTION:Sky Park Andytown / remote friendly FaceTime 
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:554e5afd-8bb4-42d1-b62d-80d9e25e8962
+DTSTART:20180829T153000Z
+DTEND:20180829T170000Z
+DESCRIPTION:Vive La Tarte - SOMA
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:5f40cf37-8ce7-4fcc-bd47-1141803195ea
+DTSTART:20180404T153000Z
+DTEND:20180404T170007Z
+DESCRIPTION:Noon All Day
+LOCATION:690 Indiana St (19th)\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Noon All Day
+URL:https://foursquare.com/v/5a1f260b916bc11d05c05186
+X-APPLE-STRUCTURED-LOCATION:690 Indiana St (19th)\, San Francisco\, CA 9410
+ 7\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:7a41af50-f7c4-476b-9e0a-11cccd8da281
+DTSTART:20181114T163000Z
+DTEND:20181114T180000Z
+DESCRIPTION:Contraband
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012209Z
+UID:86f4d7e7-b535-4542-bd51-8f0293863932
+DTSTART:20181107T163000Z
+DTEND:20181107T180000Z
+DESCRIPTION:Special Xtra
+LOCATION:138 Minna St (New Montgomery St)\, San Francisco\, CA 94105\, Unit
+ ed States
+SUMMARY:SF iOS Coffee at Special Xtra
+URL:https://foursquare.com/v/538d010a498e71342055358c
+X-APPLE-STRUCTURED-LOCATION:138 Minna St (New Montgomery St)\, San Francisc
+ o\, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:30fbd517-fefd-4c62-bd33-43de785e2124
+DTSTART:20180926T153000Z
+DTEND:20180926T170000Z
+DESCRIPTION:Sightglass Coffee
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1b3fed9f-592e-44d4-93cc-0998cc155862
+DTSTART:20180124T163000Z
+DTEND:20180124T180000Z
+DESCRIPTION:Blue Bottle Coffee - Ferry Building
+LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, San Francisco\, CA 
+ 94111\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/49d68c61f964a520e65c1fe3
+X-APPLE-STRUCTURED-LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, 
+ San Francisco\, CA 94111\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2d84c27a-c964-492c-a1c3-4d6c0f78935d
+DTSTART:20180516T153000Z
+DTEND:20180516T170000Z
+DESCRIPTION:Ritual Coffee on Valencia
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c5b1161b-4f7f-427f-a6de-cf0c7d64c005
+DTSTART:20180207T163000Z
+DTEND:20180207T180000Z
+DESCRIPTION:Contraband Coffee Bar
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:85aa0eee-1511-4840-aa8e-e6f61b45761e
+DTSTART:20180307T163000Z
+DTEND:20180307T180000Z
+DESCRIPTION:OG Sightglass on 7th
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a83f8f27-8cc1-4d65-a5c4-414483787b53
+DTSTART:20181003T153000Z
+DTEND:20181003T170000Z
+DESCRIPTION:Dynamo Donut & Coffee
+LOCATION:2760 24th St (at Hampshire St)\, San Francisco\, CA 94110\, United
+  States
+SUMMARY:SF iOS Coffee at Dynamo Donut & Coffee
+URL:https://foursquare.com/v/49ccf971f964a520a6591fe3
+X-APPLE-STRUCTURED-LOCATION:2760 24th St (at Hampshire St)\, San Francisco\
+ , CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f6a803a1-9a70-476e-a5d5-fcdacbffc2b7
+DTSTART:20180620T153000Z
+DTEND:20180620T170000Z
+DESCRIPTION:Réveille Coffee: North Beach edition
+LOCATION:200 Columbus Ave (at Pacific Ave)\, San Francisco\, CA 94133\, Uni
+ ted States
+SUMMARY:SF iOS Coffee at Réveille Coffee Co.
+URL:https://foursquare.com/v/50ad5b86067d33c34bef6724
+X-APPLE-STRUCTURED-LOCATION:200 Columbus Ave (at Pacific Ave)\, San Francis
+ co\, CA 94133\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ccc579de-90b7-45ad-bbd5-641ee8fff986
+DTSTART:20180110T163000Z
+DTEND:20180110T180000Z
+DESCRIPTION:Coffee Bar Mission
+LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.)\, San Francisco\,
+  CA 94110\, United States
+SUMMARY:SF iOS Coffee at Coffee Bar
+URL:https://foursquare.com/v/47fde9f4f964a520df4e1fe3
+X-APPLE-STRUCTURED-LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.
+ )\, San Francisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:afd054d0-2e1d-4d9d-a8f2-e4e799f29171
+DTSTART:20180808T153000Z
+DTEND:20180808T170000Z
+DESCRIPTION:The Point
+LOCATION:505 Brannan St\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at The Point
+URL:https://foursquare.com/v/5a788999491be712e2878069
+X-APPLE-STRUCTURED-LOCATION:505 Brannan St\, San Francisco\, CA 94107\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6cb3a8ea-a3ab-40e5-b080-f722bb031ddd
+DTSTART:20180711T153000Z
+DTEND:20180711T170000Z
+DESCRIPTION:Coffee Bar
+LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.)\, San Francisco\,
+  CA 94110\, United States
+SUMMARY:SF iOS Coffee at Coffee Bar
+URL:https://foursquare.com/v/47fde9f4f964a520df4e1fe3
+X-APPLE-STRUCTURED-LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.
+ )\, San Francisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c9e43c7e-619c-4b9a-966b-97a806fe6f00
+DTSTART:20190313T153000Z
+DTEND:20190313T170000Z
+DESCRIPTION:Sightglass in SOMA
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:405bad14-dc91-452f-b74e-ec4d180ca9e2
+DTSTART:20190814T153000Z
+DTEND:20190814T170000Z
+DESCRIPTION:Townsend Coffee
+LOCATION:372 Ritch St (btwn Townsend & Brannan St)\, San Francisco\, CA 941
+ 07\, United States
+SUMMARY:SF iOS Coffee at Cento
+URL:https://foursquare.com/v/49b1697af964a520d6521fe3
+X-APPLE-STRUCTURED-LOCATION:372 Ritch St (btwn Townsend & Brannan St)\, San
+  Francisco\, CA 94107\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:fca01a31-8ece-4c26-8ea7-b669ec4fb43b
+DTSTART:20180418T153000Z
+DTEND:20180418T170000Z
+DESCRIPTION:Vive La Tarte
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:78e5203a-744d-4a70-8a18-f57fb68e3140
+DTSTART:20190605T153000Z
+DTEND:20190605T170000Z
+DESCRIPTION:Let's talk about SwiftUI
+LOCATION:986 Market St (at 6th St)\, San Francisco\, CA 94102\, United Stat
+ es
+SUMMARY:SF iOS Coffee at Equator Coffees & Teas
+URL:https://foursquare.com/v/550080fb498e3b394ebc6c9c
+X-APPLE-STRUCTURED-LOCATION:986 Market St (at 6th St)\, San Francisco\, CA 
+ 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a9abaf2c-c265-4b90-9823-252006db6a9a
+DTSTART:20180725T153000Z
+DTEND:20180725T170000Z
+DESCRIPTION:Ferry Building (BB\, VLT\, etc.)
+LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, San Francisco\, CA 
+ 94111\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/49d68c61f964a520e65c1fe3
+X-APPLE-STRUCTURED-LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, 
+ San Francisco\, CA 94111\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b8596db0-87a4-4c4d-95cc-b0266ead1634
+DTSTART:20190529T153000Z
+DTEND:20190529T170000Z
+DESCRIPTION:WWDC warmup
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:3e5def93-5a85-4631-8485-eb34047bea07
+DTSTART:20181010T153000Z
+DTEND:20181010T170000Z
+DESCRIPTION:Verve Coffee Roasters
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:91e5747e-407a-4a6f-bc93-ba5d2a056917
+DTSTART:20191016T153000Z
+DTEND:20191016T170000Z
+DESCRIPTION:4️⃣🛢
+LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San Francisco\, CA 9410
+ 3\, United States
+SUMMARY:SF iOS Coffee at Four Barrel Coffee
+URL:https://foursquare.com/v/480d1a5ef964a520284f1fe3
+X-APPLE-STRUCTURED-LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San 
+ Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c1c564cd-f148-458a-9b54-2e7065f855fd
+DTSTART:20190508T153000Z
+DTEND:20190508T170000Z
+DESCRIPTION:Mission Coffee
+LOCATION:3086 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Haus Coffee
+URL:https://foursquare.com/v/4a188a97f964a520c5791fe3
+X-APPLE-STRUCTURED-LOCATION:3086 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a16f81ae-3193-4fe4-aab6-3c6846277f11
+DTSTART:20191218T163000Z
+DTEND:20191218T180000Z
+DESCRIPTION:Celebrate the holiday rebel within us all
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5041d52d-66f5-41f9-9289-98ba4d3bb9cd
+DTSTART:20190102T163000Z
+DTEND:20190102T173000Z
+DESCRIPTION:First ☕️ of 2019 @ Saint Frank on Mission
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:53f01b83-0faa-4aee-a2a8-cded94de6214
+DTSTART:20190107T221000Z
+DTEND:20190107T230000Z
+DESCRIPTION:Surprise Monday Inaugural Blue Bottle
+LOCATION:168 2nd St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St\, San Francisco\, CA 94105\, United 
+ States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f9dbe4eb-b61b-415e-896b-858a0871354d
+DTSTART:20180228T163000Z
+DTEND:20180228T180000Z
+DESCRIPTION:St Frank in SOMA
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2731bb66-bdbe-40c6-96ab-d55e6cce8144
+DTSTART:20180509T153000Z
+DTEND:20180509T170000Z
+DESCRIPTION:La Capra - Fidi 
+LOCATION:50 Fremont St (at Mission St)\, San Francisco\, CA 94105\, United 
+ States
+SUMMARY:SF iOS Coffee at La Capra Coffee
+URL:https://foursquare.com/v/5464d1a9498e9169e65dc8bc
+X-APPLE-STRUCTURED-LOCATION:50 Fremont St (at Mission St)\, San Francisco\,
+  CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:4d1e05d7-d3ab-4614-8504-7aa49d105418
+DTSTART:20190321T160000Z
+DTEND:20190321T170000Z
+DESCRIPTION:The GDC Special starring MGS
+LOCATION:720 Market St (btwn O'Farrell & Kearny St)\, San Francisco\, CA 94
+ 102\, United States
+SUMMARY:SF iOS Coffee at Mazarine Coffee
+URL:https://foursquare.com/v/547cac4d498ecfcb0018b838
+X-APPLE-STRUCTURED-LOCATION:720 Market St (btwn O'Farrell & Kearny St)\, Sa
+ n Francisco\, CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6e4c2f22-20e1-44e8-9ebf-1d7012d593b2
+DTSTART:20181031T153000Z
+DTEND:20181031T170000Z
+DESCRIPTION:Spooky Saint Frank(enstein)
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:09429771-b1b6-4579-a71d-ed4fc02d8d88
+DTSTART:20190918T153000Z
+DTEND:20190918T170000Z
+DESCRIPTION:Aanddyy is leaving SF for some reason
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:66b4185f-bfce-4bf4-9291-bece6b42c26b
+DTSTART:20190626T153000Z
+DTEND:20190626T170000Z
+DESCRIPTION:Contraband? Darn near killed 'em
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f7143a32-0a03-4e62-9d7a-e9d06b93361b
+DTSTART:20191009T153000Z
+DTEND:20191009T170000Z
+DESCRIPTION:East cut again. Preorder in the app!
+LOCATION:168 2nd St (between Natoma St and Howard St)\, San Francisco\, CA 
+ 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St (between Natoma St and Howard St)\, 
+ San Francisco\, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6e04f202-84c7-4146-97b8-c451c3655c82
+DTSTART:20190417T153000Z
+DTEND:20190417T170000Z
+DESCRIPTION:Special Guest: Mergesort is here ✅
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a689f44c-7ef5-4187-ab9e-bf0473790990
+DTSTART:20190424T153000Z
+DTEND:20190424T170000Z
+DESCRIPTION:Freddie’s first selection ☕️
+LOCATION:168 2nd St (between Natoma St and Howard St)\, San Francisco\, CA 
+ 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St (between Natoma St and Howard St)\, 
+ San Francisco\, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:73a4866e-b940-48dc-8708-d753e771c784
+DTSTART:20200108T163000Z
+DTEND:20200108T180000Z
+DESCRIPTION:The second annual first coffup of 2019
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:15e079f0-155c-424f-92f2-6c7abd9fc45c
+DTSTART:20191204T163000Z
+DTEND:20191204T180000Z
+DESCRIPTION:Happy Birthday Chris
+LOCATION:111 Minna St (2nd St.)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5150b7c78aca1877ec109926
+X-APPLE-STRUCTURED-LOCATION:111 Minna St (2nd St.)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c210dc3b-381d-450d-97bd-fda0de47cd20
+DTSTART:20190904T153000Z
+DTEND:20190904T170000Z
+DESCRIPTION:Nev got a job. So we celebrate 
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:46049b26-83aa-4cf7-a3db-a6b6860ec269
+DTSTART:20190612T153000Z
+DTEND:20190612T170000Z
+DESCRIPTION:WWDC Decompression
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:84ea4e5b-7b28-438b-a5bc-9e90fa2eeb3a
+DTSTART:20190109T163000Z
+DTEND:20190109T180000Z
+DESCRIPTION:Vive La Tarte with Ethan's Dad
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1c194a40-8196-4c15-b316-6f95fada7be6
+DTSTART:20180117T163000Z
+DTEND:20180117T180000Z
+DESCRIPTION:Red Door (1st and Howard)
+LOCATION:505 Howard St (1st St)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5473ada4498e5d7a1971dc74
+X-APPLE-STRUCTURED-LOCATION:505 Howard St (1st St)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f365e2d4-5277-44b7-9f78-ff2ea65d1e50
+DTSTART:20190807T153000Z
+DTEND:20190807T170000Z
+DESCRIPTION:The Point: One Year Later
+LOCATION:505 Brannan St\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at The Point
+URL:https://foursquare.com/v/5a788999491be712e2878069
+X-APPLE-STRUCTURED-LOCATION:505 Brannan St\, San Francisco\, CA 94107\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2dfe8830-b635-4f20-a568-856d0b8c5a54
+DTSTART:20180103T163000Z
+DTEND:20180103T180000Z
+DESCRIPTION:Ritual Valencia
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:8b0eacec-dd3b-4534-b9a1-bb16a332249b
+DTSTART:20181205T163000Z
+DTEND:20181205T180000Z
+DESCRIPTION:Blue Bottle South Park
+LOCATION:2 South Park\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/582352764972292ad70ec0bd
+X-APPLE-STRUCTURED-LOCATION:2 South Park\, San Francisco\, CA 94107\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e0467f03-b831-44e4-a371-ac908feb7181
+DTSTART:20180221T163000Z
+DTEND:20180221T180000Z
+DESCRIPTION:Stable Cafe
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b2f59b8f-602c-4fa1-9055-207869fe9735
+DTSTART:20190130T163000Z
+DTEND:20190130T180000Z
+DESCRIPTION:St Frank
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:7df1a46f-c686-4e36-a5cc-e72106963ede
+DTSTART:20180912T153000Z
+DTEND:20180912T162900Z
+DESCRIPTION:Red Door\, 111 Minna St
+LOCATION:111 Minna St (2nd St.)\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Red Door Coffee
+URL:https://foursquare.com/v/5150b7c78aca1877ec109926
+X-APPLE-STRUCTURED-LOCATION:111 Minna St (2nd St.)\, San Francisco\, CA 941
+ 05\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:4b2a8a4b-26de-495f-8f24-1b4ceb94ae66
+DTSTART:20191205T020000Z
+DTEND:20191205T060000Z
+DESCRIPTION:👾Holiday Party: Game Night 
+LOCATION:508 4th St (Bryant St)\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Coin-Op Game Room
+URL:https://foursquare.com/v/584a4ab19343e03b162d12b7
+X-APPLE-STRUCTURED-LOCATION:508 4th St (Bryant St)\, San Francisco\, CA 941
+ 07\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:bcc58a2b-c386-4ba7-923e-f6c251f35ac5
+DTSTART:20190515T153000Z
+DTEND:20190515T170000Z
+DESCRIPTION:Ritual Rain check
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6189c162-b7c9-497c-9ab8-e91df494b2ec
+DTSTART:20190403T153000Z
+DTEND:20190403T170000Z
+DESCRIPTION:Four Barrel Coffee
+LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San Francisco\, CA 9410
+ 3\, United States
+SUMMARY:SF iOS Coffee at Four Barrel Coffee
+URL:https://foursquare.com/v/480d1a5ef964a520284f1fe3
+X-APPLE-STRUCTURED-LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San 
+ Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e7024c68-9d26-437e-b5c8-a70a80f241bf
+DTSTART:20181128T163000Z
+DTEND:20181128T180000Z
+DESCRIPTION:Vive La Tarte with Matt Whittaker
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:62ad8bd0-9d02-48e2-a518-a32886e8221b
+DTSTART:20200219T163000Z
+DTEND:20200219T180000Z
+DESCRIPTION:Wolves
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d6c152d2-90ab-4629-9876-d94ba2c34ffe
+DTSTART:20200129T163000Z
+DTEND:20200129T180000Z
+DESCRIPTION:The end of SOMA
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2e5aa98a-0320-4faf-8a6d-325d65ea94c3
+DTSTART:20180502T153000Z
+DTEND:20180502T163000Z
+DESCRIPTION:Blue Bottle Market Square
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d3e92130-7223-4f29-8d53-39720cc373ab
+DTSTART:20190821T153000Z
+DTEND:20190821T170000Z
+DESCRIPTION:Extended discussion about boats
+LOCATION:1415 Folsom St (btwn 10th St & Juniper St)\, San Francisco\, CA 94
+ 103\, United States
+SUMMARY:SF iOS Coffee at Sextant Coffee Roasters
+URL:https://foursquare.com/v/536c170f498e257eb7c70999
+X-APPLE-STRUCTURED-LOCATION:1415 Folsom St (btwn 10th St & Juniper St)\, Sa
+ n Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:56b55e90-8839-49b2-8e53-4e5f1cf39649
+DTSTART:20190911T153000Z
+DTEND:20190911T170000Z
+DESCRIPTION:Downey got a job: Let’s all get a Rebel Within
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ddf366fc-2c74-461f-b4cb-5bee6c298fce
+DTSTART:20181121T163000Z
+DTEND:20181121T180000Z
+DESCRIPTION:Coffee Bar (Mariposa St)
+LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.)\, San Francisco\,
+  CA 94110\, United States
+SUMMARY:SF iOS Coffee at Coffee Bar
+URL:https://foursquare.com/v/47fde9f4f964a520df4e1fe3
+X-APPLE-STRUCTURED-LOCATION:1890 Bryant St (btwn Mariposa St. & Florida St.
+ )\, San Francisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5ae1c54e-a408-4d3a-ba9e-6d465b76f50f
+DTSTART:20190227T163000Z
+DTEND:20190227T180000Z
+DESCRIPTION:Contraband in SOMA
+LOCATION:260 5th St (5th And Clementina)\, San Francisco\, CA 94103\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Contraband Coffee Bar
+URL:https://foursquare.com/v/58780cf39e35d31224af6dcb
+X-APPLE-STRUCTURED-LOCATION:260 5th St (5th And Clementina)\, San Francisco
+ \, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:db0df3aa-fced-40af-8813-2952084d9675
+DTSTART:20200115T163000Z
+DTEND:20200115T180000Z
+DESCRIPTION:1st anniversary of the 2nd coffup of 2019
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:23ca1132-8fb1-43e1-9b14-58439c86eb4c
+DTSTART:20181219T163000Z
+DTEND:20181219T180000Z
+DESCRIPTION:Blue Bottle Market Square
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d4d1d4ab-679c-4fdb-bdf1-34f93065cea3
+DTSTART:20181024T153000Z
+DTEND:20181024T170000Z
+DESCRIPTION:Four Barrel Coffee
+LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San Francisco\, CA 9410
+ 3\, United States
+SUMMARY:SF iOS Coffee at Four Barrel Coffee
+URL:https://foursquare.com/v/480d1a5ef964a520284f1fe3
+X-APPLE-STRUCTURED-LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San 
+ Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:147df90c-057b-41ea-9661-d2f9f4bec320
+DTSTART:20190910T170000Z
+DTEND:20190910T190000Z
+DESCRIPTION:Credit Karma hosts an Apple event viewing party
+LOCATION:760 Market St\, San Francisco\, CA 94102\, United States
+SUMMARY:SF iOS Coffee at Credit Karma HQ
+URL:https://foursquare.com/v/537baf4a498edb1da559052c
+X-APPLE-STRUCTURED-LOCATION:760 Market St\, San Francisco\, CA 94102\, Unit
+ ed States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:4608ee4b-110e-4017-be23-4b1b470d2a23
+DTSTART:20180606T153000Z
+DTEND:20180606T170000Z
+DESCRIPTION:Frog Hollow Farm (Ferry Building)
+LOCATION:1 Ferry Building\, Shop # 46 (The Embarcadero)\, San Francisco\, C
+ A 94111\, United States
+SUMMARY:SF iOS Coffee at Frog Hollow Farm
+URL:https://foursquare.com/v/4b26aa12f964a520277f24e3
+X-APPLE-STRUCTURED-LOCATION:1 Ferry Building\, Shop # 46 (The Embarcadero)\
+ , San Francisco\, CA 94111\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2a0fd374-0ec6-4011-abd4-aa5f17bb338c
+DTSTART:20190123T163000Z
+DTEND:20190123T180000Z
+DESCRIPTION:The new Blue Bottle on 2nd
+LOCATION:168 2nd St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St\, San Francisco\, CA 94105\, United 
+ States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:43d6bc52-7828-4b28-9187-2848a77bddd5
+DTSTART:20180822T153000Z
+DTEND:20180822T170000Z
+DESCRIPTION:Blue Bottle Market Square
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5a433a4d-7559-4adf-9db3-dbfceeeee43e
+DTSTART:20190731T153000Z
+DTEND:20190731T170000Z
+DESCRIPTION:East Cut's Blue Bottle
+LOCATION:168 2nd St (between Natoma St and Howard St)\, San Francisco\, CA 
+ 94105\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5c3384fbacc5f5002c89a62c
+X-APPLE-STRUCTURED-LOCATION:168 2nd St (between Natoma St and Howard St)\, 
+ San Francisco\, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:10b28536-fcd8-4e7d-8017-d2415bd10b19
+DTSTART:20180321T153000Z
+DTEND:20180321T180000Z
+DESCRIPTION:Verve on Castro
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:da23cab3-08dd-4850-aa58-4b1081f5f2d1
+DTSTART:20190320T153000Z
+DTEND:20190320T170000Z
+DESCRIPTION:BlueBottle: Ferry Building edition
+LOCATION:Ferry Building\, San Francisco\, CA 94111\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee Kiosk
+URL:https://foursquare.com/v/521cf6af11d21968a3ce3498
+X-APPLE-STRUCTURED-LOCATION:Ferry Building\, San Francisco\, CA 94111\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:cb3887ce-d06b-48cb-8a77-a8492313ad4f
+DTSTART:20190710T153000Z
+DTEND:20190710T170000Z
+DESCRIPTION:First time at Craftsman and Wolves
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e1f7a707-445b-41e4-a8c9-ebe4f46ec4ee
+DTSTART:20191120T163000Z
+DTEND:20191120T180000Z
+DESCRIPTION:Pentacle discovery!
+LOCATION:64 6th St (at Jessie St)\, San Francisco\, CA 94103\, United State
+ s
+SUMMARY:SF iOS Coffee at Pentacle Coffee
+URL:https://foursquare.com/v/5a1c333d1ffed7595e5b4a39
+X-APPLE-STRUCTURED-LOCATION:64 6th St (at Jessie St)\, San Francisco\, CA 9
+ 4103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:21efdb7a-bc16-4c1e-a17b-726a8380731b
+DTSTART:20191106T163000Z
+DTEND:20191106T180000Z
+DESCRIPTION:First event of November
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:0e8fd4e8-ad5f-4c30-9249-8869700cb744
+DTSTART:20180425T153000Z
+DTEND:20180425T170000Z
+DESCRIPTION:Ritual Coffee Roasters on Octavia
+LOCATION:432B Octavia St (at Hayes St)\, San Francisco\, CA 94102\, United 
+ States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/4dd94350e4cd37c893d8146f
+X-APPLE-STRUCTURED-LOCATION:432B Octavia St (at Hayes St)\, San Francisco\,
+  CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:8414cd83-9980-4539-888c-0e4946dc4371
+DTSTART:20190501T153000Z
+DTEND:20190501T170000Z
+DESCRIPTION:South Park: It’s gonna be May
+LOCATION:2 South Park\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/582352764972292ad70ec0bd
+X-APPLE-STRUCTURED-LOCATION:2 South Park\, San Francisco\, CA 94107\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:99cf0430-2c46-45d1-b507-7b68490066c8
+DTSTART:20180919T153000Z
+DTEND:20180919T170000Z
+DESCRIPTION:Saint Frank
+LOCATION:1081 Mission St (7th)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Saint Frank
+URL:https://foursquare.com/v/5964f126b3d8e2739960e1af
+X-APPLE-STRUCTURED-LOCATION:1081 Mission St (7th)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:425cb2e3-3f9b-4840-a8e6-071d258b1ab2
+DTSTART:20200205T163000Z
+DTEND:20200205T180000Z
+DESCRIPTION:Dogpatch
+LOCATION:690 Indiana St (19th)\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Noon All Day
+URL:https://foursquare.com/v/5a1f260b916bc11d05c05186
+X-APPLE-STRUCTURED-LOCATION:690 Indiana St (19th)\, San Francisco\, CA 9410
+ 7\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:217ccfbb-7b24-466f-9adb-c95d6724acb8
+DTSTART:20190522T153000Z
+DTEND:20190522T170000Z
+DESCRIPTION:Andytown is open early now!
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1d8db384-f648-444b-a799-c88128d0ea97
+DTSTART:20180627T153000Z
+DTEND:20180627T170000Z
+DESCRIPTION:Vive La Tarte\, Ferry Building
+LOCATION:One Ferry Building\, San Francisco Bay Trail #50\, San Francisco\,
+  CA 94111\, United States
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/5a62620d18d43b054358cfa7
+X-APPLE-STRUCTURED-LOCATION:One Ferry Building\, San Francisco Bay Trail #5
+ 0\, San Francisco\, CA 94111\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:dd50bf92-014c-49cb-862d-18c55834dac5
+DTSTART:20190724T153000Z
+DTEND:20190724T170000Z
+DESCRIPTION:South Park: The Blue Bottle not the cartoon
+LOCATION:2 South Park\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/582352764972292ad70ec0bd
+X-APPLE-STRUCTURED-LOCATION:2 South Park\, San Francisco\, CA 94107\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:70240aed-d415-4366-9aee-40a5f729c154
+DTSTART:20181017T153000Z
+DTEND:20181017T170000Z
+DESCRIPTION:Mazarine - Best Coffee\, FYI It's Roderic's Birthday
+LOCATION:720 Market St (btwn O'Farrell & Kearny St)\, San Francisco\, CA 94
+ 102\, United States
+SUMMARY:SF iOS Coffee at Mazarine Coffee
+URL:https://foursquare.com/v/547cac4d498ecfcb0018b838
+X-APPLE-STRUCTURED-LOCATION:720 Market St (btwn O'Farrell & Kearny St)\, Sa
+ n Francisco\, CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5c1c4b25-c122-4d4c-9adf-0d4a6a294d5d
+DTSTART:20190828T153000Z
+DTEND:20190828T170000Z
+DESCRIPTION:Haven't been to a BlueBottle in nearly a month....so....
+LOCATION:1355 Market St Ste 190 (at 10th St)\, San Francisco\, CA 94103\, U
+ nited States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/5560dbdb498e91a2bcde84f6
+X-APPLE-STRUCTURED-LOCATION:1355 Market St Ste 190 (at 10th St)\, San Franc
+ isco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:bc8e40ff-27ed-43b6-a1bd-dc4097c6742d
+DTSTART:20191127T163000Z
+DTEND:20191127T180000Z
+DESCRIPTION:A very far north Thanksgiving special
+LOCATION:1030 Washington St\, San Francisco\, CA 94108\, United States
+SUMMARY:SF iOS Coffee at The Coffee Movement
+URL:https://foursquare.com/v/5c47e89dcf72a0003963c145
+X-APPLE-STRUCTURED-LOCATION:1030 Washington St\, San Francisco\, CA 94108\,
+  United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:542f1da5-c48d-4e90-8e37-7556c465c93f
+DTSTART:20171213T163000Z
+DTEND:20171213T180000Z
+DESCRIPTION:The Mill
+LOCATION:736 Divisadero St (btwn Grove St & Fulton St)\, San Francisco\, CA
+  94117\, United States
+SUMMARY:SF iOS Coffee at The Mill
+URL:https://foursquare.com/v/4feddd79d86cd6f22dc171a9
+X-APPLE-STRUCTURED-LOCATION:736 Divisadero St (btwn Grove St & Fulton St)\,
+  San Francisco\, CA 94117\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e3f1aa5c-c1eb-439e-b78e-26302841b6d6
+DTSTART:20200304T163000Z
+DTEND:20200304T180000Z
+DESCRIPTION:Bottomless Coffee at Vīvę Lá Tärté
+LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA 94103\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Vive La Tarte
+URL:https://foursquare.com/v/55554f0a498e7ffc6883325c
+X-APPLE-STRUCTURED-LOCATION:1160 Howard St (at 8th St)\, San Francisco\, CA
+  94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ad8bf941-4052-43b7-a3bc-6f03596039e6
+DTSTART:20181212T163000Z
+DTEND:20181212T170000Z
+DESCRIPTION:Sextant Coffee Roasters
+LOCATION:1415 Folsom St (btwn 10th St & Juniper St)\, San Francisco\, CA 94
+ 103\, United States
+SUMMARY:SF iOS Coffee at Sextant Coffee Roasters
+URL:https://foursquare.com/v/536c170f498e257eb7c70999
+X-APPLE-STRUCTURED-LOCATION:1415 Folsom St (btwn 10th St & Juniper St)\, Sa
+ n Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:02f2a289-9d13-42cd-8d04-d23c85c5c940
+DTSTART:20180613T153000Z
+DTEND:20180613T170000Z
+DESCRIPTION:Ritual Coffee Roasters
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:0204161d-f1c2-4b84-95f5-77ffc382ee65
+DTSTART:20180314T153000Z
+DTEND:20180314T170000Z
+DESCRIPTION:St Clare Greg's Coffupaversary
+LOCATION:654 Mission St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at St. Clare Coffee
+URL:https://foursquare.com/v/5727c93c498e5d75b9c90e3d
+X-APPLE-STRUCTURED-LOCATION:654 Mission St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c7a0401b-c310-4033-bddd-cc14a0eae504
+DTSTART:20210602T153000Z
+DTEND:20210602T170000Z
+DESCRIPTION:We're back baby: Vaccinated folks only please
+LOCATION:Natoma St (btwn Beale & 2nd St)\, San Francisco\, CA 94105\, Unite
+ d States
+SUMMARY:SF iOS Coffee at Salesforce Park
+URL:https://foursquare.com/v/5b6f605bbd4009002cb4d0ac
+X-APPLE-STRUCTURED-LOCATION:Natoma St (btwn Beale & 2nd St)\, San Francisco
+ \, CA 94105\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:31e91fe5-a2f9-4bf8-a6fb-51fe4cf5ca72
+DTSTART:20220914T153000Z
+DTEND:20220914T170000Z
+DESCRIPTION:Classic C&W
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f53be7c8-07e0-4814-8140-22587d2b242d
+DTSTART:20210729T190000Z
+DTEND:20210729T210000Z
+DESCRIPTION:A special lunch outing
+LOCATION:472 Water Street\, Oakland\, CA 94607\, United States
+SUMMARY:SF iOS Coffee at Jack London Square
+URL:https://foursquare.com/v/475315f0f964a520bb4c1fe3
+X-APPLE-STRUCTURED-LOCATION:472 Water Street\, Oakland\, CA 94607\, United 
+ States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:3b685087-285b-4ae7-9d85-b692fc49679d
+DTSTART:20210804T153000Z
+DTEND:20210804T170000Z
+DESCRIPTION:Salesforce Park + Andytown
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d087d2b5-ba63-4b13-981f-2261c9935b07
+DTSTART:20210811T153000Z
+DTEND:20210811T170000Z
+DESCRIPTION:Outdoor food truck coffee @ SPRO
+LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, CA 94158\, United S
+ tates
+SUMMARY:SF iOS Coffee at Spro Coffeelab
+URL:https://foursquare.com/v/593475aa4c954c63db8a1c37
+X-APPLE-STRUCTURED-LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, 
+ CA 94158\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:207a4131-551e-4846-8415-acb1f500340e
+DTSTART:20210818T153000Z
+DTEND:20210818T170000Z
+DESCRIPTION:For The Wolves (FTW)
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:62881202-79e5-49c9-8e20-70202ad5ce11
+DTSTART:20211006T153000Z
+DTEND:20211006T170000Z
+DESCRIPTION:Ritual Coffee on Valencia
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d36c1ba1-1a9e-402e-93b4-c43e677a5620
+DTSTART:20210915T153000Z
+DTEND:20210915T170000Z
+DESCRIPTION:Rebels' Coffee
+LOCATION:746 Valencia St (btwn 18th and 19th St)\, San Francisco\, CA 94110
+ \, United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th and 19th St)\, San F
+ rancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:20a9326f-591e-4c71-88ee-a32f98f181c3
+DTSTART:20210922T153000Z
+DTEND:20210922T170000Z
+DESCRIPTION:Salesforce Park
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1a859a0e-dddb-4065-900b-ed930b3bce0b
+DTSTART:20210929T153000Z
+DTEND:20210929T170000Z
+DESCRIPTION:Stable
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:847fec19-2842-48b5-bf9c-f0fb6444efbe
+DTSTART:20211020T153000Z
+DTEND:20211020T170000Z
+DESCRIPTION:Red Bay Coffee at the Ferry Building
+LOCATION:1 Ferry Building\, San Francisco\, CA 94111\, United States
+SUMMARY:SF iOS Coffee at Red Bay Coffee
+URL:https://foursquare.com/v/60aa98920133be7d14c75791
+X-APPLE-STRUCTURED-LOCATION:1 Ferry Building\, San Francisco\, CA 94111\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9ec474b4-95f2-477e-844d-2e98e5a7ac2f
+DTSTART:20211027T153000Z
+DTEND:20211027T170000Z
+DESCRIPTION:Stability at Stable
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:0de5b0e9-8eea-4d8c-8a53-7ddee91516ae
+DTSTART:20211110T163000Z
+DTEND:20211110T180000Z
+DESCRIPTION:Roderic's Return\; Reconvening at Ritual
+LOCATION:432B Octavia St (at Hayes St)\, San Francisco\, CA 94102\, United 
+ States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/4dd94350e4cd37c893d8146f
+X-APPLE-STRUCTURED-LOCATION:432B Octavia St (at Hayes St)\, San Francisco\,
+  CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:49f83e37-db9d-4cf5-b667-6e9659f0d4c7
+DTSTART:20211117T163000Z
+DTEND:20211117T180000Z
+DESCRIPTION:The Spro
+LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, CA 94158\, United S
+ tates
+SUMMARY:SF iOS Coffee at Spro Coffeelab
+URL:https://foursquare.com/v/593475aa4c954c63db8a1c37
+X-APPLE-STRUCTURED-LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, 
+ CA 94158\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:707a1d5f-931f-412f-a3a0-f1bdfe8baf7d
+DTSTART:20211215T153000Z
+DTEND:20211215T170000Z
+DESCRIPTION:Craftsman and Wolves (sponsored by Roderic)
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:56a2f300-0c3a-4a8e-ba3a-6a615d7347bd
+DTSTART:20220112T163000Z
+DTEND:20220112T180000Z
+DESCRIPTION:Top of the Park
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5c0b3f01-a512-4c31-8983-09b8615ce23b
+DTSTART:20220302T163000Z
+DTEND:20220302T180000Z
+DESCRIPTION:Back Outside @ Stable
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b3d19d66-2168-4d31-8c08-4953ee921eb8
+DTSTART:20220316T153000Z
+DTEND:20220316T170000Z
+DESCRIPTION:Rebels Within (C&W)
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:8d695269-c5fc-433d-92a2-1bba7417f4b3
+DTSTART:20220323T153000Z
+DTEND:20220323T170000Z
+DESCRIPTION:Andytown @ Salesforce Park
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:880dfdb0-d24e-4511-8197-ecd70d4dc3d8
+DTSTART:20220330T153000Z
+DTEND:20220330T170000Z
+DESCRIPTION:Whose Haus
+LOCATION:3086 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Haus Coffee
+URL:https://foursquare.com/v/4a188a97f964a520c5791fe3
+X-APPLE-STRUCTURED-LOCATION:3086 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:68b91da1-00d1-4595-b759-0caee94306e0
+DTSTART:20220406T153000Z
+DTEND:20220406T170000Z
+DESCRIPTION:More Stability
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:88b4988f-518c-496f-a6b2-e35aa9e1f525
+DTSTART:20220413T153000Z
+DTEND:20220413T170000Z
+DESCRIPTION:South Park Blue Bottle 🧇
+LOCATION:2 South Park\, San Francisco\, CA 94107\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/582352764972292ad70ec0bd
+X-APPLE-STRUCTURED-LOCATION:2 South Park\, San Francisco\, CA 94107\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:852b345e-1b89-4e9f-8b24-5bc80bbbf2ea
+DTSTART:20220420T153000Z
+DTEND:20220420T170000Z
+DESCRIPTION:Mission Ritual
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b587effd-b567-4c47-9819-b88908691fac
+DTSTART:20220525T153000Z
+DTEND:20220525T170000Z
+DESCRIPTION:Craftsman and Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9251b631-3bec-4d71-9e27-068916d7790c
+DTSTART:20220928T153000Z
+DTEND:20220928T170000Z
+DESCRIPTION:The Mill
+LOCATION:736 Divisadero St (btwn Grove St & Fulton St)\, San Francisco\, CA
+  94117\, United States
+SUMMARY:SF iOS Coffee at The Mill
+URL:https://foursquare.com/v/4feddd79d86cd6f22dc171a9
+X-APPLE-STRUCTURED-LOCATION:736 Divisadero St (btwn Grove St & Fulton St)\,
+  San Francisco\, CA 94117\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:58114ad7-3b6e-4889-bfea-5110780a98a0
+DTSTART:20220518T153000Z
+DTEND:20220518T170000Z
+DESCRIPTION:Ferry Building (outdoors! ❄️)
+LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, San Francisco\, CA 
+ 94111\, United States
+SUMMARY:SF iOS Coffee at Blue Bottle Coffee
+URL:https://foursquare.com/v/49d68c61f964a520e65c1fe3
+X-APPLE-STRUCTURED-LOCATION:1 Ferry Building Ste 7 (at The Embarcardero)\, 
+ San Francisco\, CA 94111\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f574f7b4-b2bc-46a4-97d9-014be0341de3
+DTSTART:20220921T153000Z
+DTEND:20220921T170000Z
+DESCRIPTION:Four Barrel
+LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San Francisco\, CA 9410
+ 3\, United States
+SUMMARY:SF iOS Coffee at Four Barrel Coffee
+URL:https://foursquare.com/v/480d1a5ef964a520284f1fe3
+X-APPLE-STRUCTURED-LOCATION:375 Valencia St (btwn 14th St & 15th St)\, San 
+ Francisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e65f52ba-73fd-40b9-8cf2-751946ccec28
+DTSTART:20221005T153000Z
+DTEND:20221005T170000Z
+DESCRIPTION:C&W Repeat
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c787b886-8da4-45ef-8114-7613e506717c
+DTSTART:20221012T153000Z
+DTEND:20221012T170000Z
+DESCRIPTION:Stable Breakfast
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6011f204-339b-48b1-ad26-bfb6a58eac5e
+DTSTART:20220601T153000Z
+DTEND:20220601T170000Z
+DESCRIPTION:Panhandle Coffee @ Flywheel
+LOCATION:672 Stanyan St (btwn Haight St & Page St)\, San Francisco\, CA 941
+ 17\, United States
+SUMMARY:SF iOS Coffee at Flywheel Coffee
+URL:https://foursquare.com/v/4f934157e4b0ab5f09ebb8fc
+X-APPLE-STRUCTURED-LOCATION:672 Stanyan St (btwn Haight St & Page St)\, San
+  Francisco\, CA 94117\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:682de420-8bca-43d6-b9f6-4b1676fff366
+DTSTART:20220608T153000Z
+DTEND:20220608T170000Z
+DESCRIPTION:WWDC Coffee @ Salesforce Park SF
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:092ba5b0-f069-431d-82dc-3467ca09f5ae
+DTSTART:20220607T153000Z
+DTEND:20220607T170000Z
+DESCRIPTION:WWDC Coffee @ Philz Main Street Cupertino
+LOCATION:19439 Stevens Creek Blvd\, Cupertino\, CA 95014\, United States
+SUMMARY:SF iOS Coffee at Philz Coffee
+URL:https://foursquare.com/v/5665e48f498e662de1aeabcd
+X-APPLE-STRUCTURED-LOCATION:19439 Stevens Creek Blvd\, Cupertino\, CA 95014
+ \, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b943d16b-9f31-4aa6-a091-06a5ce8c2654
+DTSTART:20220615T153000Z
+DTEND:20220615T170000Z
+DESCRIPTION:Post-WWDC Stable
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d1e1bb44-3fda-4152-a184-fa2489176afc
+DTSTART:20220622T153000Z
+DTEND:20220622T170000Z
+DESCRIPTION:FRONT (outdoors!)
+LOCATION:470 Alabama St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at The Archery
+URL:https://foursquare.com/v/572c333d498e3519b8d57191
+X-APPLE-STRUCTURED-LOCATION:470 Alabama St\, San Francisco\, CA 94110\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a306fc91-de0a-4a1e-947a-3ab286d5003d
+DTSTART:20221019T153000Z
+DTEND:20221019T170000Z
+DESCRIPTION:Ritual in the Mission
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:8281757f-820e-4489-a6e1-32c34caf3466
+DTSTART:20220629T153000Z
+DTEND:20220629T170000Z
+DESCRIPTION:Dynamo Donuts (and Coffee)
+LOCATION:2760 24th St (at Hampshire St)\, San Francisco\, CA 94110\, United
+  States
+SUMMARY:SF iOS Coffee at Dynamo Donut & Coffee
+URL:https://foursquare.com/v/49ccf971f964a520a6591fe3
+X-APPLE-STRUCTURED-LOCATION:2760 24th St (at Hampshire St)\, San Francisco\
+ , CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:6f8f0fc4-4234-431b-8c64-3b29ad7f3aa6
+DTSTART:20220706T153000Z
+DTEND:20220706T170000Z
+DESCRIPTION:Sightglass (indoors!)
+LOCATION:270 7th St (btwn Howard & Folsom St)\, San Francisco\, CA 94103\, 
+ United States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/4a4b8a43f964a5206fac1fe3
+X-APPLE-STRUCTURED-LOCATION:270 7th St (btwn Howard & Folsom St)\, San Fran
+ cisco\, CA 94103\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:03e031f0-f3ec-4c0e-bdf5-31588f9ab1c1
+DTSTART:20220713T153000Z
+DTEND:20220713T170000Z
+DESCRIPTION:Outdoor coffee @ SPRO
+LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, CA 94158\, United S
+ tates
+SUMMARY:SF iOS Coffee at Spro Coffeelab
+URL:https://foursquare.com/v/593475aa4c954c63db8a1c37
+X-APPLE-STRUCTURED-LOCATION:601 Mission Bay Blvd N (4th)\, San Francisco\, 
+ CA 94158\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:24eae3fe-5c95-4a6c-b3f7-08e0cabc96d2
+DTSTART:20220720T153000Z
+DTEND:20220720T170000Z
+DESCRIPTION:Craftsman and Wolves!
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5a13e1dc-b148-4379-83dc-2e9520552fc6
+DTSTART:20221026T153000Z
+DTEND:20221026T170000Z
+DESCRIPTION:🔭☕️ Telescope Coffee
+LOCATION:451 9th St (Harrison)\, San Francisco\, CA 94103\, United States
+SUMMARY:SF iOS Coffee at Telescope Coffee
+URL:https://foursquare.com/v/6115539d1e360013fe858f0b
+X-APPLE-STRUCTURED-LOCATION:451 9th St (Harrison)\, San Francisco\, CA 9410
+ 3\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:7fc88a7f-934b-4ec9-b423-e41aeaeaffbb
+DTSTART:20221102T153000Z
+DTEND:20221102T170000Z
+DESCRIPTION:Rebel November
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:70e1246e-e655-4bbc-ba43-b72eb699738d
+DTSTART:20221109T163000Z
+DTEND:20221109T180000Z
+DESCRIPTION:Andytown (upstairs\, maybe indoors!)
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:be9ddb63-ce5d-4484-bfb4-ee09d3d53d95
+DTSTART:20220727T153000Z
+DTEND:20220727T170000Z
+DESCRIPTION:Bernal Coffee
+LOCATION:745 Cortland Ave (btwn Anderson & Ellsworth St)\, San Francisco\, 
+ CA 94110\, United States
+SUMMARY:SF iOS Coffee at Martha & Bros. Coffee
+URL:https://foursquare.com/v/4a64c6d0f964a520a9c61fe3
+X-APPLE-STRUCTURED-LOCATION:745 Cortland Ave (btwn Anderson & Ellsworth St)
+ \, San Francisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:771331f2-5fd3-4262-9d8b-6cf5dd54b390
+DTSTART:20220803T153000Z
+DTEND:20220803T170000Z
+DESCRIPTION:Andytown (upstairs\, outdoors!)
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:31243a8b-13fb-4fa8-9e1d-6ae54a846375
+DTSTART:20220810T153000Z
+DTEND:20220810T170000Z
+DESCRIPTION:Verve
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d3d5d843-426c-49b1-afcc-7d5001597c21
+DTSTART:20220817T153000Z
+DTEND:20220817T170000Z
+DESCRIPTION:Ritual in the Mission
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:abf5193f-09e1-4bc7-9322-15d141338869
+DTSTART:20220824T153000Z
+DTEND:20220824T170000Z
+DESCRIPTION:Verve\, Indoors
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f772fdd8-9f3f-4449-9bb0-f719db985afe
+DTSTART:20220831T153000Z
+DTEND:20220831T170000Z
+DESCRIPTION:Duboce Park Café
+LOCATION:2 Sanchez St (at Duboce Ave)\, San Francisco\, CA 94114\, United S
+ tates
+SUMMARY:SF iOS Coffee at Duboce Park Cafe
+URL:https://foursquare.com/v/45377562f964a520be3b1fe3
+X-APPLE-STRUCTURED-LOCATION:2 Sanchez St (at Duboce Ave)\, San Francisco\, 
+ CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:21a0ff0f-2f5c-4f7a-9a16-13a926b9b2b4
+DTSTART:20221123T163000Z
+DTEND:20221123T180000Z
+DESCRIPTION:Thankful for the Rebels
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:243c3ed8-c043-4955-b071-679889aa867e
+DTSTART:20221130T163000Z
+DTEND:20221130T180000Z
+DESCRIPTION:Andytown\, best town
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:7db3d447-48f0-464e-b8c2-17f216e72ef3
+DTSTART:20221221T163000Z
+DTEND:20221221T180000Z
+DESCRIPTION:Holiday Rebels
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:fe1e092f-791f-41fd-aa40-c1a88c68040c
+DTSTART:20230125T163000Z
+DTEND:20230125T180000Z
+DESCRIPTION:New Year Andytown
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:807266f8-10ed-4517-9c9d-eb247d1c79a9
+DTSTART:20230208T163000Z
+DTEND:20230208T180000Z
+DESCRIPTION:Craftsman & Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1d95f09b-e1b3-4c74-bca1-219862fbbe6c
+DTSTART:20230412T153000Z
+DTEND:20230412T170000Z
+DESCRIPTION:C&W April
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:4cb646fd-1a7e-48da-8a99-02ba27d9ae4a
+DTSTART:20230419T153000Z
+DTEND:20230419T170000Z
+DESCRIPTION:Ritual!
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:af221076-eaab-4e38-b7e1-b06033e5efdb
+DTSTART:20230426T153000Z
+DTEND:20230426T170000Z
+DESCRIPTION:Craftsman and Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:fa22aa0a-888f-4086-9962-fcf233f0ca33
+DTSTART:20230606T153000Z
+DTEND:20230606T170000Z
+DESCRIPTION:WWDC Coffee @ Philz Main Street Cupertino
+LOCATION:19439 Stevens Creek Blvd\, Cupertino\, CA 95014\, United States
+SUMMARY:SF iOS Coffee at Philz Coffee
+URL:https://foursquare.com/v/5665e48f498e662de1aeabcd
+X-APPLE-STRUCTURED-LOCATION:19439 Stevens Creek Blvd\, Cupertino\, CA 95014
+ \, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:429ed583-b198-4ede-9f0e-4fa8e87e7206
+DTSTART:20230517T153000Z
+DTEND:20230517T173000Z
+DESCRIPTION:Craftsman. Wolves\, too.
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:647978ad-414c-4483-8865-c4b245705b54
+DTSTART:20230531T153000Z
+DTEND:20230531T173000Z
+DESCRIPTION:Pre WWDC 2023 warmup
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b86152e1-9d2e-43c1-a7fd-6460c42dd85d
+DTSTART:20230628T153000Z
+DTEND:20230628T170000Z
+DESCRIPTION:Goodbye Marcell
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:cb4205aa-6e5c-407e-af23-d0d484565356
+DTSTART:20230719T153000Z
+DTEND:20230719T170000Z
+DESCRIPTION:C&W FTW (also Farewell Greg?)
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ec854aa4-6d3a-43bf-a966-6d6382312cad
+DTSTART:20230726T153000Z
+DTEND:20230726T170000Z
+DESCRIPTION:Philz for the future 
+LOCATION:3101 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Philz Coffee
+URL:https://foursquare.com/v/44ce9913f964a52018361fe3
+X-APPLE-STRUCTURED-LOCATION:3101 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:41743850-3260-4a9c-b970-ef34db2c7a29
+DTSTART:20230802T153000Z
+DTEND:20230802T170000Z
+DESCRIPTION:C&W Always the best
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ee2451e7-6506-4882-8a6a-062b6b17f365
+DTSTART:20230816T153000Z
+DTEND:20230816T170000Z
+DESCRIPTION:Haaaawwwsss Haus
+LOCATION:3086 24th St (at Folsom St)\, San Francisco\, CA 94110\, United St
+ ates
+SUMMARY:SF iOS Coffee at Haus Coffee
+URL:https://foursquare.com/v/4a188a97f964a520c5791fe3
+X-APPLE-STRUCTURED-LOCATION:3086 24th St (at Folsom St)\, San Francisco\, C
+ A 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9720cf96-0fae-46db-8d16-01bf4f6010d3
+DTSTART:20230823T153000Z
+DTEND:20230823T170000Z
+DESCRIPTION:Stable
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:7d80199f-b254-41ca-9930-8c4714d18244
+DTSTART:20230822T003000Z
+DTEND:20230822T020000Z
+DESCRIPTION:NSCoder Night - Ritual Valencia
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e3d57946-9e04-43c5-b247-920216dab021
+DTSTART:20230829T003000Z
+DTEND:20230829T020000Z
+DESCRIPTION:Tinto NSCoder night
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:411efcf5-c589-43e8-b33a-3a9dc7fadf09
+DTSTART:20230830T153000Z
+DTEND:20230830T170000Z
+DESCRIPTION:Inner Sunset Tartine!
+LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, United States
+SUMMARY:SF iOS Coffee at Tartine
+URL:https://foursquare.com/v/5d2b9404c8358500240b9ff1
+X-APPLE-STRUCTURED-LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:fc7ba501-530b-4f24-bb37-449a3268b62f
+DTSTART:20230906T153000Z
+DTEND:20230906T170000Z
+DESCRIPTION:Craftsman and Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a4c17e5c-80d7-496e-9f13-df43013b4c2f
+DTSTART:20230913T153000Z
+DTEND:20230913T170000Z
+DESCRIPTION:Tartine in the sunset
+LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, United States
+SUMMARY:SF iOS Coffee at Tartine
+URL:https://foursquare.com/v/5d2b9404c8358500240b9ff1
+X-APPLE-STRUCTURED-LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e823a4ee-3046-4bdc-be47-a251b15758dc
+DTSTART:20230919T003000Z
+DTEND:20230919T020000Z
+DESCRIPTION:NSCoder Night : Tinto on Valencia
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:3287f48a-e299-43fe-a76b-e5be7be8a411
+DTSTART:20230926T003000Z
+DTEND:20230926T020000Z
+DESCRIPTION:NSCoderNight: Tinto on Valencia
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:43d20e28-21b8-4bec-a4db-46b355ce4652
+DTSTART:20231018T153000Z
+DTEND:20231018T170000Z
+DESCRIPTION:Dandelion on Valencia
+LOCATION:740 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Dandelion Chocolate
+URL:https://foursquare.com/v/501ec87fe4b067f6ad7a2832
+X-APPLE-STRUCTURED-LOCATION:740 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e177daad-8a98-4e3c-b5ab-eacd7b8fbbe3
+DTSTART:20231013T020000Z
+DTEND:20231013T040000Z
+DESCRIPTION:Monthly Tech Talks @ Asiento
+LOCATION:2730 21st St (Bryant)\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Asiento
+URL:https://foursquare.com/v/4cf8b915e8e2548187f5d862
+X-APPLE-STRUCTURED-LOCATION:2730 21st St (Bryant)\, San Francisco\, CA 9411
+ 0\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:932a4eb1-a84b-4e05-be0a-3b7181531591
+DTSTART:20231024T003000Z
+DTEND:20231024T020000Z
+DESCRIPTION:NSCoder Night @ Tinto on Valencia
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b6172d66-24e9-411e-b319-43ac4c3cd518
+DTSTART:20231030T233000Z
+DTEND:20231031T020000Z
+DESCRIPTION:Apple Event Watching Party @ 150 Van Ness 
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:293d43c7-d73e-43ba-96ea-1dcc1e4e278f
+DTSTART:20231114T013000Z
+DTEND:20231114T030000Z
+DESCRIPTION:NSCoder @ Tinto
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2acce875-77c2-4915-a1ee-78f7f2464410
+DTSTART:20231122T163000Z
+DTEND:20231122T190000Z
+DESCRIPTION:Thanksgiving Verve
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:47958f8a-9da3-4239-944d-745176775625
+DTSTART:20231003T003000Z
+DTEND:20231003T020000Z
+DESCRIPTION:NSCoder Night Social: Tinto on Valencia!
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5f9eec0f-983c-45d8-a57d-005f0924e835
+DTSTART:20231004T153000Z
+DTEND:20231004T170000Z
+DESCRIPTION:Craftsman & Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a46baae1-4b66-4b96-ba9b-95fe49e0ab6b
+DTSTART:20231011T153000Z
+DTEND:20231011T170000Z
+DESCRIPTION:Four Barrel
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a7742b20-96b0-4d1c-b90b-7503273e1fe8
+DTSTART:20231010T003000Z
+DTEND:20231010T020000Z
+DESCRIPTION:NSCoder Night @ Tinto on Valencia
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:abb315fe-e3dc-426c-b123-41ae0d34731d
+DTSTART:20231017T003000Z
+DTEND:20231017T020000Z
+DESCRIPTION:NSCoder Night @ Tinto on Valencia
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:295f2500-574b-41fe-93ea-5b19f24a8620
+DTSTART:20231025T153000Z
+DTEND:20231025T170000Z
+DESCRIPTION:The Mill on Divisadero
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9a46a35e-c70f-4951-b72d-e407796495a8
+DTSTART:20231213T163000Z
+DTEND:20231213T180000Z
+DESCRIPTION:Dandelion on Valencia
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:675b7fa6-dbc2-4396-92be-ae459a507855
+DTSTART:20231220T163000Z
+DTEND:20231220T190000Z
+DESCRIPTION:Christmas and Reindeer
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:732992af-18ae-4f3b-89f8-af33e6154dc0
+DTSTART:20231227T163000Z
+DTEND:20231227T183000Z
+DESCRIPTION:Verve Upper-Market
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:49c6d6ca-adc5-4f6c-a062-67e2937cd4db
+DTSTART:20240119T163000Z
+DTEND:20240119T183000Z
+DESCRIPTION:East Bay: Cafenated
+LOCATION:2085 Vine St (Shattuck)\, Berkeley\, CA 94709\, United States
+SUMMARY:SF iOS Coffee at Cafenated Coffee Company
+URL:https://foursquare.com/v/5cc327db8c812a002c2983d7
+X-APPLE-STRUCTURED-LOCATION:2085 Vine St (Shattuck)\, Berkeley\, CA 94709\,
+  United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:bdc4796e-aba9-4302-8a0e-8daac1648c55
+DTSTART:20231101T153000Z
+DTEND:20231101T170000Z
+DESCRIPTION:Andytown Coffee @ SalesForce Tower (181 Fremont St Floor 7)
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1c3f307b-cda1-41bf-a5fe-f8064b7abdfb
+DTSTART:20231108T163000Z
+DTEND:20231108T180000Z
+DESCRIPTION:Flywheel in the Panhandle featuring Zadr
+LOCATION:672 Stanyan St (btwn Haight St & Page St)\, San Francisco\, CA 941
+ 17\, United States
+SUMMARY:SF iOS Coffee at Flywheel Coffee
+URL:https://foursquare.com/v/4f934157e4b0ab5f09ebb8fc
+X-APPLE-STRUCTURED-LOCATION:672 Stanyan St (btwn Haight St & Page St)\, San
+  Francisco\, CA 94117\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ffdc54bf-d1e9-4169-99a3-8bbd12813605
+DTSTART:20231115T163000Z
+DTEND:20231115T180000Z
+DESCRIPTION:Classic C&W with Greg H
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:5d3203d2-74fe-4936-abe6-2863684a938b
+DTSTART:20231121T013000Z
+DTEND:20231121T030000Z
+DESCRIPTION:Wine Time @ Tinto
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:3988ad5a-9ca8-4c6a-ab1b-c9aef3667f6c
+DTSTART:20231129T163000Z
+DTEND:20231129T190000Z
+DESCRIPTION:Inaugural Sana’s Cafe
+LOCATION:199 New Montgomery St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Sana’a Cafe
+URL:https://foursquare.com/v/6469881933be6372730dae21
+X-APPLE-STRUCTURED-LOCATION:199 New Montgomery St\, San Francisco\, CA 9410
+ 5\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f8f45bd7-75f8-4a54-bebb-a34ef7b132e3
+DTSTART:20231212T030000Z
+DTEND:20231212T050000Z
+DESCRIPTION:SF iOS Holiday Party
+LOCATION:4067 18th St (btwn Castro & Hartford)\, San Francisco\, CA 94114\,
+  United States
+SUMMARY:SF iOS Coffee at Midnight Sun
+URL:https://foursquare.com/v/42911d00f964a5200f241fe3
+X-APPLE-STRUCTURED-LOCATION:4067 18th St (btwn Castro & Hartford)\, San Fra
+ ncisco\, CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:942fee8e-6d4f-465d-ab24-92fc646d8218
+DTSTART:20231206T163000Z
+DTEND:20231206T183000Z
+DESCRIPTION:Wednesday Rebels
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b31862c5-3165-421e-900f-81af52c89a85
+DTSTART:20240110T163000Z
+DTEND:20240110T190000Z
+DESCRIPTION:What did the Craftsman say to the Wolves?
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:b407dc27-137c-45d0-b0a8-15d11040dffd
+DTSTART:20240117T163000Z
+DTEND:20240117T180000Z
+DESCRIPTION:Coffee @ Tartine (Inner Sunset)
+LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, United States
+SUMMARY:SF iOS Coffee at Tartine
+URL:https://foursquare.com/v/5d2b9404c8358500240b9ff1
+X-APPLE-STRUCTURED-LOCATION:1226 9th Ave\, San Francisco\, CA 94122\, Unite
+ d States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:214a6687-8c8a-4999-8deb-129153254938
+DTSTART:20240124T163000Z
+DTEND:20240124T183000Z
+DESCRIPTION:The Return of Saint Frank
+LOCATION:120 Folsom St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Saint Frank Coffee
+URL:https://foursquare.com/v/65988c0c2ca7fa3644b823c6
+X-APPLE-STRUCTURED-LOCATION:120 Folsom St\, San Francisco\, CA 94105\, Unit
+ ed States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d5fc1b47-4dd3-4118-98b3-3914b5800d4e
+DTSTART:20231205T013000Z
+DTEND:20231205T033000Z
+DESCRIPTION:Wine Time
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:10e058db-e612-4db2-84a2-6f7550d9c37d
+DTSTART:20231219T013000Z
+DTEND:20231219T033000Z
+DESCRIPTION:Wine Time!
+LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, United States
+SUMMARY:SF iOS Coffee at Tinto Wine
+URL:https://foursquare.com/v/64c484fbec67e91c4e5bacfd
+X-APPLE-STRUCTURED-LOCATION:1152 Valencia St\, San Francisco\, CA 94110\, U
+ nited States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:e0c8ede8-82da-44dd-b001-3e0e21d2da78
+DTSTART:20240131T163000Z
+DTEND:20240131T183000Z
+DESCRIPTION:Sightglass in Mission
+LOCATION:3014 20th St (at Alabama St)\, San Francisco\, CA 94110\, United S
+ tates
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/530a187e498eb0cfd40890a0
+X-APPLE-STRUCTURED-LOCATION:3014 20th St (at Alabama St)\, San Francisco\, 
+ CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:a7d543fa-be33-4c0a-8fa1-43cb4ef6a10f
+DTSTART:20240619T153000Z
+DTEND:20240619T170000Z
+DESCRIPTION:!!EMERGENCY WOLVES!!
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:13582e64-add0-4766-a577-ff636df8358d
+DTSTART:20240327T153000Z
+DTEND:20240327T170000Z
+DESCRIPTION:Howling at Craftsman & Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d12da419-15f5-46e8-ab7c-48f46ee1a719
+DTSTART:20240403T153000Z
+DTEND:20240403T173000Z
+DESCRIPTION:Ritual in the Mission
+LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/42853f80f964a5200c231fe3
+X-APPLE-STRUCTURED-LOCATION:1026 Valencia St (btwn 21st & Hill St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:7ddd7643-b04a-4db3-9f22-35e758dd2287
+DTSTART:20240410T153000Z
+DTEND:20240410T173000Z
+DESCRIPTION:70ºF?? That’s Stable weather
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9b95b4d8-12a0-47ae-b058-1b804b80394a
+DTSTART:20240417T153000Z
+DTEND:20240417T173000Z
+DESCRIPTION:Craftsman? I barely knew him
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:125bf837-5cae-4587-b823-617854de3c23
+DTSTART:20240207T163000Z
+DTEND:20240207T180000Z
+DESCRIPTION:Muddy Waters (16th & Valencia)
+LOCATION:521 Valencia St (at 16th St.)\, San Francisco\, CA 94110\, United 
+ States
+SUMMARY:SF iOS Coffee at Muddy Waters
+URL:https://foursquare.com/v/49be90fdf964a520ba541fe3
+X-APPLE-STRUCTURED-LOCATION:521 Valencia St (at 16th St.)\, San Francisco\,
+  CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:275f303a-2c3e-4528-aa60-e68be696ea36
+DTSTART:20240214T163000Z
+DTEND:20240214T190000Z
+DESCRIPTION:Sightglass on Divis
+LOCATION:301 Divisadero St (at Page St)\, San Francisco\, CA 94117\, United
+  States
+SUMMARY:SF iOS Coffee at Sightglass Coffee
+URL:https://foursquare.com/v/5968bf3429551366c474d076
+X-APPLE-STRUCTURED-LOCATION:301 Divisadero St (at Page St)\, San Francisco\
+ , CA 94117\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:9af96d78-8b6d-4e68-9032-b8036da6f9dd
+DTSTART:20240221T163000Z
+DTEND:20240221T183000Z
+DESCRIPTION:C&W: It ain’t broke…
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:aa55049f-6edb-45ba-84f7-2f69c75d48ad
+DTSTART:20240424T153000Z
+DTEND:20240424T173000Z
+DESCRIPTION:Rise and Grind!
+LOCATION:2598 Folsom St (b/t 21st St & 22nd St)\, San Francisco\, CA 94110\
+ , United States
+SUMMARY:SF iOS Coffee at Rise And Grind Coffee & Tea
+URL:https://foursquare.com/v/5e35d40972ac420008cf5b76
+X-APPLE-STRUCTURED-LOCATION:2598 Folsom St (b/t 21st St & 22nd St)\, San Fr
+ ancisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:d499494d-6757-42c4-a256-7658e22ef10e
+DTSTART:20240228T163000Z
+DTEND:20240228T180000Z
+DESCRIPTION:Trellis Coworking (5th St & Mission)
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:8d417812-fcb0-4d3a-8964-ebfbb1638273
+DTSTART:20240508T153000Z
+DTEND:20240508T173000Z
+DESCRIPTION:Man\, it's a hot one 🥵 
+LOCATION:432B Octavia St (at Hayes St)\, San Francisco\, CA 94102\, United 
+ States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/4dd94350e4cd37c893d8146f
+X-APPLE-STRUCTURED-LOCATION:432B Octavia St (at Hayes St)\, San Francisco\,
+  CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:13bf0491-9e6b-4f00-91d5-c9c951a7b3bc
+DTSTART:20240501T153000Z
+DTEND:20240501T173000Z
+DESCRIPTION:Vervacious
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:afa9b7d7-68fe-448f-9879-cc54290c4d1e
+DTSTART:20240313T153000Z
+DTEND:20240313T180000Z
+DESCRIPTION:The beauty of Karma
+LOCATION:1901 Hayes St\, San Francisco\, CA 94117\, United States
+SUMMARY:SF iOS Coffee at Karma Cafe
+URL:https://foursquare.com/v/5ae0993dfd16bb599cde4e91
+X-APPLE-STRUCTURED-LOCATION:1901 Hayes St\, San Francisco\, CA 94117\, Unit
+ ed States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:ff3ad9c4-5598-4eec-bfd5-57f506c9da3f
+DTSTART:20240306T163000Z
+DTEND:20240306T180000Z
+DESCRIPTION:It’s C&W Weather
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:71b473bd-ab8d-4771-8683-11c6407b199e
+DTSTART:20240320T153000Z
+DTEND:20240320T170000Z
+DESCRIPTION:Stable Café on Folsom
+SUMMARY:SF iOS Coffee at 
+URL:https://foursquare.com/v/
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:286bbbd9-8e57-48a6-be12-571d508b5907
+DTSTART:20240515T153000Z
+DTEND:20240515T173000Z
+DESCRIPTION:Unstable 🤪 ☕️ 
+LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Francisco\, CA 94110\, 
+ United States
+SUMMARY:SF iOS Coffee at Stable Cafe
+URL:https://foursquare.com/v/49b1a93df964a520d9521fe3
+X-APPLE-STRUCTURED-LOCATION:2128 Folsom St (btwn 17th & 18th St)\, San Fran
+ cisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:c800850e-0d0c-4272-b4cc-4b5721879947
+DTSTART:20240522T153000Z
+DTEND:20240522T173000Z
+DESCRIPTION:Andytown Salesforce Park - it’s been a minute
+LOCATION:181 Fremont St\, San Francisco\, CA 94105\, United States
+SUMMARY:SF iOS Coffee at Andytown Coffee Roasters
+URL:https://foursquare.com/v/5b69d2dc911fc4002c70bdb8
+X-APPLE-STRUCTURED-LOCATION:181 Fremont St\, San Francisco\, CA 94105\, Uni
+ ted States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:dcb71041-9721-4b2d-8d3f-4ea06c731201
+DTSTART:20240610T153000Z
+DTEND:20240610T173000Z
+DESCRIPTION:WWDC Coffee @ Berraco Colombian Cafe
+LOCATION:19110 Stevens Creek Blvd Ste A\, Cupertino\, CA 95014\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Berraco Coffee
+URL:https://foursquare.com/v/64517cd09fca37085dab2892
+X-APPLE-STRUCTURED-LOCATION:19110 Stevens Creek Blvd Ste A\, Cupertino\, CA
+  95014\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:bb8d3f66-a177-41bc-8101-3be775c0f999
+DTSTART:20240626T153000Z
+DTEND:20240626T170000Z
+DESCRIPTION:Who Let the Verve Out?
+LOCATION:2101 Market St (at Church St)\, San Francisco\, CA 94114\, United 
+ States
+SUMMARY:SF iOS Coffee at Verve Coffee Roasters
+URL:https://foursquare.com/v/589f6a4372714f7d35566b6a
+X-APPLE-STRUCTURED-LOCATION:2101 Market St (at Church St)\, San Francisco\,
+  CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:57c73436-6987-470b-9b6c-2c93dfae5966
+DTSTART:20240613T153000Z
+DTEND:20240613T173000Z
+DESCRIPTION:WWDC Coffee Nirvana Soul
+LOCATION:19700 Vallco Pkwy (Wolfe Rd)\, Cupertino\, CA 95014\, United State
+ s
+SUMMARY:SF iOS Coffee at Nirvana Soul
+URL:https://foursquare.com/v/62717e2baa89384f47bbf687
+X-APPLE-STRUCTURED-LOCATION:19700 Vallco Pkwy (Wolfe Rd)\, Cupertino\, CA 9
+ 5014\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:3ea61fc4-ab49-4a2d-8f3d-89f7f8f378f7
+DTSTART:20240612T153000Z
+DTEND:20240612T173000Z
+DESCRIPTION:WWDC Coffee @ Coffee & Water Lab
+LOCATION:603 Saratoga Ave #40 (Moorpark Ave)\, San Jose\, CA 95129\, United
+  States
+SUMMARY:SF iOS Coffee at Coffee & Water Lab
+URL:https://foursquare.com/v/60ac105d6b72bd0c78f171a5
+X-APPLE-STRUCTURED-LOCATION:603 Saratoga Ave #40 (Moorpark Ave)\, San Jose\
+ , CA 95129\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:2a695688-d75c-4887-a510-eb9b5e63d9b8
+DTSTART:20240614T153000Z
+DTEND:20240614T173000Z
+DESCRIPTION:WWDC Coffee Berraco Coffee
+LOCATION:19110 Stevens Creek Blvd Ste A\, Cupertino\, CA 95014\, United Sta
+ tes
+SUMMARY:SF iOS Coffee at Berraco Coffee
+URL:https://foursquare.com/v/64517cd09fca37085dab2892
+X-APPLE-STRUCTURED-LOCATION:19110 Stevens Creek Blvd Ste A\, Cupertino\, CA
+  95014\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:602dbe2f-b101-4150-8618-e67cdaec4874
+DTSTART:20240529T153000Z
+DTEND:20240529T173000Z
+DESCRIPTION:Dubocery
+LOCATION:2 Sanchez St (at Duboce Ave)\, San Francisco\, CA 94114\, United S
+ tates
+SUMMARY:SF iOS Coffee at Duboce Park Cafe
+URL:https://foursquare.com/v/45377562f964a520be3b1fe3
+X-APPLE-STRUCTURED-LOCATION:2 Sanchez St (at Duboce Ave)\, San Francisco\, 
+ CA 94114\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:f937c223-4d89-4ec5-b74c-8fd14f717434
+DTSTART:20240717T153000Z
+DTEND:20240717T170000Z
+DESCRIPTION:C to the W
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:1a334b53-82f4-473e-b4fe-1c199270116c
+DTSTART:20240724T153000Z
+DTEND:20240724T170000Z
+DESCRIPTION:Ritual in Ha-Ha Yes!-YES!!
+LOCATION:432B Octavia St (at Hayes St)\, San Francisco\, CA 94102\, United 
+ States
+SUMMARY:SF iOS Coffee at Ritual Coffee Roasters
+URL:https://foursquare.com/v/4dd94350e4cd37c893d8146f
+X-APPLE-STRUCTURED-LOCATION:432B Octavia St (at Hayes St)\, San Francisco\,
+  CA 94102\, United States
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240806T012210Z
+UID:904dfbf2-c50d-4aa7-b683-8843752ef82d
+DTSTART:20240731T153000Z
+DTEND:20240731T170000Z
+DESCRIPTION:Cold weather got you down? Warm up at Craftsman and Wolves
+LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Francisco\, CA 94110\,
+  United States
+SUMMARY:SF iOS Coffee at Craftsman and Wolves
+URL:https://foursquare.com/v/4fab3157bb3d83ffee63d747
+X-APPLE-STRUCTURED-LOCATION:746 Valencia St (btwn 18th & 19th St)\, San Fra
+ ncisco\, CA 94110\, United States
+END:VEVENT
+END:VCALENDAR

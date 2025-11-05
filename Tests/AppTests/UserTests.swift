@@ -25,7 +25,7 @@ final class UserTests: XCTestCase {
         let testUser = User.Create(name: userNameGood, email: userEmailGood, password: passwordGood, confirmPassword: passwordGood)
         let body = try JSONEncoder().encode(testUser)
         
-        try app.test(.POST, "users", headers: headers, body: ByteBuffer(data: body)) { res in
+        try app.test(.POST, "api/v2/users", headers: headers, body: ByteBuffer(data: body)) { res in
             XCTAssertEqual(res.status, .ok)
             let result = try res.content.decode(User.Public.self)
             XCTAssertEqual(result.name, userNameGood)
@@ -37,7 +37,7 @@ final class UserTests: XCTestCase {
     func login() throws {
         let basicAuth = BasicAuthorization(username: userEmailGood, password: passwordGood)
         headers.basicAuthorization = basicAuth
-        try app.test(.GET, "users/login", headers: headers) { res in
+        try app.test(.GET, "api/v2/users/login", headers: headers) { res in
             XCTAssertEqual(res.status, .ok)
             let resultBody = try res.content.decode([String : String].self)
             XCTAssertEqual(resultBody["error"], "false")

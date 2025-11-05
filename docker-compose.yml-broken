@@ -1,25 +1,5 @@
-# Docker Compose file for Vapor
-#
-# Install Docker on your system to run and test
-# your Vapor app in a production-like environment.
-#
-# Note: This file is intended for testing and does not
-# implement best practices for a production deployment.
-#
-# Learn more: https://docs.docker.com/compose/reference/
-#
-#   Build images: docker-compose build
-#      Start app: docker-compose up app
-# Start database: docker-compose up db
-# Run migrations: docker-compose run migrate
-#       Stop all: docker-compose down (add -v to wipe db)
-#
 volumes:
   db_data:
-  # note that you’ll need to use `docker volume create caddy_data` before running `docker compose up`
-  caddy_data:
-#    external: true
-  caddy_config:
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
@@ -31,19 +11,19 @@ x-shared_environment: &shared_environment
   JWT_SIGNING_SECRET: ${JWT_SIGNING_SECRET}
   SERVER_ADMIN_PASSWORD: ${SERVER_ADMIN_PASSWORD}
   SERVER_ADMIN_EMAIL: ${SERVER_ADMIN_EMAIL}
+
 services:
-  caddy:
-    image: caddy:2.6
-    restart: unless-stopped
+  nginx:
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"
-      - "443:443/udp"
+    depends_on:
+      - app
+    restart: unless-stopped
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - $PWD/site:/srv
-      - caddy_data:/data
-      - caddy_config:/config
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
   app:
     image: coffee-server:latest
     build:

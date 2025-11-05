@@ -1,0 +1,18 @@
+# COFFEE SERVER ENV
+# You’ll need to copy this file to `.env` with the values in place for production
+# Super User Configuration (required for first migraiton)
+SERVER_ADMIN_PASSWORD=format2aloha@HALE7baggage
+SERVER_ADMIN_EMAIL=coffee-admin@criticalusability.com
+
+# JWT secret
+JWT_SIGNING_SECRET=ANvwW9dp@v7Xf-*Ezb2ZthWMDgkuZH2V
+
+# Postgres Configuration
+DATABASE_USERNAME=mcritz
+DATABASE_SECRET="ANvwW9dp@v7Xf-*Ezb2ZthWMDgkuZH2V"
+DATABASE_NAME=mcritz
+
+
+# compose
+BASE_URL="localhost"
+DATABASE_HOST="db"

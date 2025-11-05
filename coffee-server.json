@@ -1,0 +1,2155 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CoffeeServer.paw",
+    "description": "",
+    "version": "1.0.0",
+    "contact": {
+      "name": "mcritz",
+      "email": "github@michaelcritz.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://echo.paw.cloud/",
+      "description": ""
+    },
+    {
+      "url": "https://echo.paw.cloud/{basePath}",
+      "description": "",
+      "variables": {
+        "basePath": {
+          "default": "/api/v2"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/{host}/healthcheck/": {
+      "get": {
+        "summary": "/healthcheck",
+        "description": "",
+        "operationId": "ffa8afa5-684e-41ec-a8d5-3b2565bf7877",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "text/plain": {
+                "example": {
+                  "value": "OK.\n\nDatabase Check: Event count = 0\n\n2023-02-20 03:57:47 +0000"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/render": {
+      "get": {
+        "summary": "/render",
+        "description": "",
+        "operationId": "9cff6fcc-82db-4537-b747-c99fa82a7ca8",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "boolean"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "Something went wrong."
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 04 Aug 2024 18:23:35 GMT"
+                }
+              },
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "47"
+                }
+              },
+              "Server": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "nginx/1.27.0"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/": {
+      "get": {
+        "summary": "/index",
+        "description": "",
+        "operationId": "088dbd7d-6f99-441d-8fda-3ef426aaddc2",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "boolean"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "Something went wrong."
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 04 Aug 2024 18:23:43 GMT"
+                }
+              },
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "47"
+                }
+              },
+              "Server": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "nginx/1.27.0"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/todos": {
+      "get": {
+        "summary": "/todos",
+        "description": "",
+        "operationId": "14f1296f-1d47-4d08-a63b-155970b8d8c2",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string",
+                      "example": "Something went wrong."
+                    },
+                    "error": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 04 Aug 2024 20:05:16 GMT"
+                }
+              },
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "47"
+                }
+              },
+              "Server": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "nginx/1.27.0"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "/todos",
+        "description": "",
+        "operationId": "0f989305-baff-440d-9c55-ce7de979a43e",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "create events"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/users": {
+      "post": {
+        "summary": "create",
+        "description": "",
+        "operationId": "73eb1f43-01c2-4845-aff5-a7bff0d57547",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "jqlne@longnamerson.esquire4"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "secret password"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Jonathan Q. Longnamerson, Esquire"
+                  },
+                  "confirmPassword": {
+                    "type": "string",
+                    "example": "secret password"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string",
+                      "example": "Something went wrong."
+                    },
+                    "error": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 04 Aug 2024 20:03:40 GMT"
+                }
+              },
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "47"
+                }
+              },
+              "Server": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "nginx/1.27.0"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "list",
+        "description": "",
+        "operationId": "b5c4d2f3-3390-45da-9f8b-ddc5effb1512",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "820F964C-133E-4278-B65D-E7CCA0152A54"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Server Admin"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "158"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:20:53 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/users/login": {
+      "post": {
+        "summary": "login - admin",
+        "description": "",
+        "operationId": "965cc494-4bae-419b-92d9-a078a862b2f2",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Basic Y29mZmVlLWFkbWluQGNyaXRpY2FsdXNhYmlsaXR5LmNvbTpmb3JtYXQyYWxvaGFASEFMRTdiYWdnYWdl",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "text/plain": {
+                "example": {
+                  "value": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "login - user",
+        "description": "",
+        "operationId": "162bada9-390e-4916-a48a-81fa97d05b27",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Basic anFsbmVAbG9uZ25hbWVyc29uLmVzcXVpcmU0OnNlY3JldCBwYXNzd29yZA==",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "boolean"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "SessionJWTToken not authenticated."
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "60"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:19:56 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/users/573689AF-9C55-43A7-AE26-D37ABB042ABC": {
+      "get": {
+        "summary": "fetch",
+        "description": "",
+        "operationId": "fdf4696d-e7fd-47e8-a939-5280c0d9e5a9",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "820F964C-133E-4278-B65D-E7CCA0152A54"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Server Admin"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "158"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:20:57 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/users/me": {
+      "get": {
+        "summary": "me",
+        "description": "",
+        "operationId": "8127388b-5aea-4e43-ad3c-11930d01ebd2",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "example": "coffee-admin@criticalusability.com"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "820F964C-133E-4278-B65D-E7CCA0152A54"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Server Admin"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "112"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:20:59 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/tags": {
+      "post": {
+        "summary": "create tag",
+        "description": "",
+        "operationId": "383ced42-b06b-42e5-8744-6738c8aa83f7",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Tag jrUPOY3b"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "fetch",
+        "description": "",
+        "operationId": "d7e99a81-3dbd-4a12-9b77-81a5910dca84",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "delete",
+        "description": "",
+        "operationId": "c8943168-987c-4f2d-898a-9d249f4368db",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/tags/attach": {
+      "post": {
+        "summary": "attach",
+        "description": "",
+        "operationId": "14980bec-2b31-4843-af48-5a0c90b695c4",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/users/820F964C-133E-4278-B65D-E7CCA0152A54/tags": {
+      "get": {
+        "summary": "user tags",
+        "description": "",
+        "operationId": "124735dd-3517-443c-91d7-1a886a239fad",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups/": {
+      "get": {
+        "summary": "html list",
+        "description": "",
+        "operationId": "2d842519-003b-4972-be10-353c34521a74",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "text/html": {
+                "example": {
+                  "value": "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"/><title>The Coffee</title><meta name=\"twitter:title\" content=\"The Coffee\"/><meta property=\"og:title\" content=\"The Coffee\"/><link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"/></head><body><body class=\"dark\"><div><h1>Coffee!</h1><h2>Oops</h2><h3>No groups available</h3></div></body></body></html>"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups": {
+      "get": {
+        "summary": "list",
+        "description": "",
+        "operationId": "3626ca24-a0d3-40a9-8b54-71f39a2ce142",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "Test Group NJbgpQy3WP2LpkFR2pYfNbJB8DfLfD7G"
+                      },
+                      "id": {
+                        "type": "string",
+                        "example": "ABF1F08D-A266-41C1-9065-81FBB28FBC11"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "100"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:26:27 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "create",
+        "description": "",
+        "operationId": "eaf89796-2a01-45ba-a3c8-3ee2533e97b0",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Test Group SCbu0KcM5mmavQcJvTPyt7hTtEVoMgir"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "Test Group NJbgpQy3WP2LpkFR2pYfNbJB8DfLfD7G"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "ABF1F08D-A266-41C1-9065-81FBB28FBC11"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "98"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:21:15 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups/ABF1F08D-A266-41C1-9065-81FBB28FBC11/events": {
+      "get": {
+        "summary": ":groupID/events",
+        "description": "",
+        "operationId": "1c692df1-b871-4a91-82fc-8eb9d3e7fc59",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "A68D43E6-C6D6-42B5-8E31-49AC39A4E074"
+                      },
+                      "startAt": {
+                        "type": "string",
+                        "example": "2022-02-27T10:30:06Z"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Test Event qN16iLOBNFQMrDAlWVLXMYxjQ08FHyQr"
+                      },
+                      "endAt": {
+                        "type": "string",
+                        "example": "2022-02-27T11:00:06Z"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "653"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:27:12 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups/ABF1F08D-A266-41C1-9065-81FBB28FBC11/calendar/": {
+      "get": {
+        "summary": ":groupID/calendar",
+        "description": "",
+        "operationId": "229bdd87-afad-42a4-bdfd-78599cd20004",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string",
+                      "example": "Not Found"
+                    },
+                    "error": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "35"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:27:24 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups/ABF1F08D-A266-41C1-9065-81FBB28FBC11/calendar.ics/": {
+      "get": {
+        "summary": " :groupID/calendar",
+        "description": "",
+        "operationId": "56462093-7180-4546-8a6b-38e853826a6f",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "text/calendar": {
+                "example": {
+                  "value": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//swift-calendar//icalendarkit//EN\r\nCALSCALE:GREGORIAN\r\nBEGIN:VEVENT\r\nDTSTAMP:20240803T233702Z\r\nUID:A68D43E6-C6D6-42B5-8E31-49AC39A4E074\r\nCREATED:20240803T233702Z\r\nDESCRIPTION:See you at Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv!\r\nDTSTART:20220227T103006Z\r\nGEO:91.27;113.52\r\nLAST-MODIFIED:20240803T233702Z\r\nLOCATION:Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv\r\nX-MICROSOFT-CDO-BUSYSTATUS:BUSY\r\nSUMMARY:Test Event qN16iLOBNFQMrDAlWVLXMYxjQ08FHyQr\r\nDTEND:20220227T110006Z\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nDTSTAMP:20240803T233702Z\r\nUID:00ABFA81-CF7E-42F7-AE89-CC41B199C751\r\nCREATED:20240803T233702Z\r\nDESCRIPTION:See you at Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv!\r\nDTSTART:20220227T103006Z\r\nGEO:91.27;113.52\r\nLAST-MODIFIED:20240803T233702Z\r\nLOCATION:Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv\r\nX-MICROSOFT-CDO-BUSYSTATUS:BUSY\r\nSUMMARY:Test Event tsaVSlebnj4Pxcd2oe5Ra5LqQsW3UpGE\r\nDTEND:20220227T110006Z\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nDTSTAMP:20240803T233702Z\r\nUID:DD31FD70-8517-470B-A2FF-BB59570EC82E\r\nCREATED:20240803T233702Z\r\nDESCRIPTION:See you at Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv!\r\nDTSTART:20220227T103006Z\r\nGEO:91.27;113.52\r\nLAST-MODIFIED:20240803T233702Z\r\nLOCATION:Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv\r\nX-MICROSOFT-CDO-BUSYSTATUS:BUSY\r\nSUMMARY:Test Event kJOELsMwsxmlYP4Ce5hUxG1q0uby8SAW\r\nDTEND:20220227T110006Z\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nDTSTAMP:20240803T233702Z\r\nUID:EF9617E2-4AAA-43F5-92DC-A9D33F90C449\r\nCREATED:20240803T233702Z\r\nDESCRIPTION:See you at Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv!\r\nDTSTART:20220227T103006Z\r\nGEO:91.27;113.52\r\nLAST-MODIFIED:20240803T233702Z\r\nLOCATION:Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv\r\nX-MICROSOFT-CDO-BUSYSTATUS:BUSY\r\nSUMMARY:Test Event HhCD85GPVSexh4yUxpJFvUkQUwt5MJJc\r\nDTEND:20220227T110006Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/groups/ABF1F08D-A266-41C1-9065-81FBB28FBC11": {
+      "delete": {
+        "summary": "delete",
+        "description": "",
+        "operationId": "30d4718f-c7db-47df-bd66-34b2d8bb566e",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "SF Run and Caffeine"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/events": {
+      "get": {
+        "summary": "list",
+        "description": "",
+        "operationId": "ea0f4d9f-f8a9-474a-818d-cb95a10aa790",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:24:04 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "delete",
+        "description": "",
+        "operationId": "ee4368d3-2dd9-488d-a995-f5e1745ff513",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "create with venueID",
+        "description": "",
+        "operationId": "a3c75993-60c4-41fb-81e4-518738e199ce",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "groupID": {
+                    "type": "string",
+                    "example": "ABF1F08D-A266-41C1-9065-81FBB28FBC11"
+                  },
+                  "venueID": {
+                    "type": "string",
+                    "example": "42E37C78-48D6-4E48-89C2-FE621ED62F46"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Test Event n6pVw2cbQtkYnaf7PHBPJ7xfOFDqHn6P"
+                  },
+                  "startAt": {
+                    "type": "string",
+                    "example": "2022-2-27T10:30:06Z"
+                  },
+                  "endAt": {
+                    "type": "string",
+                    "example": "2022-2-27T11:00:06Z"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/events/upcoming": {
+      "get": {
+        "summary": "future",
+        "description": "",
+        "operationId": "40eeba2e-e39b-499a-a663-ad91749ce570",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:24:06 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/events/EF9617E2-4AAA-43F5-92DC-A9D33F90C449": {
+      "get": {
+        "summary": "fetch",
+        "description": "",
+        "operationId": "4276a189-4c68-4e97-8ca5-8c72078ae9fd",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/venues": {
+      "get": {
+        "summary": "index",
+        "description": "",
+        "operationId": "25219628-a180-4347-bd81-e536f2be4606",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "42E37C78-48D6-4E48-89C2-FE621ED62F46"
+                      },
+                      "location": {
+                        "type": "object",
+                        "properties": {
+                          "longitude": {
+                            "type": "number"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Venue Description Qbp3rpX7BB3s"
+                          },
+                          "latitude": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv"
+                      },
+                      "url": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "413"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:26:18 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "create",
+        "description": "",
+        "operationId": "26418ceb-4e02-4af6-8d00-99f113350047",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Test Venue AhAVYnv6Wmcd1ItoIuFJHh43gUHufYt5"
+                  },
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string",
+                        "example": "Venue Description 05lFerC05idL"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "latitude": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string",
+                          "example": "Venue Description twkyUhIyvOKL"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Test Venue nFYfhmtoRe65VyTXtuRlLKa5UiAuubh3"
+                    },
+                    "url": {
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "F2B355F5-BF2A-4CFF-A3C2-1F87E16D690A"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "205"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:25:50 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/venues/F2B355F5-BF2A-4CFF-A3C2-1F87E16D690A": {
+      "put": {
+        "summary": "update",
+        "description": "",
+        "operationId": "9a6849e1-c4d8-4166-b049-64b9493fab6a",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json; charset=utf-8",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Test Venue AhAVYnv6Wmcd1ItoIuFJHh43gUHufYt5"
+                  },
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "latitude": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string",
+                      "example": "Bad Request"
+                    },
+                    "error": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "37"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:24:58 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/venues/42E37C78-48D6-4E48-89C2-FE621ED62F46": {
+      "get": {
+        "summary": "fetch",
+        "description": "",
+        "operationId": "5590d1d8-7e11-4d4f-b82e-8b8ef4cf5c74",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "Test Venue IeIJ8u5bpkmF1VygSv7JMamwx44ihyGv"
+                      },
+                      "id": {
+                        "type": "string",
+                        "example": "42E37C78-48D6-4E48-89C2-FE621ED62F46"
+                      },
+                      "location": {
+                        "type": "object",
+                        "properties": {
+                          "latitude": {
+                            "type": "number"
+                          },
+                          "longitude": {
+                            "type": "number"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Venue Description Qbp3rpX7BB3s"
+                          }
+                        }
+                      },
+                      "url": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "207"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:25:10 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "delete",
+        "description": "",
+        "operationId": "6261fa6b-8631-493a-a58f-6fd17d985125",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "Bearer",
+              "description": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{host}/venues/42E37C78-48D6-4E48-89C2-FE621ED62F46/events": {
+      "get": {
+        "summary": ":venueID/events",
+        "description": "",
+        "operationId": "5afdbc9b-2f5d-42d3-816c-28e2585ce1ca",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {}
+          },
+          "required": false
+        },
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "boolean"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "Bad Request"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Connection": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "Content-Length": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "37"
+                }
+              },
+              "Date": {
+                "description": "",
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 03 Aug 2024 17:25:16 GMT"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {}
+}

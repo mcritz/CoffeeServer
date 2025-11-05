@@ -83,7 +83,7 @@ func routes(_ app: Application) throws {
 //    }
     
     func hostURL() -> String {
-        #if DEBUG
+        #if false
         let uriProtocol = "http://"
         #else
         let uriProtocol = "webcal://"

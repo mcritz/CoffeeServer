@@ -11,7 +11,7 @@ extension InterestGroupController {
         guard let group = try await InterestGroup.find(groupID, on: req.db) else {
             throw Abort(.notFound)
         }
-        let events = try await group.$events.get(on: req.db)
+        let events = try await group.$events.query(on: req.db).all()
         let iCalEvents = try await icalEvents(for: events, req: req)
         let calendarBody = ICalendar(events: iCalEvents).vEncoded
         let calHeaders = calendarHeaders(group: group)
@@ -58,7 +58,8 @@ extension InterestGroupController {
     }
 }
 
-extension ICalendarEvent: Comparable {
+extension ICalendarEvent: @retroactive Equatable {}
+extension ICalendarEvent: @retroactive Comparable {
     public static func < (lhs: ICalendarKit.ICalendarEvent, rhs: ICalendarKit.ICalendarEvent) -> Bool {
         guard let lhsStart = lhs.dtstart,
               let rhsStart = rhs.dtstart else {
@@ -71,7 +72,8 @@ extension ICalendarEvent: Comparable {
     }
 }
 
-extension ICalendarDate: Comparable {
+extension ICalendarDate: @retroactive Equatable {}
+extension ICalendarDate: @retroactive Comparable {
     public static func < (lhs: ICalendarKit.ICalendarDate, rhs: ICalendarKit.ICalendarDate) -> Bool {
         lhs.date < rhs.date
     }

@@ -37,17 +37,19 @@ func configureCORS(on app: Application) {
 
 func configureDatabase(on app: Application) throws {
     if app.environment.name != Environment.testing.name {
-        guard let username = Environment.get("DATABASE_USERNAME"),
-              let database = Environment.get("DATABASE_NAME") else {
+        guard let dbUsername = Environment.get("DATABASE_USERNAME"),
+              let dbName = Environment.get("DATABASE_NAME") else {
             throw ConfigureError.environmentNotSet(reason: "Database configuration not set in environment")
         }
-        app.databases.use(.postgres(
-            hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-            port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
-            username: username,
-            password: Environment.get("DATABASE_SECRET") ?? "",
-            database: database
-        ), as: .psql)
+        let dbHostname =      Environment.get("DATABASE_HOST") ?? "localhost"
+        let dbPort =          Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber
+        let dbPassword =    Environment.get("DATABASE_SECRET")
+        let postgresConfig = PostgresConfiguration(hostname: dbHostname,
+                                                      port: dbPort,
+                                                      username: dbUsername,
+                                                      password: dbPassword,
+                                                      database: dbName)
+        app.databases.use(.postgres(configuration: postgresConfig), as: .psql)
     } else {
 #if DEBUG
         // Environment is testing. Use in-memory sqlite.
