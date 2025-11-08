@@ -28,6 +28,7 @@ extension InterestGroupController {
                         .$events
                         .query(on: req.db)
                         .filter(\Event.$endAt >= now)
+                        .filter(\Event.$venue.$id != nil)
                         .sort(\.$startAt)
                         .all()
                     // TODO: Update this to one query. It can be done!
@@ -84,7 +85,8 @@ extension InterestGroupController {
         let group = try await fetch(req: req)
         let futureEvents = try await group.$events
             .query(on: req.db)
-            .filter(\.$endAt, .greaterThan, now)
+            .filter(\.$endAt > now)
+            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .all()
         // TODO: We should fetch Venues. Which I suppose are actually siblings here.
@@ -127,6 +129,11 @@ extension InterestGroupController {
                     }.class("details")
                 }.class("bar")
             }.class("event")
+                .style("""
+                    background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
+                                        rgba(1, 0, 18, 0.0) 75%),
+                url('https://fastly.4sqi.net/img/general/612x612/403777_tR60tUZMVoJ5Q5ylr8hQnp0pgZTy5BOQLqydzAoHWiA.jpg')
+                """)
         }.class("coffee-group")
     }
 }
