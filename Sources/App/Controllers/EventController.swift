@@ -3,9 +3,6 @@ import Vapor
 
 struct EventController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        //        let groupsHTML = routes.grouped("events")
-        //        groupsHTML.get(use: webView)
-        
         let eventsAPI = routes.grouped("api", "v2", "events")
         eventsAPI.get(use: index)
         eventsAPI.get("upcoming", use: future)

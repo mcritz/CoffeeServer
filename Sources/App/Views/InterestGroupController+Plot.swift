@@ -76,4 +76,19 @@ extension InterestGroupController {
         }.class("wrapper")
         return WebPage(list).response()
     }
+    
+    func webViewSingle(req: Request) async throws -> Response {
+        let group = try await fetch(req: req)
+        
+        let content = Div {
+            Header {
+                H1(group.name)
+            }
+            Div {
+                Text("Event stuff goes here")
+            }
+        }
+        
+        return WebPage(content).response()
+    }
 }

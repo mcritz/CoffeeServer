@@ -139,6 +139,7 @@ body {
             transition: var(--transition-slow);
             align-self: start;
             text-align: start;
+            text-overflow: hidden;
         }
         div.bar {
             display: flex;
