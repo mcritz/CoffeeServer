@@ -3,8 +3,8 @@ import Plot
 struct NoGroupsView: Component {
     var body: Component {
         Div {
-            H1("Coffee!")
-            H2("No groups available")
+            H1("Coffee Coffee Coffee Coffee")
+            H2("Nothing going on")
         }
     }
 }

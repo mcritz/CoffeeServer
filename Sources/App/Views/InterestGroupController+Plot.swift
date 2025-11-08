@@ -16,12 +16,19 @@ extension InterestGroup: Hashable, Equatable {
 extension InterestGroupController {
     
     public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
+        let now = Calendar(identifier: .gregorian).startOfDay(for: Date())
         let allGroups = try await InterestGroup.query(on: req.db).all()
         let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(of: [(InterestGroup, [EventData])].self) { taskGroup in
             var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
-                    let eventModels = try await interestGroup.$events.get(on: req.db)
+                    let eventModels = try await interestGroup
+                        .$events
+                        .query(on: req.db)
+                        .filter(\Event.$endAt >= now)
+                        .sort(\.$startAt)
+                        .all()
+                    // TODO: Update this to one query. It can be done!
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
                         let venue = try await eventModel.$venue.get(on: req.db)
@@ -29,7 +36,8 @@ extension InterestGroupController {
                         eventData.venue = venue
                         eventDatas.append(eventData)
                     }
-                    eventDatas.sort { $0.startAt < $1.startAt }
+                    // TODO: Confirm this is unneeded
+//                    eventDatas.sort { $0.startAt < $1.startAt }
                     return [(interestGroup, eventDatas)]
                 }
             }

@@ -20,7 +20,8 @@ struct GroupView: Component {
                     if let nextEvent = events.first {
                         Div {
                             H3(nextEvent.name)
-                            H4(nextEvent.startAt.formatted(date: .abbreviated, time: .standard))
+                            // FIXME: We need a client side solution for this
+                            H4(nextEvent.startAt.formatted(date: .numeric, time: .complete))
                         }
                         .class("bar")
                     }
