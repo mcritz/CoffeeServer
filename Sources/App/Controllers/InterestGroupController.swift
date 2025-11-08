@@ -28,7 +28,7 @@ struct InterestGroupController: RouteCollection {
     func fetch(req: Request) async throws -> InterestGroup {
         guard let groupIDString = req.parameters.get("groupID"),
               let groupUUID = UUID(groupIDString),
-            let group = try await InterestGroup.find(groupUUID, on: req.db) else {
+              let group = try await InterestGroup.find(groupUUID, on: req.db) else {
             throw Abort(.notFound)
         }
         return group

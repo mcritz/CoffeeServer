@@ -31,11 +31,6 @@ body {
     header {
         text-align: center;
         display: block;
-        /* position: fixed; */
-        width: var(--card-width);
-        /* background: rgba(240, 240, 240, 0.5); */
-        /* backdrop-filter: blur(1.5rem); */
-        /* z-index: 100; */
         a {
             color: var(--text-color);
             text-decoration: none;

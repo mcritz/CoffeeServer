@@ -18,7 +18,9 @@ extension InterestGroupController {
     public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
         let now = Calendar(identifier: .gregorian).startOfDay(for: Date())
         let allGroups = try await InterestGroup.query(on: req.db).all()
-        let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(of: [(InterestGroup, [EventData])].self) { taskGroup in
+        let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
+            of: [(InterestGroup, [EventData])].self
+        ) { taskGroup in
             var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
@@ -78,17 +80,53 @@ extension InterestGroupController {
     }
     
     func webViewSingle(req: Request) async throws -> Response {
+        let now = Date.now
         let group = try await fetch(req: req)
+        let futureEvents = try await group.$events
+            .query(on: req.db)
+            .filter(\.$endAt, .greaterThan, now)
+            .with(\.$venue)
+            .all()
+        // TODO: We should fetch Venues. Which I suppose are actually siblings here.
         
         let content = Div {
             Header {
+                H4 {
+                    Link("Home", url: "/")
+                }
                 H1(group.name)
             }
-            Div {
-                Text("Event stuff goes here")
+            if futureEvents.count > 0 {
+                Div {
+                    H2("Upcoming")
+                    for event in futureEvents {
+                        coffeeEventView(event)
+                    }
+                }.id("coffee-groups")
+            } else {
+                Div {
+                    H2("No coffee events scheduled")
+                }.id("coffee-groups")
             }
         }
         
         return WebPage(content).response()
+    }
+    
+    func coffeeEventView(_ event: Event) -> any Component  {
+        Div {
+            Div {
+                H2(event.name)
+                Div {
+                    Div {
+                        H4(event.venue?.name ?? "Ask Organizer")
+                        Paragraph(
+                            event.startAt
+                                .formatted(date: .abbreviated, time: .standard)
+                        )
+                    }.class("details")
+                }.class("bar")
+            }.class("event")
+        }.class("coffee-group")
     }
 }
