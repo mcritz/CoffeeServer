@@ -1,52 +1,242 @@
-html {
-    
+:root {
+    --text-on-dark: #fff;
+    --text-on-light: #111;
+    --page-background-color: rgb(240, 240, 240);
+    --text-color: #333;
+    --text-color-secondary: #888;
+    --link-color: #f29b31;
+    --link-hover-color: #e2731f;
+
+    --component-background-color: #ba9;
+
+    --card-width: 30rem;
+    --default-border-radius: 0.77rem;
+    --large-border-radius: calc(var(--default-border-radius) * 4.5);
+    --xlarge-border-radius: calc(var(--default-border-radius) * 5.5);
+    --default-padding: 0.5rem 2.25rem;
+    --default-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    --default-text-shadow: 0 0 0.05rem rgba(0, 0, 0, 0.5), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+    --default-inset-shadow: inset 0 0rem 2rem 0.2rem rgba(0, 0, 0, 0.5);
+
+    --transition-slow:  all 0.35s ease-in-out;
 }
 
 body {
-    background: #41231C;
-    color: #e1e1e1;
-    font-family: system-ui, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-
-}
-
-
-body.dark {
-    color: #e1e1e1;
-    background: #1f1d1a;
-    background-repeat: no-repeat;
-}
-
-.wrapper {
-    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+    background-color: var(--page-background-color);
+    padding: 0;
+    margin: 0;
     align-items: center;
-    justify-content: leading;
+    header {
+        text-align: center;
+        display: block;
+        /* position: fixed; */
+        width: var(--card-width);
+        /* background: rgba(240, 240, 240, 0.5); */
+        /* backdrop-filter: blur(1.5rem); */
+        /* z-index: 100; */
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            &:hover {
+                color: var(--link-hover-color);
+            }
+        }
+    }
+}
+
+#coffee-groups {
+    padding-top: 1rem;
+    display: flex;
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    div.previously {
+        width: var(--card-width);
+
+        .previously-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .previous-item {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: flex-start;
+            border-radius: var(--default-border-radius);
+            background-color: #fff;
+            padding: var(--default-padding);
+            line-height: 0.25rem;
+            padding: 0;
+            img {
+                width: 8rem;
+                height: 6rem;
+                border-radius: var(--default-border-radius);
+            }
+            .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                & > * {
+                    margin: 0.65rem 0;
+                }
+                h4 {
+                    font-size: 1.2rem;
+                }
+                p {
+                    font-size: 1.0rem;
+                    color: var(--text-color-secondary);
+                }
+            }
+        }
+    }
+}
+
+.coffee-group.selected {
+    width: 100vw;
+    header {
+        text-align: start;
+    }
+}
+
+.coffee-group {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: var(--card-width);
     max-width: 90vw;
+    height: 30rem;
+    max-height: 75vw;
+    margin-bottom: 3rem;
+    line-height: 0.89;
+    .event {
+        font-size: 2rem;
+        border-radius: var(--default-border-radius);
+        box-shadow: var(--default-inset-shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #fff;
+        transition: var(--transition-slow);
+        box-shadow: 0 0.3rem 3.0rem rgba(0, 0, 0, 0.25);
+        background-color: var(--component-background-color);
+        background-size: 125%;
+        background-position: 50% 50%;
+        h2 {
+            display: block;
+            background-color: rgba(2, 40, 53, 0);
+            color: #f8f1ff;
+            text-shadow: var(--default-text-shadow);
+            padding: var(--default-padding);
+            transition: var(--transition-slow);
+            align-self: start;
+            text-align: start;
+        }
+        div.bar {
+            display: flex;
+            gap: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 24px;
+            bottom: 0;
+            width: 100%;
+            min-height: 20%;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 -1.5rem 1rem -0.7rem rgba(0, 0, 0, 0.5), inset 0 0 rgba(0, 0, 0, 0.0);
+            border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
+            padding: 1.0rem 1.0rem;
+            backdrop-filter: blur(2.5rem) saturate(110%) brightness(70%);
+            transition: var(--transition-slow);
+            font-size: 18px;
+            h3, h4, p {
+                margin: 0;
+                line-height: 2.25rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            h3, h4 {
+                font-weight: 700;
+            }
+            p {
+                font-weight: 400;
+            }
+            a {
+                text-align: center;
+                font-weight: 700;
+                display: block;
+                color: var(--text-on-light);
+                background-color: var(--link-color);
+                padding: 0.5rem 0.5rem;
+                margin: 0.5rem 0 1rem 0;
+                border-radius: var(--default-border-radius);
+                text-decoration: none;
+                font-size: 1.0rem;
+                margin-top: 0.5rem;
+                &:hover {
+                    color: var(--text-on-dark);
+                    background-color: var(--link-hover-color);
+                    transform: scale(0.95);
+                }
+                transition: var(--transition-slow);
+            }
+        }
+    }
+    &.selected a,
+    a:focus,
+    a:active,
+    a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0.3rem 3.0rem rgba(255, 0, 0, 0.25);
+        /* box-shadow: inset 0 1.25rem 2rem rgba(0, 0, 0, 0.5); */
+        border-radius: var(--large-border-radius);
+        background-size: 100%;
+        h2 {
+            display: inline-block;
+            transform: scale(.7) translateY(-0.75rem) translateX(0.7rem);
+            transform-origin: 0% 0%;
+        }
+        .bar {
+            backdrop-filter: blur(3.5rem) saturate(350%) brightness(350%) contrast(150%);
+            transform: translateY(-1rem) scale(0.9);
+            border-radius: var(--xlarge-border-radius);
+            color: #220066;
+            text-shadow: 0 0 0.05rem rgba(255, 225, 225, 0.75), 0 0rem 1.5rem 1.5rem rgba(255, 200, 200, 1.0), 0.5rem 0.5rem 0 rgba(255, 225, 225, 0.95);
+            box-shadow: 0 -0.3rem 1.0rem rgba(0, 0, 0, 0.1), inset 0 0 5rem 0.5rem rgba(200, 220, 255, 1.0);
+        }
+    }
 }
 
-h1, h2 {
-    font-size: 2.2rem;
-    font-weight: 900;
-}
-
-.group-ul {
-    display: flex;
-    max-width: 80vw;
-    list-style: none;
-    wrap: flex;
-    overflow: wrap;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.group-ul .group-view-wrapper {
-    display: flex;
-    min-height: 160px;
-    background: rgba(255,255,255, 0.05);
-    border-radius: 0.3rem;
-    padding: 10px;
-    gap: 10px;
+@media (max-width: 600px) {
+    :root {
+        font-size: 12px;
+    }
+    .coffee-group {
+        font-size: 12px;
+        gap: 0.2rem;
+        a div {
+            line-height: 1rem;
+        }
+        h2 {
+            font-size: 2.0rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+        h4 {
+            font-size: 1.1rem;
+        }
+        p {
+            font-size: 1.0rem;
+        }
+    }
 }

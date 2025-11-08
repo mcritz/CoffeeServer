@@ -12,7 +12,7 @@ struct WebPage {
         let body = HTML(
             .head(
                 .encoding(.utf8),
-                .title("The Coffee"),
+                .title("CoffeeCoffeeCoffee.coffee"),
                 .stylesheet("/style.css")
             ),
             .body(buildBody)
@@ -27,6 +27,6 @@ struct WebPage {
     
     
     private func buildBody() -> Component {
-        self.content.class("dark")
+        self.content
     }
 }

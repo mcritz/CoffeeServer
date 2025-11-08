@@ -10,27 +10,24 @@ struct GroupView: Component {
         return hostURL
         + "/groups/\(group.id!.uuidString)/calendar.ics"
     }
+    //                Link("Calendar", url: calendarURLString())
 
     var body: Component {
         Div {
-            Text(group.name)
-            Link("Calendar", url: calendarURLString())
-            if(events.count < 1) {
-                List {
-                    ListItem {
-                        Text("No Events")
+            if let groupURL = try? group.requireID() {
+                Link(url: "/groups/\(groupURL)") {
+                    H2(group.name)
+                    if let nextEvent = events.first {
+                        Div {
+                            H3(nextEvent.name)
+                            H4(nextEvent.startAt.formatted(date: .abbreviated, time: .standard))
+                        }
+                        .class("bar")
                     }
-                }.listStyle(.unordered)
-            } else {
-                List {
-                    for event in events {
-                        ListItem {
-                            EventSummaryView(event: event)
-                        }.class("event-name")
-                    }
-                }.listStyle(.unordered)
+                }
+                .class("event")
             }
         }
-        .class("group-view")
+        .class("coffee-group")
     }
 }

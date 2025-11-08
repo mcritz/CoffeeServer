@@ -56,16 +56,16 @@ extension InterestGroupController {
             return WebPage(NoGroupsView()).response()
         }
         let list = Div {
-                H1("Coffee!")
-                List(sortedGroupEvents) { group, events in
-                    ListItem {
-                        GroupView(hostURL: hostURL, group: group, events: events)
-                    }
-                    .class("group-view-wrapper")
-                }
-                .class("group-ul")
+            Header {
+                H1("Coffee Coffee Coffee Coffee")
             }
-            .class("wrapper")
+            Div {
+                for (group, events) in sortedGroupEvents {
+                    GroupView(hostURL: hostURL, group: group, events: events)
+                }
+            }
+            .id("coffee-groups")
+        }.class("wrapper")
         return WebPage(list).response()
     }
 }
