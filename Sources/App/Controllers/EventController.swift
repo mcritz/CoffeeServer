@@ -61,19 +61,13 @@ struct EventController: RouteCollection {
             startAt: eventData.startAt,
             endAt: eventData.endAt
         )
-
-        guard let venueData = eventData.venue,
-              let venueID = try? venueData.requireID(),
-                let oldVenue = try await Venue.find(venueID, on: req.db)
-        else {
+        
+        guard let venueID = eventData.venueID,
+                let existingVenue = try await Venue.find(venueID, on: req.db) else {
             throw Abort(.badRequest, reason: "Venue is required")
         }
         
-        oldVenue.location = venueData.location
-        oldVenue.name = venueData.name
-        oldVenue.url = venueData.url
-        try await oldVenue.update(on: req.db)
-        event.$venue.id = try oldVenue.requireID()
+        event.$venue.id = try existingVenue.requireID()
         
         try await event.save(on: req.db)
         return event.publicData()
