@@ -12,6 +12,7 @@ import Vapor
 final class MediaContentController: RouteCollection {
     // req.application.directory.resourcesDirectory.appending("media")
     private let mediaDirectoryPath: String
+    private let maxUploadSize: Int64 = 1024 * 1024 * 1024
 
     init(mediaPath: String) {
         self.mediaDirectoryPath = mediaPath
@@ -57,11 +58,6 @@ final class MediaContentController: RouteCollection {
         guard let contentType = req.headers["Content-Type"].first else {
             throw Abort(.badRequest, reason: "Content-Type header is missing")
         }
-        guard let contentLengthText = req.headers["Content-Length"].first,
-            let contentLength = Int(contentLengthText)
-        else {
-            throw Abort(.badRequest, reason: "Content-Length header is missing or non-integer")
-        }
 
         do {
             try FileManager.default.createDirectory(
@@ -93,6 +89,10 @@ final class MediaContentController: RouteCollection {
         }
         
         for try await byteBuffer in req.body {
+            guard streamedLength < maxUploadSize else {
+                throw Abort(.badRequest, reason: "Upload exceeds maximum")
+            }
+            
             do {
                 try await req.application.fileio.write(fileHandle: nioFileHandle,
                                                        toOffset: streamedLength,
@@ -108,7 +108,7 @@ final class MediaContentController: RouteCollection {
             filename: filename,
             rawFilename: rawFilename,
             mimeType: contentType,
-            contentLength: contentLength,
+            contentLength: Int(streamedLength),
             userID: requestingUser
         )
         try await media.save(on: req.db)
