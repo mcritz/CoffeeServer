@@ -80,6 +80,13 @@ extension InterestGroupController {
         return WebPage(list).response()
     }
     
+    
+    private func calendarURLString(groupID: UUID) -> String {
+        return hostURL
+        + "/groups/\(groupID.uuidString)/calendar.ics"
+    }
+    
+    
     func webViewSingle(req: Request) async throws -> Response {
         let now = Date.now
         let group = try await fetch(req: req)
@@ -97,6 +104,10 @@ extension InterestGroupController {
                     Link("Home", url: "/")
                 }
                 H1(group.name)
+                if let groupID = try? group.requireID() {
+                    Link("Calendar", url: calendarURLString(groupID: groupID))
+                        .class("calendar-link")
+                }
             }
             if futureEvents.count > 0 {
                 Div {
@@ -114,8 +125,8 @@ extension InterestGroupController {
         
         return WebPage(content).response()
     }
-    
-    func coffeeEventView(_ event: Event) -> any Component  {
+
+    func coffeeEventView(_ event: Event) -> any Component {
         Div {
             Div {
                 H2(event.name)
@@ -132,7 +143,7 @@ extension InterestGroupController {
                 .style("""
                     background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
                                         rgba(1, 0, 18, 0.0) 75%),
-                url('https://fastly.4sqi.net/img/general/612x612/403777_tR60tUZMVoJ5Q5ylr8hQnp0pgZTy5BOQLqydzAoHWiA.jpg')
+                url('/\(event.imageURL?.absoluteString ?? "/media/default-image.jpg")')
                 """)
         }.class("coffee-group")
     }
