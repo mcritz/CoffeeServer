@@ -19,9 +19,15 @@ final class Venue: Content, Model {
     @Children(for: \.$venue)
     var events: [Event]
     
+    @Children(for: \.$venue)
+    var media: [MediaContent]
+    
     init() { }
     
-    internal init(id: UUID? = nil, name: String, location: Location? = nil, url: URL? = nil) {
+    internal init(id: UUID? = nil,
+                  name: String,
+                  location: Location? = nil,
+                  url: URL? = nil) {
         self.id = id
         self.name = name
         self.location = location

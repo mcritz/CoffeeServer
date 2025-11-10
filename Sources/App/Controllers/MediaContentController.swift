@@ -1,0 +1,117 @@
+//
+//  MediaContentController.swift
+//  CoffeeServer
+//
+//  Created by Michael Critz on 11/9/25.
+//
+
+import Fluent
+import NIOCore
+import Vapor
+
+final class MediaContentController: RouteCollection {
+    // req.application.directory.resourcesDirectory.appending("media")
+    private let mediaDirectoryPath: String
+
+    init(mediaPath: String) {
+        self.mediaDirectoryPath = mediaPath
+    }
+
+    func boot(routes: Vapor.RoutesBuilder) throws {
+        let mediaAPI = routes.grouped("api", "v2", "media")
+        mediaAPI.on(.POST, "upload", body: .stream, use: uploadMedia)
+        mediaAPI.group(":mediaID") { mediaItem in
+            mediaItem.get(use: getMedia)
+        }
+    }
+    
+    func getMedia(req: Request) async throws -> Response {
+        guard let mediaID = req.parameters.get("mediaID") else {
+            throw Abort(.badRequest, reason: "No media ID provided")
+        }
+        guard let mediaID = UUID(mediaID),
+            let userMedia = try await MediaContent.find(mediaID, on: req.db)
+        else {
+            throw Abort(.notFound)
+        }
+        let filePath = mediaDirectoryPath.appending("/\(userMedia.filename)")
+        
+        guard let mediaType = userMedia.mediaType() else {
+            return req.fileio.streamFile(at: filePath)
+        }
+        return req.fileio.streamFile(at: filePath, mediaType: mediaType)
+    }
+    
+    func uploadMedia(req: Request) async throws -> MediaContent {
+        let payload = try req.jwt.verify(as: SessionJWTToken.self)
+        guard let requestingUser = try await User.find(payload.userId, on: req.db) else {
+            req.logger.info("Unauthorized upload attempt:\n\(req)")
+            throw Abort(.unauthorized, reason: "Must be logged in")
+        }
+        guard let rawFilename = req.headers["File-Name"].first else {
+            throw Abort(.badRequest, reason: "File-Name header missing or invalid")
+        }
+        // TODO: We really shouldn’t trust users with honest `Content-Type`s. Even if they aren’t malicious, they’re
+        // busy and forgetful. This could lead to serious problems. For now, we can mitigate that this functionality
+        // should be limited in its usefulness to authorized users. But still...
+        guard let contentType = req.headers["Content-Type"].first else {
+            throw Abort(.badRequest, reason: "Content-Type header is missing")
+        }
+        guard let contentLengthText = req.headers["Content-Length"].first,
+            let contentLength = Int(contentLengthText)
+        else {
+            throw Abort(.badRequest, reason: "Content-Length header is missing or non-integer")
+        }
+
+        do {
+            try FileManager.default.createDirectory(
+                atPath: mediaDirectoryPath,
+                withIntermediateDirectories: true
+            )
+        } catch {
+            req.logger.error("Failed to create media directory: \(String(describing: error))")
+            throw Abort(.internalServerError, reason: "Server misconfigured for file uploads")
+        }
+        let filename = UUID().uuidString
+        let filePath = mediaDirectoryPath.appending("/\(filename)")
+        try? FileManager.default.removeItem(atPath: filePath)
+        guard FileManager.default.createFile(atPath: filePath,
+                                       contents: nil,
+                                       attributes: nil) else {
+            req.logger.error("File creation failed for:\n\t \(filePath)")
+            throw Abort(.internalServerError)
+        }
+        
+        var streamedLength: Int64 = 0
+        let nioFileHandle = try NIOFileHandle(path: filePath, mode: .write)
+        defer {
+            do {
+                try nioFileHandle.close()
+            } catch {
+                req.logger.error("\(error.localizedDescription)")
+            }
+        }
+        
+        for try await byteBuffer in req.body {
+            do {
+                try await req.application.fileio.write(fileHandle: nioFileHandle,
+                                                       toOffset: streamedLength,
+                                                       buffer: byteBuffer,
+                                                       eventLoop: req.eventLoop).get()
+                streamedLength += Int64(byteBuffer.readableBytes)
+            } catch {
+                req.logger.error("\(error.localizedDescription)")
+            }
+        }
+        
+        let media = try MediaContent(
+            filename: filename,
+            rawFilename: rawFilename,
+            mimeType: contentType,
+            contentLength: contentLength,
+            userID: requestingUser
+        )
+        try await media.save(on: req.db)
+        return media
+    }
+}

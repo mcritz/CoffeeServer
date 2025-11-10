@@ -9,3 +9,4 @@ db.sqlite
 .swiftpm
 .env
 Caddyfile
+Public/media/**
