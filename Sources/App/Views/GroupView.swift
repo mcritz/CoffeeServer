@@ -8,7 +8,7 @@ struct GroupView: Component {
 
     private func backgroundImageURL(event: EventData) -> String {
         guard let imageURL = event.imageURL else {
-            return "TODO DEFAULT IMAGE URL"
+            return "default-coffee.webp"
         }
         return imageURL.absoluteString
     }

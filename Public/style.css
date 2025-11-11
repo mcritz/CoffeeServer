@@ -41,6 +41,17 @@ body {
     }
 }
 
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+header img {
+    min-width: 250px;
+    width: 30vw;
+    max-width: 480px;
+}
+
 #coffee-groups {
     padding-top: 1rem;
     display: flex;
@@ -223,7 +234,7 @@ body {
         font-size: 12px;
         gap: 0.2rem;
         a div {
-            line-height: 1rem;
+            padding: 0;
         }
         h2 {
             font-size: 2.0rem;

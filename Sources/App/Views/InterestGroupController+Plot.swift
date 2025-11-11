@@ -69,6 +69,8 @@ extension InterestGroupController {
         let list = Div {
             Header {
                 H1("Coffee Coffee Coffee Coffee")
+                    .class("hidden")
+                Image("/logo-stack.png")
             }
             Div {
                 for (group, events) in sortedGroupEvents {
@@ -100,9 +102,10 @@ extension InterestGroupController {
         
         let content = Div {
             Header {
-                H4 {
-                    Link("Home", url: "/")
+                Link(url: "/") {
+                    Image(url: "/logo-long.png", description: "Home")
                 }
+                
                 H1(group.name)
                 if let groupID = try? group.requireID() {
                     Link("Calendar", url: calendarURLString(groupID: groupID))
@@ -153,7 +156,7 @@ extension InterestGroupController {
                     .style("""
                     background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
                                         rgba(1, 0, 18, 0.0) 75%),
-                url('/\(event.imageURL?.absoluteString ?? "/media/default-image.jpg")')
+                url('/\(event.imageURL?.absoluteString ?? "default-coffee.webp")')
                 """)
             })
         }.class("coffee-group")
