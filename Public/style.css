@@ -108,6 +108,9 @@ body {
     max-height: 75vw;
     margin-bottom: 3rem;
     line-height: 0.89;
+    a {
+        text-decoration: none;
+    }
     .event {
         font-size: 2rem;
         border-radius: var(--default-border-radius);

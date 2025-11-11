@@ -125,26 +125,37 @@ extension InterestGroupController {
         
         return WebPage(content).response()
     }
+    
+    private func location(for event: Event) -> String {
+        if let venue = event.venue,
+           let location = event.venue?.location {
+            return "https://maps.apple.com/?q=\(venue.name)&ll=\(location.latitude),\(location.longitude)"
+        } else {
+            return "#"
+        }
+    }
 
     func coffeeEventView(_ event: Event) -> any Component {
         Div {
-            Div {
-                H2(event.name)
+            Link(url: location(for: event), label: {
                 Div {
+                    H2(event.name)
                     Div {
-                        H4(event.venue?.name ?? "Ask Organizer")
-                        Paragraph(
-                            event.startAt
-                                .formatted(date: .abbreviated, time: .standard)
-                        )
-                    }.class("details")
-                }.class("bar")
-            }.class("event")
-                .style("""
+                        Div {
+                            H4(event.venue?.name ?? "Ask Organizer")
+                            Paragraph(
+                                event.startAt
+                                    .formatted(date: .abbreviated, time: .standard)
+                            )
+                        }.class("details")
+                    }.class("bar")
+                }.class("event")
+                    .style("""
                     background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
                                         rgba(1, 0, 18, 0.0) 75%),
                 url('/\(event.imageURL?.absoluteString ?? "/media/default-image.jpg")')
                 """)
+            })
         }.class("coffee-group")
     }
 }
