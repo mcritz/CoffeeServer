@@ -8,7 +8,7 @@
 import Fluent
 import Vapor
 
-final class VenueMediaContent: Model {
+final class VenueMediaContent: Model, @unchecked Sendable {
     static let schema = "venue+mediacontent"
     
     @ID(key: .id) var id: UUID?

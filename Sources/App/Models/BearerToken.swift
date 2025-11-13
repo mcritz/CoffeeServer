@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-final class BearerToken: Model, Content {
+final class BearerToken: Model, Content, @unchecked Sendable {
     static let schema = "bearer-tokens"
     
     @ID(key: .id)

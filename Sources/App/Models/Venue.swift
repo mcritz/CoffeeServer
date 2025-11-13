@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-final class Venue: Content, Model {
+final class Venue: Content, Model, @unchecked Sendable {
     static let schema = "venue"
     
     @ID(key: .id)
