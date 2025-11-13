@@ -5,3 +5,7 @@ localhost {
 coffeecoffee.world {
     reverse_proxy app:8080
 }
+
+coffeecoffeecoffee.coffee {
+    reverse_proxy app:8080
+}
