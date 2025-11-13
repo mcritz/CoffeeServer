@@ -13,10 +13,14 @@ final class InterestGroup: Model, Content {
     @Children(for: \.$group)
     var events: [Event]
     
+    @Field(key: "image_url")
+    var imageURL: String?
+    
     init() { }
 
-    internal init(id: UUID? = nil, name: String) {
+    internal init(id: UUID? = nil, name: String, imageURL: String? = nil) {
         self.id = id
         self.name = name
+        self.imageURL = imageURL
     }
 }

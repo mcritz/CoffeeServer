@@ -71,6 +71,7 @@ extension InterestGroupController {
                 H1("Coffee Coffee Coffee Coffee")
                     .class("hidden")
                 Image("/logo-stack.png")
+                    .class("header-image")
             }
             Div {
                 for (group, events) in sortedGroupEvents {
@@ -78,7 +79,8 @@ extension InterestGroupController {
                 }
             }
             .id("coffee-groups")
-        }.class("wrapper")
+        }
+        .class("wrapper")
         return WebPage(list).response()
     }
     
@@ -104,12 +106,16 @@ extension InterestGroupController {
             Header {
                 Link(url: "/") {
                     Image(url: "/logo-long.png", description: "Home")
+                        .class("header-image")
                 }
                 
                 H1(group.name)
                 if let groupID = try? group.requireID() {
-                    Link("Calendar", url: calendarURLString(groupID: groupID))
-                        .class("calendar-link")
+                    Link(url: calendarURLString(groupID: groupID)) {
+                        Image("/icon-calendar.png")
+                        Text("Subscribe to Calendar")
+                    }
+                    .class("white-button")
                 }
             }
             if futureEvents.count > 0 {
@@ -132,7 +138,7 @@ extension InterestGroupController {
     private func location(for event: Event) -> String {
         if let venue = event.venue,
            let location = event.venue?.location {
-            return "https://maps.apple.com/?q=\(venue.name)&ll=\(location.latitude),\(location.longitude)"
+            return "maps://maps.apple.com/?q=\(venue.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? venue.name)&coordinate=\(location.latitude),\(location.longitude)"
         } else {
             return "#"
         }

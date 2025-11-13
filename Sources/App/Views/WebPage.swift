@@ -16,8 +16,7 @@ struct WebPage {
                 .stylesheet("/style.css")
             ),
             .body(buildBody)
-        )
-            .render()
+        ).render()
         let resposneHeaders: HTTPHeaders = HTTPHeaders(dictionaryLiteral:
             ("Content-Type", "text/html"),
             ("ETag", "bean_\(body.hashValue)")
@@ -27,6 +26,14 @@ struct WebPage {
     
     
     private func buildBody() -> Component {
-        self.content
+        Div {
+            self.content
+            Footer {
+                Link("Email Support", url: "mailto:coffee@pixel.science")
+                    .class("white-button")
+                Link("Code of Conduct", url: "https://github.com/coffeecoffeecoffeecoffee/Coffee-Code-Of-Conduct")
+                    .class("white-button")
+            }
+        }
     }
 }

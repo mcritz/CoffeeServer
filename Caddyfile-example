@@ -1,4 +1,12 @@
-# You will need to rename this to `Caddyfile` for production
+localhost {
+    reverse_proxy app:8080
+}
+
 # Change this to your domain name
-example.com
-reverse_proxy app:8080
+coffeecoffee.world {
+    reverse_proxy app:8080
+}
+
+webcal:// {
+    reverse_proxy app:8080
+}

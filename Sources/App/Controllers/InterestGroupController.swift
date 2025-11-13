@@ -16,6 +16,7 @@ struct InterestGroupController: RouteCollection {
         groupsAPI.post(use: create)
         groupsAPI.group(":groupID") { group in
             group.get(use: fetch)
+            group.put(use: update)
             group.delete(use: delete)
             group.get("events", use: groupEvents)
         }
@@ -40,6 +41,26 @@ struct InterestGroupController: RouteCollection {
             throw Abort(.unauthorized)
         }
         let group = try req.content.decode(InterestGroup.self)
+        try await group.save(on: req.db)
+        return group
+    }
+    
+    func update(req: Request) async throws -> InterestGroup {
+        guard try await req.isAdmin() else {
+            req.logger.warning("Unauthorized update attempt\n\t\(req)")
+            throw Abort(.unauthorized)
+        }
+        guard let newData = try? req.content.decode(InterestGroup.self),
+              let groupIDString = req.parameters.get("groupID"),
+              let groupUUID = UUID(groupIDString) else {
+            throw Abort(.badRequest)
+        }
+        guard let group = try await InterestGroup.find(groupUUID, on: req.db) else {
+            throw Abort(.notFound)
+        }
+        group.name = newData.name
+        group.imageURL = newData.imageURL
+        // events cannot be editted on the group
         try await group.save(on: req.db)
         return group
     }
