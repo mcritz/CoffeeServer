@@ -15,7 +15,6 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
         .package(url: "https://github.com/JohnSundell/Plot", .upToNextMajor(from: "0.14.0")),
         .package(url: "https://github.com/swift-calendar/icalendarkit.git", .upToNextMajor(from: "1.0.2")),
-        .package(url: "https://github.com/21GramConsulting/MediaType.git", .upToNextMajor(from: "1.0.3")),
     ],
     targets: [
         .target(
@@ -29,7 +28,6 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Plot", package: "Plot"),
                 .product(name: "ICalendarKit", package: "ICalendarKit"),
-                .product(name: "MediaType", package: "mediatype"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

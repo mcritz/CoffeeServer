@@ -60,7 +60,7 @@ struct InterestGroupController: RouteCollection {
         }
         group.name = newData.name
         group.imageURL = newData.imageURL
-        // events cannot be editted on the group
+        // events cannot be edited on the group
         try await group.save(on: req.db)
         return group
     }
