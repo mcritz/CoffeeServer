@@ -33,7 +33,7 @@ x-shared_environment: &shared_environment
   SERVER_ADMIN_EMAIL: ${SERVER_ADMIN_EMAIL}
 services:
   caddy:
-    image: caddy:2.6
+    image: caddy:2-alpine
     restart: unless-stopped
     ports:
       - "80:80"

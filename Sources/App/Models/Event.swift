@@ -22,7 +22,7 @@ extension EventData: AsyncResponseEncodable {
     }
 }
 
-final class Event: Model, Content {
+final class Event: Model, Content, @unchecked Sendable {
     static let schema = "events"
     
     @ID(key: .id)

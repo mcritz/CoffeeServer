@@ -16,12 +16,22 @@ extension InterestGroup: Hashable, Equatable {
 extension InterestGroupController {
     
     public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
+        let now = Calendar(identifier: .gregorian).startOfDay(for: Date())
         let allGroups = try await InterestGroup.query(on: req.db).all()
-        let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(of: [(InterestGroup, [EventData])].self) { taskGroup in
+        let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
+            of: [(InterestGroup, [EventData])].self
+        ) { taskGroup in
             var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
-                    let eventModels = try await interestGroup.$events.get(on: req.db)
+                    let eventModels = try await interestGroup
+                        .$events
+                        .query(on: req.db)
+                        .filter(\Event.$endAt >= now)
+                        .filter(\Event.$venue.$id != nil)
+                        .sort(\.$startAt)
+                        .all()
+                    // TODO: Update this to one query. It can be done!
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
                         let venue = try await eventModel.$venue.get(on: req.db)
@@ -29,7 +39,8 @@ extension InterestGroupController {
                         eventData.venue = venue
                         eventDatas.append(eventData)
                     }
-                    eventDatas.sort { $0.startAt < $1.startAt }
+                    // TODO: Confirm this is unneeded
+//                    eventDatas.sort { $0.startAt < $1.startAt }
                     return [(interestGroup, eventDatas)]
                 }
             }
@@ -56,16 +67,104 @@ extension InterestGroupController {
             return WebPage(NoGroupsView()).response()
         }
         let list = Div {
-                H1("Coffee!")
-                List(sortedGroupEvents) { group, events in
-                    ListItem {
-                        GroupView(hostURL: hostURL, group: group, events: events)
-                    }
-                    .class("group-view-wrapper")
-                }
-                .class("group-ul")
+            Header {
+                H1("Coffee Coffee Coffee Coffee")
+                    .class("hidden")
+                Image("/logo-stack.png")
+                    .class("header-image")
             }
-            .class("wrapper")
+            Div {
+                for (group, events) in sortedGroupEvents {
+                    GroupView(hostURL: hostURL, group: group, events: events)
+                }
+            }
+            .id("coffee-groups")
+        }
+        .class("wrapper")
         return WebPage(list).response()
+    }
+    
+    
+    private func calendarURLString(groupID: UUID) -> String {
+        return hostURL
+        + "/groups/\(groupID.uuidString)/calendar.ics"
+    }
+    
+    
+    func webViewSingle(req: Request) async throws -> Response {
+        let now = Date.now
+        let group = try await fetch(req: req)
+        let futureEvents = try await group.$events
+            .query(on: req.db)
+            .filter(\.$endAt > now)
+            .filter(\.$venue.$id != nil)
+            .with(\.$venue)
+            .all()
+        // TODO: We should fetch Venues. Which I suppose are actually siblings here.
+        
+        let content = Div {
+            Header {
+                Link(url: "/") {
+                    Image(url: "/logo-long.png", description: "Home")
+                        .class("header-image")
+                }
+                
+                H1(group.name)
+                if let groupID = try? group.requireID() {
+                    Link(url: calendarURLString(groupID: groupID)) {
+                        Image("/icon-calendar.png")
+                        Text("Subscribe to Calendar")
+                    }
+                    .class("white-button")
+                }
+            }
+            if futureEvents.count > 0 {
+                Div {
+                    H2("Upcoming")
+                    for event in futureEvents {
+                        coffeeEventView(event)
+                    }
+                }.id("coffee-groups")
+            } else {
+                Div {
+                    H2("No coffee events scheduled")
+                }.id("coffee-groups")
+            }
+        }
+        
+        return WebPage(content).response()
+    }
+    
+    private func location(for event: Event) -> String {
+        if let venue = event.venue,
+           let location = event.venue?.location {
+            return "maps://maps.apple.com/?q=\(venue.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? venue.name)&coordinate=\(location.latitude),\(location.longitude)"
+        } else {
+            return "#"
+        }
+    }
+
+    func coffeeEventView(_ event: Event) -> any Component {
+        Div {
+            Link(url: location(for: event), label: {
+                Div {
+                    H2(event.name)
+                    Div {
+                        Div {
+                            H4(event.venue?.name ?? "Ask Organizer")
+                            Paragraph(
+                                event.startAt
+                                    .formatted(date: .abbreviated, time: .standard)
+                            )
+                        }.class("details")
+                    }.class("bar")
+                }.class("event")
+                    .style("""
+                    background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
+                                        rgba(1, 0, 18, 0.0) 75%),
+                url('/\(event.imageURL?.absoluteString ?? "default-coffee.webp")')
+                """)
+            })
+        }.class("coffee-group")
     }
 }

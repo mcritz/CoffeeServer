@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-final class InterestGroup: Model, Content {
+final class InterestGroup: Model, Content, @unchecked Sendable {
     static let schema = "interestgroup"
     
     @ID(key: .id)
@@ -13,10 +13,14 @@ final class InterestGroup: Model, Content {
     @Children(for: \.$group)
     var events: [Event]
     
+    @Field(key: "image_url")
+    var imageURL: String?
+    
     init() { }
 
-    internal init(id: UUID? = nil, name: String) {
+    internal init(id: UUID? = nil, name: String, imageURL: String? = nil) {
         self.id = id
         self.name = name
+        self.imageURL = imageURL
     }
 }

@@ -5,32 +5,74 @@ struct GroupView: Component {
     let hostURL: String
     let group: InterestGroup
     let events: [EventData]
-    
-    func calendarURLString() -> String {
-        return hostURL
-        + "/groups/\(group.id!.uuidString)/calendar.ics"
+
+    private func backgroundImageURL(event: EventData) -> String {
+        guard let imageURL = event.imageURL else {
+            return "default-coffee.webp"
+        }
+        return imageURL.absoluteString
+    }
+
+    private func backgroundImageURL(group: InterestGroup) -> String {
+        guard let groupImageURL = group.imageURL else {
+            return "default-coffee.webp"
+        }
+        return groupImageURL
     }
 
     var body: Component {
-        Div {
-            Text(group.name)
-            Link("Calendar", url: calendarURLString())
-            if(events.count < 1) {
-                List {
-                    ListItem {
-                        Text("No Events")
-                    }
-                }.listStyle(.unordered)
-            } else {
-                List {
-                    for event in events {
-                        ListItem {
-                            EventSummaryView(event: event)
-                        }.class("event-name")
-                    }
-                }.listStyle(.unordered)
-            }
+        guard let groupURL = try? group.requireID() else {
+            // Nothing to see...
+            return Div().class("hidden")
         }
-        .class("group-view")
+        let upcoming = events.filter { $0.endAt >= Date.now }
+        if let nextEvent = upcoming.first {
+            return Div {
+                Link(url: "/groups/\(groupURL)") {
+                    H2(group.name)
+                    Div {
+                        H3(nextEvent.name)
+                        H4(
+                            nextEvent.startAt
+                                .formatted(date: .numeric,
+                                           time: .complete) // TODO: Maybe format
+                        )
+                    }
+                    .class("bar")
+                }
+                .class("event")
+                .style(
+                    """
+                    background-image: 
+                        linear-gradient(0deg, rgba(2,0,36,0.5) 0%, rgba(1, 0, 18, 0.0) 75%), 
+                        url('\(backgroundImageURL(event: nextEvent))');
+                    """
+                )
+            }
+            .class("coffee-group")
+        } else {
+            return Div {
+                Link(url: "/groups/\(groupURL)") {
+                    H2(group.name)
+                    Div {
+                        if events.count > 0 {
+                            H3("\(events.count) events")
+                        } else {
+                            H3("No events, yet!")
+                        }
+                    }
+                    .class("bar")
+                }
+                .class("event")
+                .style(
+                    """
+                            background-image: 
+                                linear-gradient(0deg, rgba(2,0,36,0.5) 0%, rgba(1, 0, 18, 0.0) 75%), 
+                                url('\(backgroundImageURL(group: group))');
+                    """
+                )
+            }
+            .class("coffee-group")
+        }
     }
 }

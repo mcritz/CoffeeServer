@@ -1,4 +1,4 @@
-import JWT
+@preconcurrency import JWT
 import Vapor
 
 fileprivate extension TimeInterval {
