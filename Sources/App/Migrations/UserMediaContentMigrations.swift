@@ -10,18 +10,9 @@ import Vapor
 
 extension UserMediaContent {
     struct Migration: AsyncMigration {
-        var name: String = "CreateUserMedia"
+        var name: String = "CreateUserMediaContent"
         
         func prepare(on database: any Database) async throws {
-//            @ID(key: .id)
-//            var id: UUID?
-//            
-//            @Parent(key: "user_id")
-//            var user: User
-//            
-//            @Parent(key: "mediacontent_id")
-//            var mediaContent: MediaContent
-            
             try await database.schema(UserMediaContent.schema)
                 .id()
                 .field("user_id", .uuid, .required, .references(User.schema, "id"))
