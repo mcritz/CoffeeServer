@@ -21,8 +21,7 @@ func routes(_ app: Application) throws {
         
         var os = ""
         var environment = ""
-        let uptimeFormatted = DateComponentsFormatter.uptimeFormatter
-            .string(from: ProcessInfo.processInfo.systemUptime) ?? "X:XX:XX"
+        let uptimeFormatted = UptimeFormatter.formattedUptime(from: ProcessInfo.processInfo.systemUptime)
         let processorCount = String(ProcessInfo.processInfo.processorCount)
         let processorActiveCount = String(ProcessInfo.processInfo.activeProcessorCount)
         var processName = ""
