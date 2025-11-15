@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    let interestGroupController = InterestGroupController(hostURL: hostURL())
+    let interestGroupController = InterestGroupController()
     app.get { req async throws in
         try await interestGroupController.webView(req: req)
     }
@@ -10,6 +10,33 @@ func routes(_ app: Application) throws {
     app.get("healthcheck") { req async -> String in
         let currentDate = Date()
         let eventCount = try? await Event.query(on: req.db).count()
+        let hostName = req.url.host ?? "NOT DEFINED"
+        let hostHeaderValue = req.headers.first(name: "Host") ?? "No Host header"
+        let urlString = req.url.string
+        let reqHeaders = req.headers.reduce("") { key, value in
+            """
+            \(key): \(value)
+            """
+        }
+        
+        var os = ""
+        var environment = ""
+        let uptimeFormatted = DateComponentsFormatter.uptimeFormatter
+            .string(from: ProcessInfo.processInfo.systemUptime) ?? "X:XX:XX"
+        let processorCount = String(ProcessInfo.processInfo.processorCount)
+        let processorActiveCount = String(ProcessInfo.processInfo.activeProcessorCount)
+        var processName = ""
+        
+        if let isAdmin = try? await req.isAdmin(), isAdmin {
+            os = ProcessInfo.processInfo.operatingSystemVersionString
+            environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
+                """
+                \(key): \(value)\n
+                """
+            }
+            processName = String(ProcessInfo.processInfo.globallyUniqueString)
+        }
+        
         let dbHealthText = {
             switch eventCount {
             case .some(let count):
@@ -21,9 +48,34 @@ func routes(_ app: Application) throws {
         return """
        OK.
        
+       Request
+       URL: \(urlString)
+       Hostname: \(hostName)
+       Host (from headers): \(hostHeaderValue)
+       Headers:
+       \(reqHeaders)
+       
+       
        Database Check: \(dbHealthText)
        
-       \(currentDate)
+       Process: \(processName)
+       
+       --- 
+       
+       System
+       Processors: \(processorCount)
+       Active: \(processorActiveCount)
+       
+       SystemTime: \(currentDate)
+       Uptime: \(uptimeFormatted)
+       
+       ---
+       
+       OS
+       Version: \(os)
+       
+       ENV:
+       \(environment)
        """
     }
     

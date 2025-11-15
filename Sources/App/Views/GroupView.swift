@@ -2,7 +2,6 @@ import Plot
 import Vapor
 
 struct GroupView: Component {
-    let hostURL: String
     let group: InterestGroup
     let events: [EventData]
 

@@ -14,7 +14,6 @@ fileprivate enum ConfigureError: Error {
 // configures your application
 public func configure(_ app: Application) throws {
     configureCORS(on: app)
-    
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
     
     try configureDatabase(on: app)

@@ -75,7 +75,7 @@ extension InterestGroupController {
             }
             Div {
                 for (group, events) in sortedGroupEvents {
-                    GroupView(hostURL: hostURL, group: group, events: events)
+                    GroupView(group: group, events: events)
                 }
             }
             .id("coffee-groups")
@@ -86,8 +86,7 @@ extension InterestGroupController {
     
     
     private func calendarURLString(groupID: UUID) -> String {
-        return hostURL
-        + "/groups/\(groupID.uuidString)/calendar.ics"
+        return "/groups/\(groupID.uuidString)/calendar.ics"
     }
     
     
