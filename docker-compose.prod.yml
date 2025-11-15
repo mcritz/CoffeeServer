@@ -1,0 +1,12 @@
+# Production overrides for Docker Compose
+# Uses only prebuilt images from GHCR — no local builds.
+
+services:
+  app:
+    image: ghcr.io/mcritz/coffee-server:latest
+
+  migrate:
+    image: ghcr.io/mcritz/coffee-server:latest
+
+  revert:
+    image: ghcr.io/mcritz/coffee-server:latest
