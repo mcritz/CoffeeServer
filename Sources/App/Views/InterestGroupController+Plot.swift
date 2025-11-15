@@ -85,10 +85,9 @@ extension InterestGroupController {
     }
     
     
-    private func calendarURLString(groupID: UUID) -> String {
-        return "/groups/\(groupID.uuidString)/calendar.ics"
+    private func calendarURLString(_ hostName: String, groupID: UUID) -> String {
+        return "webcal://\(hostName)/groups/\(groupID.uuidString)/calendar.ics"
     }
-    
     
     func webViewSingle(req: Request) async throws -> Response {
         let now = Date.now
@@ -109,8 +108,9 @@ extension InterestGroupController {
                 }
                 
                 H1(group.name)
-                if let groupID = try? group.requireID() {
-                    Link(url: calendarURLString(groupID: groupID)) {
+                if let groupID = try? group.requireID(),
+                   let hostName = req.headerHostName() {
+                    Link(url: calendarURLString(hostName, groupID: groupID)) {
                         Image("/icon-calendar.png")
                         Text("Subscribe to Calendar")
                     }
