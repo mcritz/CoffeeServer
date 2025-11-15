@@ -1,3 +1,4 @@
+*.swp
 Package.resolved
 Packages
 .build

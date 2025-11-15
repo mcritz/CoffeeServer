@@ -44,8 +44,11 @@ struct GroupView: Component {
                 .style(
                     """
                     background-image: 
-                        linear-gradient(0deg, rgba(2,0,36,0.5) 0%, rgba(1, 0, 18, 0.0) 75%), 
+                        linear-gradient(
+                        0deg, 
+                        rgba(2,0,36,0.5) 0%, rgba(1, 0, 18, 0.0) 75%), 
                         url('\(backgroundImageURL(event: nextEvent))');
+                    background-size: cover;
                     """
                 )
             }
@@ -66,9 +69,13 @@ struct GroupView: Component {
                 .class("event")
                 .style(
                     """
-                            background-image: 
-                                linear-gradient(0deg, rgba(2,0,36,0.5) 0%, rgba(1, 0, 18, 0.0) 75%), 
-                                url('\(backgroundImageURL(group: group))');
+                    background-image: 
+                        linear-gradient(
+                            0deg, 
+                            rgba(2,0,36,0.5) 0%, 
+                            rgba(1, 0, 18, 0.0) 75%), 
+                        url('\(backgroundImageURL(group: group))');
+                    background-size: cover;
                     """
                 )
             }

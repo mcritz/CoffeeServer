@@ -160,9 +160,12 @@ extension InterestGroupController {
                     }.class("bar")
                 }.class("event")
                     .style("""
-                    background-image: linear-gradient(0deg, rgba(2,0,36,0.5) 0%,
-                                        rgba(1, 0, 18, 0.0) 75%),
-                url('/\(event.imageURL?.absoluteString ?? "default-coffee.webp")')
+                    background-image: linear-gradient(
+                        0deg, 
+                        rgba(2,0,36,0.5) 0%, 
+                        rgba(1, 0, 18, 0.0) 75%),
+                    url('/\(event.imageURL?.absoluteString ?? "default-coffee.webp")')l
+                    background-size: cover;
                 """)
             })
         }.class("coffee-group")
