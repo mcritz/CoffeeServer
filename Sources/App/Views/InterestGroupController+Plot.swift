@@ -98,7 +98,13 @@ extension InterestGroupController {
             .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .all()
-        // TODO: We should fetch Venues. Which I suppose are actually siblings here.
+        let pastEvents = try await group.$events
+            .query(on: req.db)
+            .filter(\.$endAt <= now)
+            .filter(\.$venue.$id != nil)
+            .with(\.$venue)
+            .limit(100)
+            .all()
         
         let content = Div {
             Header {
@@ -117,18 +123,22 @@ extension InterestGroupController {
                     .class("white-button")
                 }
             }
-            if futureEvents.count > 0 {
-                Div {
+            Div {
+                if futureEvents.count > 0 {
                     H2("Upcoming")
                     for event in futureEvents {
                         coffeeEventView(event)
                     }
-                }.id("coffee-groups")
-            } else {
-                Div {
+                } else {
                     H2("No coffee events scheduled")
-                }.id("coffee-groups")
-            }
+                }
+                if pastEvents.count > 0 {
+                    H2("Previously")
+                    for event in pastEvents {
+                        coffeeEventView(event)
+                    }
+                }
+            }.id("coffee-groups")
         }
         
         return WebPage(content).response()
