@@ -73,6 +73,7 @@ func databaseMigrations(on app: Application) throws {
     app.migrations.add(AddVenueMedia())
     app.migrations.add(CreateVenueMediaContent())
     app.migrations.add(AddImageURLToInterestGroup())
+    app.migrations.add(UpdateEventImageURL())
     
     // Always automigrate dev/test
 #if DEBUG

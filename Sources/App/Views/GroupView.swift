@@ -5,11 +5,11 @@ struct GroupView: Component {
     let group: InterestGroup
     let events: [EventData]
 
-    private func backgroundImageURL(event: EventData) -> String {
+    private func backgroundImageURL(event: EventData) -> ImageURL {
         guard let imageURL = event.imageURL else {
             return "default-coffee.webp"
         }
-        return imageURL.absoluteString
+        return imageURL
     }
 
     private func backgroundImageURL(group: InterestGroup) -> String {

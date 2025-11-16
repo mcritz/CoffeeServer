@@ -8,6 +8,7 @@ struct EventController: RouteCollection {
         eventsAPI.get("upcoming", use: future)
         eventsAPI.post(use: create)
         eventsAPI.group(":eventID") { event in
+            event.put(use: update)
             event.delete(use: delete)
             event.get(use: fetchEvent)
         }
@@ -70,6 +71,35 @@ struct EventController: RouteCollection {
         event.$venue.id = try existingVenue.requireID()
         
         try await event.save(on: req.db)
+        return event.publicData()
+    }
+    
+    func update(req: Request) async throws -> EventData {
+        guard try await req.isAdmin() else {
+            req.logger.warning("Unauthorized Event edit request\n\(req)")
+            throw Abort(.unauthorized)
+        }
+        guard let eventIDString = req.parameters.get("eventID"),
+            let eventID = UUID(eventIDString)
+        else {
+            throw Abort(.badRequest)
+        }
+        let eventData = try req.content.decode(EventData.self)
+        
+        async let event = Event.find(eventID, on: req.db)
+        async let group = InterestGroup.find(eventData.groupID, on: req.db)
+        async let venue = Venue.find(eventData.venueID, on: req.db)
+        
+        guard let event = try await event,
+              let group = try await group,
+              let venue = try await venue else {
+            throw Abort(.notFound)
+        }
+        event.name = eventData.name
+        event.group?.id = try? group.requireID()
+        event.venue?.id = try? venue.requireID()
+        event.imageURL = eventData.imageURL
+        try await event.update(on: req.db)
         return event.publicData()
     }
 

@@ -1,13 +1,15 @@
 import Fluent
 import Vapor
 
+public typealias ImageURL = String
+
 struct EventData: Codable {
     var id: UUID?
     var name: String
     var groupID: UUID?
     var venueID: UUID?
     var venue: Venue?
-    var imageURL: URL?
+    var imageURL: ImageURL?
     var startAt: Date
     var endAt: Date
 }
@@ -38,7 +40,7 @@ final class Event: Model, Content, @unchecked Sendable {
     var venue: Venue?
     
     @Field(key: "image_url")
-    var imageURL: URL?
+    var imageURL: ImageURL?
     
     @Field(key: "start_at")
     var startAt: Date
@@ -52,7 +54,7 @@ final class Event: Model, Content, @unchecked Sendable {
          name: String,
          group: InterestGroup.IDValue? = nil,
          venue: Venue.IDValue? = nil,
-         imageURL: URL? = nil,
+         imageURL: ImageURL? = nil,
          startAt: Date,
          endAt: Date) {
         self.id = id
