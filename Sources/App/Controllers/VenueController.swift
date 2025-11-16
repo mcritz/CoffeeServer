@@ -54,6 +54,7 @@ final class VenueController: RouteCollection {
         }
         venue.name = newVenue.name
         venue.location = newVenue.location
+        venue.url = newVenue.url
         try await venue.update(on: req.db)
         return venue
     }

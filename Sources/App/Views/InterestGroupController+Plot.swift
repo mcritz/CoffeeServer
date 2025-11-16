@@ -135,9 +135,15 @@ extension InterestGroupController {
     }
     
     private func location(for event: Event) -> String {
-        if let venue = event.venue,
-           let location = event.venue?.location {
-            return "maps://maps.apple.com/?q=\(venue.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? venue.name)&coordinate=\(location.latitude),\(location.longitude)"
+        guard let venue = event.venue else {
+            return "#"
+        }
+        if let mapsURL = venue.url {
+            return mapsURL
+        } else if let location = venue.location,
+                  let lat = location.latitude,
+                  let lon = location.longitude {
+            return "maps://maps.apple.com/?q=\(venue.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? venue.name)&coordinate=\(lat),\(lon)"
         } else {
             return "#"
         }
@@ -151,9 +157,16 @@ extension InterestGroupController {
                     Div {
                         Div {
                             H4(event.venue?.name ?? "Ask Organizer")
+                            if let locationDescription = event.venue?.location?.description {
+                                Div {
+                                    Span(locationDescription)
+                                    Span("Open in Maps")
+                                }
+                                .class("location-description")
+                            }
                             Paragraph(
                                 event.startAt
-                                    .formatted(date: .abbreviated, time: .standard)
+                                    .formatted(date: .abbreviated, time: .shortened)
                             )
                         }.class("details")
                     }.class("bar")

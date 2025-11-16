@@ -13,7 +13,11 @@ struct WebPage {
             .head(
                 .encoding(.utf8),
                 .title("CoffeeCoffeeCoffee.coffee"),
-                .stylesheet("/style.css")
+                .meta(
+                    .name("viewport"),
+                    .content("width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+                ),
+                .stylesheet("/style.css"),
             ),
             .body(buildBody)
         ).render()
@@ -35,5 +39,6 @@ struct WebPage {
                     .class("white-button")
             }
         }
+        .class("wrapper")
     }
 }

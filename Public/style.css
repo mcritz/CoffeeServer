@@ -38,7 +38,7 @@ body {
                 color: var(--link-hover-color);
             }
         }
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
     footer {
         display: flex;
@@ -65,9 +65,16 @@ body {
 }
 
 .header-image {
-    min-width: 160px;
-    width: 20vw;
-    max-width: 320px;
+    min-width: 240px;
+    width: 30vw;
+    max-width: 480px;
+    border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
+/*    transition: all 0.1s ease-in-out;*/
+/*    transform-origin: 50% 0;*/
+/*    &:hover {*/
+/*        border-radius: 0 0 calc(var(--default-border-radius) * 1.5) calc(var(--default-border-radius) * 1.5);*/
+/*        transform: scale(0.98);*/
+/*    }*/
 }
 
 .white-button {
@@ -126,7 +133,7 @@ body {
                 flex-direction: column;
                 justify-content: center;
                 align-items: start;
-                & > * {
+                h4, p {
                     margin: 0.65rem 0;
                 }
                 h4 {
@@ -200,13 +207,13 @@ body {
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 -1.5rem 1rem -0.7rem rgba(0, 0, 0, 0.5), inset 0 0 rgba(0, 0, 0, 0.0);
             border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
-            padding: 1.0rem 1.0rem;
+            padding: 1.0rem 1.5rem;
             backdrop-filter: blur(2.5rem) saturate(110%) brightness(70%);
             transition: var(--transition-slow);
             font-size: 18px;
             h3, h4, p {
                 margin: 0;
-                line-height: 2.25rem;
+                line-height: 1.75rem;
             }
             h3 {
                 font-size: 1.5rem;
@@ -236,6 +243,11 @@ body {
                 }
                 transition: var(--transition-slow);
             }
+            .location-description {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
     }
     &.selected a,
@@ -259,6 +271,10 @@ body {
             color: #220066;
             text-shadow: 0 0 0.05rem rgba(255, 225, 225, 0.75), 0 0rem 1.5rem 1.5rem rgba(255, 200, 200, 1.0), 0.5rem 0.5rem 0 rgba(255, 225, 225, 0.95);
             box-shadow: 0 -0.3rem 1.0rem rgba(0, 0, 0, 0.1), inset 0 0 5rem 0.5rem rgba(200, 220, 255, 1.0);
+        }
+        .event {
+            transform: scale(1.05);
+            border-radius: var(--large-border-radius);
         }
     }
 }

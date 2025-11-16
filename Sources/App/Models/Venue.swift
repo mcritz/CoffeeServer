@@ -1,6 +1,8 @@
 import Fluent
 import Vapor
 
+public typealias MapURL = String
+
 final class Venue: Content, Model, @unchecked Sendable {
     static let schema = "venue"
     
@@ -14,7 +16,7 @@ final class Venue: Content, Model, @unchecked Sendable {
     var location: Location?
     
     @Field(key: "url")
-    var url: URL?
+    var url: MapURL?
     
     @Children(for: \.$venue)
     var events: [Event]
@@ -27,7 +29,7 @@ final class Venue: Content, Model, @unchecked Sendable {
     internal init(id: UUID? = nil,
                   name: String,
                   location: Location? = nil,
-                  url: URL? = nil) {
+                  url: MapURL? = nil) {
         self.id = id
         self.name = name
         self.location = location
@@ -37,7 +39,7 @@ final class Venue: Content, Model, @unchecked Sendable {
 
 struct Location: Codable {
     let description: String
-    let latitude, longitude: Double
+    let latitude, longitude: Double?
 }
 
 extension Location: Validatable {

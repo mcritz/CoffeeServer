@@ -31,10 +31,10 @@ struct GroupView: Component {
                     H2(group.name)
                     Div {
                         H3(nextEvent.name)
-                        H4(
+                        Paragraph(
                             nextEvent.startAt
                                 .formatted(date: .numeric,
-                                           time: .complete) // TODO: Maybe format
+                                           time: .shortened)
                         )
                     }
                     .class("bar")
