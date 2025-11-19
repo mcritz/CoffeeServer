@@ -71,7 +71,7 @@ struct EventController: RouteCollection {
         event.$venue.id = try existingVenue.requireID()
         
         try await event.save(on: req.db)
-        return event.publicData()
+        return event.publicData(existingVenue)
     }
     
     func update(req: Request) async throws -> EventData {
@@ -100,7 +100,7 @@ struct EventController: RouteCollection {
         event.venue?.id = try? venue.requireID()
         event.imageURL = eventData.imageURL
         try await event.update(on: req.db)
-        return event.publicData()
+        return event.publicData(venue)
     }
 
     func delete(req: Request) async throws -> HTTPStatus {

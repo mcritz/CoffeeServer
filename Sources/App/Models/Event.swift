@@ -12,6 +12,17 @@ struct EventData: Codable {
     var imageURL: ImageURL?
     var startAt: Date
     var endAt: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case groupID = "group_id"
+        case name
+        case imageURL = "image_url"
+        case startAt = "start_at"
+        case endAt = "end_at"
+        case venue
+        case venueID = "venue_id"
+    }
 }
 
 extension EventData: Content { }
@@ -68,11 +79,12 @@ final class Event: Model, Content, @unchecked Sendable {
 }
 
 extension Event {
-    func publicData() -> EventData {
+    func publicData(_ venue: Venue? = nil) -> EventData {
         return .init(id: self.id,
                      name: self.name,
                      groupID: self.group?.id,
                      venueID: self.venue?.id,
+                     venue: venue,
                      imageURL: self.imageURL,
                      startAt: self.startAt,
                      endAt: self.endAt)
