@@ -28,19 +28,20 @@ extension InterestGroupController {
                         .$events
                         .query(on: req.db)
                         .filter(\Event.$endAt >= now)
-                        .filter(\Event.$venue.$id != nil)
                         .sort(\.$startAt)
                         .all()
                     // TODO: Update this to one query. It can be done!
+                    //                        .with(\.$venue)
+                    
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
                         let venue = try await eventModel.$venue.get(on: req.db)
-                        var eventData = eventModel.publicData(venue)
+                        guard var eventData = try? await eventModel.publicData(db: req.db) else {
+                            continue
+                        }
                         eventData.venue = venue
                         eventDatas.append(eventData)
                     }
-                    // TODO: Confirm this is unneeded
-//                    eventDatas.sort { $0.startAt < $1.startAt }
                     return [(interestGroup, eventDatas)]
                 }
             }
@@ -95,13 +96,11 @@ extension InterestGroupController {
         let futureEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt > now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .all()
         let pastEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt <= now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .limit(100)
             .all()
@@ -145,9 +144,7 @@ extension InterestGroupController {
     }
     
     private func location(for event: Event) -> String {
-        guard let venue = event.venue else {
-            return "#"
-        }
+        let venue = event.venue
         if let mapsURL = venue.url {
             return mapsURL
         } else if let location = venue.location,
@@ -166,8 +163,8 @@ extension InterestGroupController {
                     H2(event.name)
                     Div {
                         Div {
-                            H4(event.venue?.name ?? "Ask Organizer")
-                            if let locationDescription = event.venue?.location?.description {
+                            H4(event.venue.name)
+                            if let locationDescription = event.venue.location?.description {
                                 Div {
                                     Span(locationDescription)
                                     Span("Open in Maps")

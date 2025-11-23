@@ -12,10 +12,8 @@ struct EventSummaryView: Component {
             Div {
                 Text(formatter.string(from: event.startAt))
             }
-            if let venue = event.venue {
-                Div {
-                    Text(venue.name)
-                }
+            Div {
+                Text(event.venue.name)
             }
         }
     }

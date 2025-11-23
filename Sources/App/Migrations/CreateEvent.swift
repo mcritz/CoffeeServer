@@ -8,8 +8,8 @@ struct CreateEvent: AsyncMigration {
             .field("image_url", .json)
             .field("start_at", .datetime, .required)
             .field("end_at", .datetime, .required)
-            .field("group_id", .uuid)
-            .field("venue_id", .uuid)
+            .field("group_id", .uuid, .required, .references(InterestGroup.schema, "id"))
+            .field("venue_id", .uuid, .required, .references(Venue.schema, "id"))
             .create()
     }
     

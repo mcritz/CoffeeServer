@@ -2,7 +2,7 @@ import Fluent
 
 extension User {
     struct Migration: AsyncMigration {
-        var name: String { "CreateUser" }
+        let name: String = "CreateUser"
 
         func prepare(on database: Database) async throws {
             try await database.schema(User.schema)

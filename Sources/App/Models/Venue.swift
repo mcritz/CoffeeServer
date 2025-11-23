@@ -4,7 +4,7 @@ import Vapor
 public typealias MapURL = String
 
 final class Venue: Content, Model, @unchecked Sendable {
-    static let schema = "venue"
+    static let schema = "venues"
     
     @ID(key: .id)
     var id: UUID?

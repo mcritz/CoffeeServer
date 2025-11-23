@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 final class InterestGroup: Model, Content, @unchecked Sendable {
-    static let schema = "interestgroup"
+    static let schema = "interestgroups"
     
     @ID(key: .id)
     var id: UUID?
