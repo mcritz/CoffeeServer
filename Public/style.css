@@ -12,7 +12,7 @@
     --card-width: 30rem;
     --default-border-radius: 0.77rem;
     --large-border-radius: calc(var(--default-border-radius) * 4.5);
-    --xlarge-border-radius: calc(var(--default-border-radius) * 5.5);
+    --xlarge-border-radius: calc(var(--default-border-radius) * 2.5);
     --default-padding: 0.5rem 2.25rem;
     --default-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
     --default-text-shadow: 0 0 0.05rem rgba(0, 0, 0, 0.5), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -193,6 +193,8 @@ body {
             align-self: start;
             text-align: start;
             text-overflow: hidden;
+            margin: 0;
+            padding: 1.5rem 1.25rem;
         }
         div.bar {
             display: flex;
@@ -261,7 +263,7 @@ body {
         background-size: 100%;
         h2 {
             display: inline-block;
-            transform: scale(.7) translateY(-0.75rem) translateX(0.7rem);
+            transform: scale(.7) translateY(1.0rem) translateX(1.5rem);
             transform-origin: 0% 0%;
         }
         .bar {

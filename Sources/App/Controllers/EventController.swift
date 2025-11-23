@@ -102,8 +102,8 @@ struct EventController: RouteCollection {
             throw Abort(.notFound)
         }
         event.name = eventData.name
-        event.group.id = try? group.requireID()
-        event.venue.id = try? venue.requireID()
+        event.$group.id = try group.requireID()
+        event.$venue.id = try venue.requireID()
         event.imageURL = eventData.imageURL
         try await event.update(on: req.db)
         return try await event.publicData(db: req.db)

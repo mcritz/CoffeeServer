@@ -32,12 +32,20 @@ struct UserController: RouteCollection {
         guard create.password == create.confirmPassword else {
             throw Abort(.badRequest, reason: "Passwords did not match")
         }
+        let maybeExistingUser = try await User.query(on: req.db)
+            .filter(\.$email == create.email)
+            .first()
+        guard maybeExistingUser == nil else {
+            req.logger.warning("A user with this email address exists: \(create.email)")
+            throw Abort(.badRequest)
+        }
         let user = try User(
             name: create.name,
             email: create.email,
             passwordHash: Bcrypt.hash(create.password)
         )
         try await user.save(on: req.db)
+        req.logger.info("User created")
         return user.publicValue()
     }
     
@@ -120,3 +128,4 @@ extension UserController {
         return try await user.$tags.get(on: req.db)
     }
 }
+

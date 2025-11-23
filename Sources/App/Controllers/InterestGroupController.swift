@@ -81,17 +81,6 @@ struct InterestGroupController: RouteCollection {
         let groupID = UUID(groupIDString) else {
             throw Abort(.badRequest)
         }
-//        guard let group = try await InterestGroup.find(groupID, on: req.db) else {
-//            throw Abort(.notFound)
-//        }
-//        let eventsSortedByStartAt = try await group.$events
-//            .get(on: req.db)
-//            .map {
-//                $0.publicData()
-//            }
-//            .sorted {
-//                $0.startAt < $1.startAt
-//            }
         let eventsSortedByStartAt = try await Event.query(on: req.db)
             .with(\.$group)
             .filter(\.$group.$id == groupID)

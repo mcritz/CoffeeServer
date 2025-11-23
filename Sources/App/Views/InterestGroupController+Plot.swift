@@ -181,8 +181,11 @@ extension InterestGroupController {
                     .style("""
                     background-image: linear-gradient(
                         0deg, 
-                        rgba(2,0,36,0.5) 0%, 
-                        rgba(1, 0, 18, 0.0) 75%),
+                        rgba(2, 0, 36, 0.5) 0%, 
+                        rgba(1, 0, 18, 0.0) 75%,
+                        rgba(1, 0, 18, 0.0) 85%,
+                        rgba(2, 0, 36, 0.8) 90%
+                    ),
                     url('/\(event.imageURL ?? "default-coffee.webp")');
                     background-size: cover;
                 """)
