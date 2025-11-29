@@ -8,10 +8,10 @@ struct EventSummaryView: Component {
     
     var body: Component {
         Div {
-            Text(event.name)
             Div {
                 Text(formatter.string(from: event.startAt))
             }
+            Text(event.name)
             Div {
                 Text(event.venue.name)
             }

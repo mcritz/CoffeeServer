@@ -35,8 +35,11 @@ extension InterestGroupController {
                     
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
-                        guard var eventData = try? await eventModel.publicData(db: req.db) else {
-                            req.logger.error("Couldn’t get public data for event: \(eventModel.name)")
+                        guard let eventData = try? await eventModel.publicData(db: req.db) else {
+                            req.logger
+                                .error(
+                                    "Couldn’t get public data for event: \(eventModel.id?.uuidString ?? eventModel.name)"
+                                )
                             continue
                         }
                         eventDatas.append(eventData)
@@ -162,18 +165,19 @@ extension InterestGroupController {
                     H2(event.name)
                     Div {
                         Div {
-                            H4(event.venue.name)
-                            if let locationDescription = event.venue.location?.title {
-                                Div {
-                                    Span(locationDescription)
-                                    Span("Open in Maps")
-                                }
-                                .class("location-description")
-                            }
                             Paragraph(
                                 event.startAt
                                     .formatted(date: .abbreviated, time: .shortened)
                             )
+                            H4(event.venue.name)
+                            if let locationDescription = event.venue.location?.title {
+                                Div {
+                                    Span(locationDescription)
+                                    // TODO: Sort this out in the UI later
+                                    // Span("Directions")
+                                }
+                                .class("location-description")
+                            }
                         }.class("details")
                     }.class("bar")
                 }.class("event")
@@ -183,7 +187,7 @@ extension InterestGroupController {
                         rgba(2, 0, 36, 0.5) 0%, 
                         rgba(1, 0, 18, 0.0) 75%,
                         rgba(1, 0, 18, 0.0) 85%,
-                        rgba(2, 0, 36, 0.8) 90%
+                        rgba(2, 0, 36, 0.8) 100%
                     ),
                     url('/\(event.imageURL ?? "default-coffee.webp")');
                     background-size: cover;
