@@ -50,6 +50,11 @@ A request to your service will first reach Caddy which knows that your server na
 6. Configure the `.env` file
     - Copy the example file `cp env_example .env`
     - Open `.env` in your text editor and add your values for each value
+    
+<span id="naive">Now... let’s run the service.</span>
+#### Naive Deployment
+Please see [Containerization](#containerization) section for more complete deployment instructions.
+
 7. Boot the service
     - If this is the **first run** then you’ll need to build the app image: `docker compose up --build -d`
         - If the build fails for any reason, you can build on your local machine and push to docker hub. Your dev sandbox is also likely a great deal faster than a typical web host.
@@ -73,3 +78,27 @@ At this point the service fleet should be running and connected to the database.
     - `curl "https://EXAMPLE.COM/healthcheck"` should also be OK.
 
 At this point, using a web browser and opening your URL should see the “Coffee”.
+
+<span id="containerizaion">Next... containerization</section>
+### Containerization
+
+I (@mcritz) deploy the service using OCI files built on a dev box a deployed to a container registry. Here’s my script for building on my dev box and deploying to GitHub:
+
+```bash
+docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  -t ghcr.io/mcritz/coffee-server:1.2.2 \
+  -t ghcr.io/mcritz/coffee-server:latest \
+  --push .
+``` 
+
+Of course, this can be altered for your favorite container registry (DockerHub, Amazon ECR, your Raspberry Pi, etc).
+
+### Deployment
+
+Once the Docker file is built and the image pushed, it’s just a matter of pulling the images on the production servers. **Run the following command instead of [Step 7](#naive)**. Feel free to use the exact same images I push to GitHub or create your own docker-compose.prod.yml file.
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml pull
+```
+I build images for linux/amd64 and linux/arm64 so, it should cover the most popular instruction sets available today.

@@ -164,7 +164,7 @@ extension InterestGroupController {
                     Div {
                         Div {
                             H4(event.venue.name)
-                            if let locationDescription = event.venue.location?.description {
+                            if let locationDescription = event.venue.location?.title {
                                 Div {
                                     Span(locationDescription)
                                     Span("Open in Maps")

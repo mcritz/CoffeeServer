@@ -40,7 +40,7 @@ struct UserController: RouteCollection {
             throw Abort(.badRequest)
         }
         let user = try User(
-            name: create.name,
+            name: create.name.lowercased(),
             email: create.email,
             passwordHash: Bcrypt.hash(create.password)
         )

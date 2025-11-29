@@ -38,7 +38,7 @@ final class Venue: Content, Model, @unchecked Sendable {
 }
 
 struct Location: Codable {
-    let description: String
+    let title: String
     let latitude, longitude: Double?
 }
 
