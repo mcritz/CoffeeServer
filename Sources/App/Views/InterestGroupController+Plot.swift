@@ -28,19 +28,22 @@ extension InterestGroupController {
                         .$events
                         .query(on: req.db)
                         .filter(\Event.$endAt >= now)
-                        .filter(\Event.$venue.$id != nil)
                         .sort(\.$startAt)
                         .all()
                     // TODO: Update this to one query. It can be done!
+                    //                        .with(\.$venue)
+                    
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
-                        let venue = try await eventModel.$venue.get(on: req.db)
-                        var eventData = eventModel.publicData(venue)
-                        eventData.venue = venue
+                        guard let eventData = try? await eventModel.publicData(db: req.db) else {
+                            req.logger
+                                .error(
+                                    "Couldn’t get public data for event: \(eventModel.id?.uuidString ?? eventModel.name)"
+                                )
+                            continue
+                        }
                         eventDatas.append(eventData)
                     }
-                    // TODO: Confirm this is unneeded
-//                    eventDatas.sort { $0.startAt < $1.startAt }
                     return [(interestGroup, eventDatas)]
                 }
             }
@@ -95,13 +98,11 @@ extension InterestGroupController {
         let futureEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt > now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .all()
         let pastEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt <= now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .limit(100)
             .all()
@@ -145,9 +146,7 @@ extension InterestGroupController {
     }
     
     private func location(for event: Event) -> String {
-        guard let venue = event.venue else {
-            return "#"
-        }
+        let venue = event.venue
         if let mapsURL = venue.url {
             return mapsURL
         } else if let location = venue.location,
@@ -166,26 +165,30 @@ extension InterestGroupController {
                     H2(event.name)
                     Div {
                         Div {
-                            H4(event.venue?.name ?? "Ask Organizer")
-                            if let locationDescription = event.venue?.location?.description {
-                                Div {
-                                    Span(locationDescription)
-                                    Span("Open in Maps")
-                                }
-                                .class("location-description")
-                            }
                             Paragraph(
                                 event.startAt
                                     .formatted(date: .abbreviated, time: .shortened)
                             )
+                            H4(event.venue.name)
+                            if let locationDescription = event.venue.location?.title {
+                                Div {
+                                    Span(locationDescription)
+                                    // TODO: Sort this out in the UI later
+                                    // Span("Directions")
+                                }
+                                .class("location-description")
+                            }
                         }.class("details")
                     }.class("bar")
                 }.class("event")
                     .style("""
                     background-image: linear-gradient(
                         0deg, 
-                        rgba(2,0,36,0.5) 0%, 
-                        rgba(1, 0, 18, 0.0) 75%),
+                        rgba(2, 0, 36, 0.5) 0%, 
+                        rgba(1, 0, 18, 0.0) 75%,
+                        rgba(1, 0, 18, 0.0) 85%,
+                        rgba(2, 0, 36, 0.8) 100%
+                    ),
                     url('/\(event.imageURL ?? "default-coffee.webp")');
                     background-size: cover;
                 """)

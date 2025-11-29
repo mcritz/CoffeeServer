@@ -12,3 +12,5 @@ db.sqlite
 env-bak
 Caddyfile
 Public/media/**
+Public/group/**
+

@@ -8,8 +8,8 @@ struct NoGroupsView: Component {
                     .class("hidden")
                 Image("/logo-stack.png")
                     .class("header-image")
+                H2("Nothing going on")
             }
-            H2("Nothing going on")
         }
     }
 }

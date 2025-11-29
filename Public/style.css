@@ -12,7 +12,7 @@
     --card-width: 30rem;
     --default-border-radius: 0.77rem;
     --large-border-radius: calc(var(--default-border-radius) * 4.5);
-    --xlarge-border-radius: calc(var(--default-border-radius) * 5.5);
+    --xlarge-border-radius: calc(var(--default-border-radius) * 2.5);
     --default-padding: 0.5rem 2.25rem;
     --default-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
     --default-text-shadow: 0 0 0.05rem rgba(0, 0, 0, 0.5), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -129,6 +129,7 @@ body {
                 border-radius: var(--default-border-radius);
             }
             .details {
+                font-family: "Rockwell", "Hoefler Text", sans-serif;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -162,7 +163,7 @@ body {
     height: 30rem;
     max-height: 75vw;
     margin-bottom: 3rem;
-    line-height: 0.89;
+    line-height: 1.25;
     a {
         text-decoration: none;
     }
@@ -184,6 +185,8 @@ body {
         background-size: 125%;
         background-position: 50% 50%;
         h2 {
+            font-family: "Rockwell", "Hoefler Text", sans-serif;
+            font-weight: 500;
             display: block;
             background-color: rgba(2, 40, 53, 0);
             color: #f8f1ff;
@@ -193,8 +196,11 @@ body {
             align-self: start;
             text-align: start;
             text-overflow: hidden;
+            margin: 0;
+            padding: 1.5rem 1.25rem;
         }
         div.bar {
+            font-family: "Rockwell", "Hoefler Text", sans-serif;
             display: flex;
             gap: 0;
             flex-direction: column;
@@ -207,7 +213,7 @@ body {
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 -1.5rem 1rem -0.7rem rgba(0, 0, 0, 0.5), inset 0 0 rgba(0, 0, 0, 0.0);
             border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
-            padding: 1.0rem 1.5rem;
+            padding: 1.0rem 1.35rem;
             backdrop-filter: blur(2.5rem) saturate(110%) brightness(70%);
             transition: var(--transition-slow);
             font-size: 18px;
@@ -219,6 +225,7 @@ body {
                 font-size: 1.5rem;
             }
             h3, h4 {
+                font-size: 1.5rem;
                 font-weight: 700;
             }
             p {
@@ -244,9 +251,19 @@ body {
                 transition: var(--transition-slow);
             }
             .location-description {
+                color: #aef;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+/*                span:last-child {*/
+/*                    text-align: center;*/
+/*                }*/
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+            .bar {
+                color: #024;
             }
         }
     }
@@ -255,13 +272,13 @@ body {
     a:active,
     a:hover {
         transform: scale(1.05);
-        box-shadow: 0 0.3rem 3.0rem rgba(255, 0, 0, 0.25);
+        box-shadow: 0 0.3rem 3.0rem white;
         /* box-shadow: inset 0 1.25rem 2rem rgba(0, 0, 0, 0.5); */
         border-radius: var(--large-border-radius);
         background-size: 100%;
         h2 {
             display: inline-block;
-            transform: scale(.7) translateY(-0.75rem) translateX(0.7rem);
+            transform: scale(.7) translateY(1.0rem) translateX(1.5rem);
             transform-origin: 0% 0%;
         }
         .bar {
@@ -271,6 +288,9 @@ body {
             color: #220066;
             text-shadow: 0 0 0.05rem rgba(255, 225, 225, 0.75), 0 0rem 1.5rem 1.5rem rgba(255, 200, 200, 1.0), 0.5rem 0.5rem 0 rgba(255, 225, 225, 0.95);
             box-shadow: 0 -0.3rem 1.0rem rgba(0, 0, 0, 0.1), inset 0 0 5rem 0.5rem rgba(200, 220, 255, 1.0);
+            .location-description {
+                color: #3322aa;
+            }
         }
         .event {
             transform: scale(1.05);

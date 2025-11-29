@@ -86,8 +86,15 @@ final class VenueController: RouteCollection {
         let eventsSortedByStartTime = try await venue.$events.get(on: req.db).sorted(by: {
             $0.startAt < $1.startAt
         })
-        let publicEvents = eventsSortedByStartTime.map {
-            $0.publicData()
+        var publicEvents = [EventData]()
+        for venueEvent in eventsSortedByStartTime {
+            guard let thisEvent = try? await venueEvent.publicData(db: req.db) else {
+                req.logger.error(
+                    "Failed to serialize Event for public listing: \(venueEvent.id?.uuidString ?? venueEvent.name)"
+                )
+                continue
+            }
+            publicEvents.append(thisEvent)
         }
         return publicEvents
     }
