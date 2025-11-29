@@ -88,9 +88,13 @@ final class VenueController: RouteCollection {
         })
         var publicEvents = [EventData]()
         for venueEvent in eventsSortedByStartTime {
-            if let thisEvent = try? await venueEvent.publicData(db: req.db) {
-                publicEvents.append(thisEvent)
+            guard let thisEvent = try? await venueEvent.publicData(db: req.db) else {
+                req.logger.error(
+                    "Failed to serialize Event for public listing: \(venueEvent.id?.uuidString ?? venueEvent.name)"
+                )
+                continue
             }
+            publicEvents.append(thisEvent)
         }
         return publicEvents
     }

@@ -35,11 +35,10 @@ extension InterestGroupController {
                     
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
-                        let venue = try await eventModel.$venue.get(on: req.db)
                         guard var eventData = try? await eventModel.publicData(db: req.db) else {
+                            req.logger.error("Couldn’t get public data for event: \(eventModel.name)")
                             continue
                         }
-                        eventData.venue = venue
                         eventDatas.append(eventData)
                     }
                     return [(interestGroup, eventDatas)]
