@@ -47,8 +47,11 @@ func routes(_ app: Application) throws {
                 return "DATABASE ERROR"
             }
         }()
+        let buildDate = Date.now.formatted(.iso8601)
         return """
        OK.
+       
+       Build Date: \(buildDate)
        
        Request
        URL: \(urlString)
