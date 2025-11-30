@@ -29,15 +29,26 @@ func routes(_ app: Application) throws {
         let processorActiveCount = String(ProcessInfo.processInfo.activeProcessorCount)
         var processName = ""
         
-        if let isAdmin = try? await req.isAdmin(), isAdmin {
-            os = ProcessInfo.processInfo.operatingSystemVersionString
-            environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
-                """
-                \(key): \(value)\n
-                """
-            }
-            processName = String(ProcessInfo.processInfo.globallyUniqueString)
+        guard let isAdmin = try? await req.isAdmin(), isAdmin else {
+            let dbHealthText = {
+                switch eventCount {
+                case .some(_):
+                    return "DATABASE OK"
+                default:
+                    return "DATABASE ERROR"
+                }
+            }()
+            return "OK: \(dbHealthText)"
         }
+        
+        os = ProcessInfo.processInfo.operatingSystemVersionString
+        environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
+            """
+            \(key): \(value)\n
+            """
+        }
+        processName = String(ProcessInfo.processInfo.globallyUniqueString)
+        
         
         let dbHealthText = {
             switch eventCount {

@@ -82,12 +82,20 @@ At this point, using a web browser and opening your URL should see the “Coffee
 <span id="containerizaion">Next... containerization</section>
 ### Containerization
 
-I (@mcritz) deploy the service using OCI files built on a dev box a deployed to a container registry. Here’s my script for building on my dev box and deploying to GitHub:
+I (@mcritz) deploy the service using OCI files built on a dev box a deployed to a container registry. I use GitHub, modify as needed for your needs.
+
+First, be sure to log in to your container registry.
+
+```bash
+echo $LOGIN_TOKEN_VAR | docker login ghcr.io -u YOUR_USERNAME --password-stdin
+```
+
+build and push image script:
 
 ```bash
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
-  -t ghcr.io/mcritz/coffee-server:1.2.2 \
+  -t ghcr.io/mcritz/coffee-server:XX.XX.XX \
   -t ghcr.io/mcritz/coffee-server:latest \
   --push .
 ``` 
