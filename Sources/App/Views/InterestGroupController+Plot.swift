@@ -26,7 +26,7 @@ extension InterestGroupController {
                    let thisStart = thisGroup.events.last?.startAt {
                         return prevStart >= thisStart
                     }
-                return prevGroup.name > thisGroup.name
+                return false
             }
         let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
             of: [(InterestGroup, [EventData])].self
@@ -34,9 +34,14 @@ extension InterestGroupController {
             var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
-                    let eventModels = interestGroup.events.filter { thisEvent in
-                        thisEvent.endAt >= now
-                    }
+                    let eventModels = try await interestGroup
+                        .$events
+                        .query(on: req.db)
+                        .filter(\Event.$endAt >= now)
+                        .sort(\.$startAt)
+                        .all()
+                    // TODO: Update this to one query. It can be done!
+                    //                        .with(\.$venue)
                     
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
