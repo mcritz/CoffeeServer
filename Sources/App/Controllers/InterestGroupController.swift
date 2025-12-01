@@ -22,7 +22,16 @@ struct InterestGroupController: RouteCollection {
     }
 
     func index(req: Request) async throws -> [InterestGroup] {
-        try await InterestGroup.query(on: req.db).all()
+        try await InterestGroup.query(on: req.db)
+            .with(\.$events)
+            .all()
+            .sorted { prevGroup, thisGroup in
+                if let prevStart = prevGroup.events.last?.startAt,
+                   let thisStart = thisGroup.events.last?.startAt {
+                    return prevStart < thisStart
+                }
+                return false
+            }
     }
     
     func fetch(req: Request) async throws -> InterestGroup {
@@ -69,9 +78,16 @@ struct InterestGroupController: RouteCollection {
         guard let group = try await InterestGroup.find(groupUUID, on: req.db) else {
             throw Abort(.notFound)
         }
+        
         group.name = newData.name
-        group.imageURL = newData.imageURL
-        // events cannot be edited on the group
+        group.short = newData.short
+        if let newImageURL = newData.imageURL {
+            group.imageURL = newImageURL
+        }
+        if let shouldArchive = newData.isArchived {
+            group.isArchived = shouldArchive
+        }
+        // events are not edited through the group
         try await group.save(on: req.db)
         return group
     }

@@ -17,21 +17,26 @@ extension InterestGroupController {
     
     public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
         let now = Calendar(identifier: .gregorian).startOfDay(for: Date())
-        let allGroups = try await InterestGroup.query(on: req.db).all()
+        let allGroups = try await InterestGroup.query(on: req.db)
+            .filter(\.$isArchived == false)
+            .with(\.$events)
+            .all()
+            .sorted { prevGroup, thisGroup in
+                if let prevStart = prevGroup.events.last?.startAt,
+                   let thisStart = thisGroup.events.last?.startAt {
+                        return prevStart >= thisStart
+                    }
+                return prevGroup.name > thisGroup.name
+            }
         let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
             of: [(InterestGroup, [EventData])].self
         ) { taskGroup in
             var rawGroupsAndEvents = [(InterestGroup, [EventData])]()
             for interestGroup in allGroups {
                 taskGroup.addTask {
-                    let eventModels = try await interestGroup
-                        .$events
-                        .query(on: req.db)
-                        .filter(\Event.$endAt >= now)
-                        .sort(\.$startAt)
-                        .all()
-                    // TODO: Update this to one query. It can be done!
-                    //                        .with(\.$venue)
+                    let eventModels = interestGroup.events.filter { thisEvent in
+                        thisEvent.endAt >= now
+                    }
                     
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {

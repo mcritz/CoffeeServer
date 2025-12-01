@@ -5,6 +5,7 @@ struct CreateInterestGroup: AsyncMigration {
         try await database.schema(InterestGroup.schema)
             .id()
             .field("name", .string, .required)
+            .unique(on: "name")
             .create()
     }
 

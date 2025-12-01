@@ -19,8 +19,8 @@ final class InterestGroup: Model, Content, @unchecked Sendable {
     @Field(key: "image_url")
     var imageURL: String?
     
-//    @Field(key: "archived")
-//    var isArchived: Bool?
+    @Field(key: "archived")
+    var isArchived: Bool?
     
     init() { }
 
@@ -29,6 +29,6 @@ final class InterestGroup: Model, Content, @unchecked Sendable {
         self.name = name
         self.short = short ?? name.lowercased().split(separator: " ").joined(separator: "-")
         self.imageURL = imageURL
-//        self.isArchived = isArchived
+        self.isArchived = isArchived
     }
 }

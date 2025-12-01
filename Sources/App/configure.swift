@@ -75,10 +75,12 @@ func databaseMigrations(on app: Application) throws {
     app.migrations.add(AddImageURLToInterestGroup())
     app.migrations.add(UpdateEventImageURL())
     app.migrations.add(UpdateVenueMapURL())
-    app.migrations.add(UpdateInteresteGroupAddSlug())
+    app.migrations.add(UpdateInteresteGroupAddShort())
+    app.migrations.add(UpdateInteresteGroupAddIsArchived())
+    app.migrations.add(PopulateInterestGroups())
     
-    // Always automigrate dev/test
 #if DEBUG
+    // Always automigrate dev/test
     print("DEBUG: Automigrate Start")
     try app.autoMigrate().wait()
     print("DEBUG: Automigrate Done")
