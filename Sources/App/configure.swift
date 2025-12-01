@@ -75,6 +75,7 @@ func databaseMigrations(on app: Application) throws {
     app.migrations.add(AddImageURLToInterestGroup())
     app.migrations.add(UpdateEventImageURL())
     app.migrations.add(UpdateVenueMapURL())
+    app.migrations.add(UpdateInteresteGroupAddSlug())
     
     // Always automigrate dev/test
 #if DEBUG

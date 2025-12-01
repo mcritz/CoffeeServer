@@ -26,12 +26,22 @@ struct InterestGroupController: RouteCollection {
     }
     
     func fetch(req: Request) async throws -> InterestGroup {
-        guard let groupIDString = req.parameters.get("groupID"),
-              let groupUUID = UUID(groupIDString),
-              let group = try await InterestGroup.find(groupUUID, on: req.db) else {
+        guard let groupIDString = req.parameters.get("groupID") else {
+            throw Abort(.badRequest, reason: "No ID. Try something like /groups/uuuid or /groups/slug")
+        }
+        if let groupUUID = UUID(groupIDString),
+           let group = try await InterestGroup.find(groupUUID, on: req.db) {
+            return group
+        }
+        
+        let slug = groupIDString.lowercased()
+        
+        guard let matchedGroup = try await InterestGroup
+            .query(on: req.db).filter(\.$short == slug)
+            .first() else {
             throw Abort(.notFound)
         }
-        return group
+        return matchedGroup
     }
 
     func create(req: Request) async throws -> InterestGroup {
@@ -40,6 +50,8 @@ struct InterestGroupController: RouteCollection {
             throw Abort(.unauthorized)
         }
         let group = try req.content.decode(InterestGroup.self)
+        // We use lowercased slugs only in urls and more importantly in the db queries
+        group.short = group.short.lowercased()
         try await group.save(on: req.db)
         return group
     }

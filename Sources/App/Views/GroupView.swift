@@ -20,14 +20,10 @@ struct GroupView: Component {
     }
 
     var body: Component {
-        guard let groupURL = try? group.requireID() else {
-            // Nothing to see...
-            return Div().class("hidden")
-        }
         let upcoming = events.filter { $0.endAt >= Date.now }
         if let nextEvent = upcoming.first {
             return Div {
-                Link(url: "/groups/\(groupURL)") {
+                Link(url: "/\(group.short)") {
                     H2(group.name)
                     Div {
                         H3(nextEvent.name)
@@ -54,7 +50,7 @@ struct GroupView: Component {
             .class("coffee-group")
         } else {
             return Div {
-                Link(url: "/groups/\(groupURL)") {
+                Link(url: "/\(group.short)") {
                     H2(group.name)
                     Div {
                         if events.count > 0 {

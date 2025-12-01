@@ -9,6 +9,7 @@ func routes(_ app: Application) throws {
     
     let legacyGroupRoute = app.routes.grouped(":groupID")
     legacyGroupRoute.get("ical", use: interestGroupController.calendar)
+    legacyGroupRoute.get(use: interestGroupController.webViewSingle)
 
     app.get("healthcheck") { req async -> String in
         let currentDate = Date()
