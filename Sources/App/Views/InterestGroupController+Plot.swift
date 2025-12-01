@@ -152,7 +152,7 @@ extension InterestGroupController {
             }.id("coffee-groups")
         }
         
-        return WebPage(content).response()
+        return WebPage(content).response(title: group.name)
     }
     
     private func location(for event: Event) -> String {
@@ -199,7 +199,7 @@ extension InterestGroupController {
                         rgba(1, 0, 18, 0.0) 85%,
                         rgba(2, 0, 36, 0.8) 100%
                     ),
-                    url('/\(event.imageURL ?? "default-coffee.webp")');
+                    url('\(event.imageURL ?? "/default-coffee.webp")');
                     background-size: cover;
                 """)
             })

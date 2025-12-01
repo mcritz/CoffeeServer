@@ -12,6 +12,8 @@ struct EventController: RouteCollection {
             event.delete(use: delete)
             event.get(use: fetchEvent)
         }
+//        eventsAPI.post("bulk", use: bulkAddEvents)
+        eventsAPI.on(.POST, "bulk", body: .collect(maxSize: 150_000), use: bulkAddEvents)
     }
 
     func index(req: Request) async throws -> [Event] {
@@ -124,5 +126,17 @@ struct EventController: RouteCollection {
         }
         try await event.delete(on: req.db)
         return .noContent
+    }
+    
+    
+    func bulkAddEvents(req: Request) async throws -> HTTPStatus {
+        guard let isAdmin = try? await req.isAdmin(), isAdmin else {
+            throw Abort(.unauthorized)
+        }
+        let events = try req.content.decode([EventData].self)
+        for newEvent in events {
+            try await newEvent.saveAsEvent(on: req.db)
+        }
+        return .created
     }
 }
