@@ -44,7 +44,7 @@ extension InterestGroupController {
                                          xMicrosoftCDOBusyStatus: .busy)
             let venue = try await event.$venue.get(on: req.db)
             icEvent.description = "See you at \(venue.name)!"
-            icEvent.location = venue.name
+            icEvent.location = venue.location?.address ?? venue.location?.title ?? ""
             if let lat = venue.location?.latitude,
                let lon = venue.location?.longitude {
                 icEvent.geo = .init(latitude: lat, longitude: lon)

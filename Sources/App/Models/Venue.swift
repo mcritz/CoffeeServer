@@ -73,6 +73,7 @@ extension Venue {
 
 struct Location: Codable {
     let title: String?
+    let address: String?
     let latitude, longitude: Double?
 }
 
