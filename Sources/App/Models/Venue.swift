@@ -95,7 +95,7 @@ extension Location {
         }
         if let lat = latitude,
            let lon = longitude {
-            queryItems.append(.init(name: "coordinate", value: "\(lat)%2C\(lon)"))
+            queryItems.append(.init(name: "coordinate", value: "\(lat),\(lon)"))
         }
         
         let baseURL = URL(string: "https://maps.apple.com/place")!
