@@ -159,6 +159,8 @@ extension InterestGroupController {
         let venue = event.venue
         if let mapsURL = venue.url {
             return mapsURL
+        } else if let mapsLocation = venue.location?.mapLocation {
+            return mapsLocation
         } else if let location = venue.location,
                   let lat = location.latitude,
                   let lon = location.longitude {
