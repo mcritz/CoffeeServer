@@ -3,38 +3,6 @@ import Vapor
 
 public typealias ImageURL = String
 
-struct EventData: Codable {
-    var id: UUID?
-    var name: String
-    var groupID: UUID?
-    var venueID: UUID?
-    var venue: Venue?
-    var imageURL: ImageURL?
-    var startAt: Date
-    var endAt: Date
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case groupID = "group_id"
-        case name
-        case imageURL = "image_url"
-        case startAt = "start_at"
-        case endAt = "end_at"
-        case venue
-        case venueID = "venue_id"
-    }
-}
-
-extension EventData: Content { }
-
-extension EventData: AsyncResponseEncodable {
-    func encodeResponse(for request: Vapor.Request) async throws -> Vapor.Response {
-        let body = try JSONEncoder().encode(self)
-        let jsonHeader = HTTPHeaders.init(dictionaryLiteral: ("Content-Type", "application/json"))
-        return Response(headers: jsonHeader, body: .init(data: body))
-    }
-}
-
 final class Event: Model, Content, @unchecked Sendable {
     static let schema = "events"
     
@@ -44,11 +12,11 @@ final class Event: Model, Content, @unchecked Sendable {
     @Field(key: "name")
     var name: String
     
-    @OptionalParent(key: "group_id")
-    var group: InterestGroup?
+    @Parent(key: "group_id")
+    var group: InterestGroup
     
-    @OptionalParent(key: "venue_id")
-    var venue: Venue?
+    @Parent(key: "venue_id")
+    var venue: Venue
     
     @Field(key: "image_url")
     var imageURL: ImageURL?
@@ -63,8 +31,8 @@ final class Event: Model, Content, @unchecked Sendable {
 
     init(id: UUID? = nil,
          name: String,
-         group: InterestGroup.IDValue? = nil,
-         venue: Venue.IDValue? = nil,
+         group: InterestGroup.IDValue,
+         venue: Venue.IDValue,
          imageURL: ImageURL? = nil,
          startAt: Date,
          endAt: Date) {
@@ -79,11 +47,12 @@ final class Event: Model, Content, @unchecked Sendable {
 }
 
 extension Event {
-    func publicData(_ venue: Venue? = nil) -> EventData {
+    func publicData(db: Database) async throws -> EventData {
+        let groupID = try await self.$group.get(on: db).requireID()
+        let venue = try await self.$venue.get(on: db)
         return .init(id: self.id,
                      name: self.name,
-                     groupID: self.group?.id,
-                     venueID: self.venue?.id,
+                     groupID: groupID,
                      venue: venue,
                      imageURL: self.imageURL,
                      startAt: self.startAt,

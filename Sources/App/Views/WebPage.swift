@@ -8,11 +8,15 @@ struct WebPage {
         self.content = Node.body { content }
     }
     
-    public func response(status: HTTPResponseStatus = .ok, headers: HTTPHeaders = .defaultHeaders) -> Response {
+    public func response(
+        status: HTTPResponseStatus = .ok,
+        headers: HTTPHeaders = .defaultHeaders,
+        title: String = "Coffee"
+    ) -> Response {
         let body = HTML(
             .head(
                 .encoding(.utf8),
-                .title("CoffeeCoffeeCoffee.coffee"),
+                .title(title),
                 .meta(
                     .name("viewport"),
                     .content("width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")

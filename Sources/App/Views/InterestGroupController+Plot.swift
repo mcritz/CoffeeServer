@@ -17,7 +17,17 @@ extension InterestGroupController {
     
     public func interestGroupsAndEvents(req: Request) async throws -> [(InterestGroup, [EventData])] {
         let now = Calendar(identifier: .gregorian).startOfDay(for: Date())
-        let allGroups = try await InterestGroup.query(on: req.db).all()
+        let allGroups = try await InterestGroup.query(on: req.db)
+            .filter(\.$isArchived == false)
+            .with(\.$events)
+            .all()
+            .sorted { prevGroup, thisGroup in
+                if let prevStart = prevGroup.events.last?.startAt,
+                   let thisStart = thisGroup.events.last?.startAt {
+                        return prevStart >= thisStart
+                    }
+                return false
+            }
         let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
             of: [(InterestGroup, [EventData])].self
         ) { taskGroup in
@@ -28,19 +38,22 @@ extension InterestGroupController {
                         .$events
                         .query(on: req.db)
                         .filter(\Event.$endAt >= now)
-                        .filter(\Event.$venue.$id != nil)
                         .sort(\.$startAt)
                         .all()
                     // TODO: Update this to one query. It can be done!
+                    //                        .with(\.$venue)
+                    
                     var eventDatas = [EventData]()
                     for eventModel in eventModels {
-                        let venue = try await eventModel.$venue.get(on: req.db)
-                        var eventData = eventModel.publicData(venue)
-                        eventData.venue = venue
+                        guard let eventData = try? await eventModel.publicData(db: req.db) else {
+                            req.logger
+                                .error(
+                                    "Couldn’t get public data for event: \(eventModel.id?.uuidString ?? eventModel.name)"
+                                )
+                            continue
+                        }
                         eventDatas.append(eventData)
                     }
-                    // TODO: Confirm this is unneeded
-//                    eventDatas.sort { $0.startAt < $1.startAt }
                     return [(interestGroup, eventDatas)]
                 }
             }
@@ -95,13 +108,11 @@ extension InterestGroupController {
         let futureEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt > now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .all()
         let pastEvents = try await group.$events
             .query(on: req.db)
             .filter(\.$endAt <= now)
-            .filter(\.$venue.$id != nil)
             .with(\.$venue)
             .limit(100)
             .all()
@@ -141,15 +152,15 @@ extension InterestGroupController {
             }.id("coffee-groups")
         }
         
-        return WebPage(content).response()
+        return WebPage(content).response(title: group.name)
     }
     
     private func location(for event: Event) -> String {
-        guard let venue = event.venue else {
-            return "#"
-        }
+        let venue = event.venue
         if let mapsURL = venue.url {
             return mapsURL
+        } else if let mapsLocation = venue.location?.mapLocation {
+            return mapsLocation
         } else if let location = venue.location,
                   let lat = location.latitude,
                   let lon = location.longitude {
@@ -166,27 +177,31 @@ extension InterestGroupController {
                     H2(event.name)
                     Div {
                         Div {
-                            H4(event.venue?.name ?? "Ask Organizer")
-                            if let locationDescription = event.venue?.location?.description {
-                                Div {
-                                    Span(locationDescription)
-                                    Span("Open in Maps")
-                                }
-                                .class("location-description")
-                            }
                             Paragraph(
                                 event.startAt
                                     .formatted(date: .abbreviated, time: .shortened)
                             )
+                            H4(event.venue.name)
+                            if let locationDescription = event.venue.location?.title {
+                                Div {
+                                    Span(locationDescription)
+                                    // TODO: Sort this out in the UI later
+                                    // Span("Directions")
+                                }
+                                .class("location-description")
+                            }
                         }.class("details")
                     }.class("bar")
                 }.class("event")
                     .style("""
                     background-image: linear-gradient(
                         0deg, 
-                        rgba(2,0,36,0.5) 0%, 
-                        rgba(1, 0, 18, 0.0) 75%),
-                    url('/\(event.imageURL ?? "default-coffee.webp")');
+                        rgba(2, 0, 36, 0.5) 0%, 
+                        rgba(1, 0, 18, 0.0) 75%,
+                        rgba(1, 0, 18, 0.0) 85%,
+                        rgba(2, 0, 36, 0.8) 100%
+                    ),
+                    url('\(event.imageURL ?? "/default-coffee.webp")');
                     background-size: cover;
                 """)
             })

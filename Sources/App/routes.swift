@@ -9,6 +9,7 @@ func routes(_ app: Application) throws {
     
     let legacyGroupRoute = app.routes.grouped(":groupID")
     legacyGroupRoute.get("ical", use: interestGroupController.calendar)
+    legacyGroupRoute.get(use: interestGroupController.webViewSingle)
 
     app.get("healthcheck") { req async -> String in
         let currentDate = Date()
@@ -29,15 +30,26 @@ func routes(_ app: Application) throws {
         let processorActiveCount = String(ProcessInfo.processInfo.activeProcessorCount)
         var processName = ""
         
-        if let isAdmin = try? await req.isAdmin(), isAdmin {
-            os = ProcessInfo.processInfo.operatingSystemVersionString
-            environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
-                """
-                \(key): \(value)\n
-                """
-            }
-            processName = String(ProcessInfo.processInfo.globallyUniqueString)
+        guard let isAdmin = try? await req.isAdmin(), isAdmin else {
+            let dbHealthText = {
+                switch eventCount {
+                case .some(_):
+                    return "DATABASE OK"
+                default:
+                    return "DATABASE ERROR"
+                }
+            }()
+            return "OK: \(dbHealthText)"
         }
+        
+        os = ProcessInfo.processInfo.operatingSystemVersionString
+        environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
+            """
+            \(key): \(value)\n
+            """
+        }
+        processName = String(ProcessInfo.processInfo.globallyUniqueString)
+        
         
         let dbHealthText = {
             switch eventCount {
@@ -47,8 +59,11 @@ func routes(_ app: Application) throws {
                 return "DATABASE ERROR"
             }
         }()
+        let buildDate = Date.now.formatted(.iso8601)
         return """
        OK.
+       
+       Build Date: \(buildDate)
        
        Request
        URL: \(urlString)

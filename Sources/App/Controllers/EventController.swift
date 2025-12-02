@@ -12,6 +12,8 @@ struct EventController: RouteCollection {
             event.delete(use: delete)
             event.get(use: fetchEvent)
         }
+//        eventsAPI.post("bulk", use: bulkAddEvents)
+        eventsAPI.on(.POST, "bulk", body: .collect(maxSize: 150_000), use: bulkAddEvents)
     }
 
     func index(req: Request) async throws -> [Event] {
@@ -46,32 +48,38 @@ struct EventController: RouteCollection {
             throw Abort(.unauthorized)
         }
         let eventData = try req.content.decode(EventData.self)
-        guard let groupID = eventData.groupID else {
-            throw Abort(.badRequest, reason: "Event must be associated with a group")
-        }
         
-        guard let existingGroup = try await InterestGroup.find(groupID, on: req.db) else {
+        let groupID = eventData.groupID
+        let existingGroup = try await InterestGroup.find(groupID, on: req.db)
+        
+        guard let venueID = eventData.venue.id else {
+            throw Abort(.badRequest, reason: "Venue ID is required")
+        }
+        let existingVenue = try await Venue.find(venueID, on: req.db)
+        
+        guard let interestGroup = existingGroup else {
             throw Abort(.notFound, reason: "No group with id \(groupID)")
         }
+        guard let venue = existingVenue else {
+            throw Abort(.notFound, reason: "No venue with id \(venueID)")
+        }
+        
+        let existingGroupID = try interestGroup.requireID()
+        let existingVenueID = try venue.requireID()
         
         let event = Event(
             id: eventData.id,
             name: eventData.name,
-            group: try existingGroup.requireID(),
+            group: existingGroupID,
+            venue: existingVenueID,
             imageURL: eventData.imageURL,
             startAt: eventData.startAt,
             endAt: eventData.endAt
         )
         
-        guard let venueID = eventData.venueID,
-                let existingVenue = try await Venue.find(venueID, on: req.db) else {
-            throw Abort(.badRequest, reason: "Venue is required")
-        }
-        
-        event.$venue.id = try existingVenue.requireID()
-        
         try await event.save(on: req.db)
-        return event.publicData(existingVenue)
+        
+        return try await event.publicData(db: req.db)
     }
     
     func update(req: Request) async throws -> EventData {
@@ -88,7 +96,7 @@ struct EventController: RouteCollection {
         
         async let event = Event.find(eventID, on: req.db)
         async let group = InterestGroup.find(eventData.groupID, on: req.db)
-        async let venue = Venue.find(eventData.venueID, on: req.db)
+        async let venue = Venue.find(eventData.venue.id, on: req.db)
         
         guard let event = try await event,
               let group = try await group,
@@ -96,11 +104,11 @@ struct EventController: RouteCollection {
             throw Abort(.notFound)
         }
         event.name = eventData.name
-        event.group?.id = try? group.requireID()
-        event.venue?.id = try? venue.requireID()
+        event.$group.id = try group.requireID()
+        event.$venue.id = try venue.requireID()
         event.imageURL = eventData.imageURL
         try await event.update(on: req.db)
-        return event.publicData(venue)
+        return try await event.publicData(db: req.db)
     }
 
     func delete(req: Request) async throws -> HTTPStatus {
@@ -118,5 +126,17 @@ struct EventController: RouteCollection {
         }
         try await event.delete(on: req.db)
         return .noContent
+    }
+    
+    
+    func bulkAddEvents(req: Request) async throws -> HTTPStatus {
+        guard let isAdmin = try? await req.isAdmin(), isAdmin else {
+            throw Abort(.unauthorized)
+        }
+        let events = try req.content.decode([EventData].self)
+        for newEvent in events {
+            try await newEvent.saveAsEvent(on: req.db)
+        }
+        return .created
     }
 }

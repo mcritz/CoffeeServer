@@ -8,7 +8,7 @@ struct UserBasicAuthenticator: AsyncBasicAuthenticator {
         basic: BasicAuthorization,
         for request: Request
     ) async throws {
-        let username = basic.username
+        let username = basic.username.lowercased()
         let password = basic.password
         guard let user = try await User.query(on: request.db)
             .filter(\.$email == username)

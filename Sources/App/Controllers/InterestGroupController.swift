@@ -22,16 +22,35 @@ struct InterestGroupController: RouteCollection {
     }
 
     func index(req: Request) async throws -> [InterestGroup] {
-        try await InterestGroup.query(on: req.db).all()
+        try await InterestGroup.query(on: req.db)
+            .with(\.$events)
+            .all()
+            .sorted { prevGroup, thisGroup in
+                if let prevStart = prevGroup.events.last?.startAt,
+                   let thisStart = thisGroup.events.last?.startAt {
+                    return prevStart < thisStart
+                }
+                return false
+            }
     }
     
     func fetch(req: Request) async throws -> InterestGroup {
-        guard let groupIDString = req.parameters.get("groupID"),
-              let groupUUID = UUID(groupIDString),
-              let group = try await InterestGroup.find(groupUUID, on: req.db) else {
+        guard let groupIDString = req.parameters.get("groupID") else {
+            throw Abort(.badRequest, reason: "No ID. Try something like /groups/uuuid or /groups/slug")
+        }
+        if let groupUUID = UUID(groupIDString),
+           let group = try await InterestGroup.find(groupUUID, on: req.db) {
+            return group
+        }
+        
+        let slug = groupIDString.lowercased()
+        
+        guard let matchedGroup = try await InterestGroup
+            .query(on: req.db).filter(\.$short == slug)
+            .first() else {
             throw Abort(.notFound)
         }
-        return group
+        return matchedGroup
     }
 
     func create(req: Request) async throws -> InterestGroup {
@@ -40,6 +59,8 @@ struct InterestGroupController: RouteCollection {
             throw Abort(.unauthorized)
         }
         let group = try req.content.decode(InterestGroup.self)
+        // We use lowercased slugs only in urls and more importantly in the db queries
+        group.short = group.short.lowercased()
         try await group.save(on: req.db)
         return group
     }
@@ -57,9 +78,16 @@ struct InterestGroupController: RouteCollection {
         guard let group = try await InterestGroup.find(groupUUID, on: req.db) else {
             throw Abort(.notFound)
         }
+        
         group.name = newData.name
-        group.imageURL = newData.imageURL
-        // events cannot be edited on the group
+        group.short = newData.short
+        if let newImageURL = newData.imageURL {
+            group.imageURL = newImageURL
+        }
+        if let shouldArchive = newData.isArchived {
+            group.isArchived = shouldArchive
+        }
+        // events are not edited through the group
         try await group.save(on: req.db)
         return group
     }
@@ -81,17 +109,24 @@ struct InterestGroupController: RouteCollection {
         let groupID = UUID(groupIDString) else {
             throw Abort(.badRequest)
         }
-        guard let group = try await InterestGroup.find(groupID, on: req.db) else {
-            throw Abort(.notFound)
-        }
-        let eventsSortedByStartAt = try await group.$events
-            .get(on: req.db)
+        let eventsSortedByStartAt = try await Event.query(on: req.db)
+            .with(\.$group)
+            .filter(\.$group.$id == groupID)
+            .with(\.$venue)
+            .sort(\.$startAt)
+            .all()
             .map {
-                $0.publicData()
+                EventData(
+                    id: $0.id,
+                    name: $0.name,
+                    groupID: try $0.group.requireID(),
+                    venue: $0.venue,
+                    imageURL: $0.imageURL,
+                    startAt: $0.startAt,
+                    endAt: $0.endAt
+                )
             }
-            .sorted {
-                $0.startAt < $1.startAt
-            }
+        
         return eventsSortedByStartAt
     }
 }
