@@ -29,7 +29,7 @@ struct GroupView: Component {
                         H3(nextEvent.name)
                         Paragraph(
                             nextEvent.startAt
-                                .formatted(date: .numeric,
+                                .formatted(date: .abbreviated,
                                            time: .shortened)
                         )
                     }
