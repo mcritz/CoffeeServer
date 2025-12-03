@@ -56,6 +56,8 @@ services:
       - '8080:8080'
     restart: unless-stopped
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
+    volumes:
+     - ./Public:/app/Public
   migrate:
     image: coffee-server:latest
     build:

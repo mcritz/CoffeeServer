@@ -48,7 +48,7 @@ final class MediaContentController: RouteCollection {
             }
             return try await req.fileio.asyncStreamFile(at: filePath, mediaType: mediaType)
         } catch {
-            req.logger.error(.init(stringLiteral: "\(String(describing: error)) filePath: \(filePath)"))
+            req.logger.error("\(String(describing: error)) filePath: \(filePath)")
         }
         throw Abort(.internalServerError)
     }
@@ -79,7 +79,7 @@ final class MediaContentController: RouteCollection {
             throw Abort(.internalServerError, reason: "Server misconfigured for file uploads")
         }
         let filename = UUID().uuidString
-        let filePath = mediaDirectoryPath.appending("/\(filename)")
+        let filePath = mediaDirectoryPath.appending(filename)
         try? FileManager.default.removeItem(atPath: filePath)
         guard FileManager.default.createFile(atPath: filePath,
                                        contents: nil,
@@ -91,7 +91,7 @@ final class MediaContentController: RouteCollection {
         var streamedLength: Int64 = 0
         let fileSystem = FileSystem.shared
         let fileHandle = try await fileSystem.openFile(
-            forWritingAt: FilePath(.init(filePath)),
+            forWritingAt: FilePath(filePath),
             options: .modifyFile(createIfNecessary: true)
         )
         
@@ -103,11 +103,12 @@ final class MediaContentController: RouteCollection {
             
             do {
                 try await fileHandle.write(contentsOf: byteBuffer,
-                                           toAbsoluteOffset: Int64(streamedLength))
+                                           toAbsoluteOffset: streamedLength)
                 streamedLength += Int64(byteBuffer.readableBytes)
             } catch {
                 try? await fileHandle.close()
                 req.logger.error("\(error.localizedDescription)")
+                throw Abort(.internalServerError, reason: "Failed to write to disk")
             }
         }
         do {
