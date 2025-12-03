@@ -7,6 +7,7 @@
 
 import Fluent
 import NIOCore
+import _NIOFileSystem
 import Vapor
 
 final class MediaContentController: RouteCollection {
@@ -35,12 +36,21 @@ final class MediaContentController: RouteCollection {
         else {
             throw Abort(.notFound)
         }
-        let filePath = mediaDirectoryPath.appending("/\(userMedia.filename)")
-        
-        guard let mediaType = userMedia.mediaType() else {
-            return req.fileio.streamFile(at: filePath)
+        let filePath = mediaDirectoryPath.appending(userMedia.filename)
+        if let fileInfo = try? await FileSystem.shared.info(forFileAt: .init(filePath)) {
+            req.logger.info("FileInfo: \(String(describing: fileInfo))")
+        } else {
+            req.logger.error("Could not open file at \(filePath)")
         }
-        return req.fileio.streamFile(at: filePath, mediaType: mediaType)
+        do {
+            guard let mediaType = userMedia.mediaType() else {
+                return try await req.fileio.asyncStreamFile(at: filePath)
+            }
+            return try await req.fileio.asyncStreamFile(at: filePath, mediaType: mediaType)
+        } catch {
+            req.logger.error(.init(stringLiteral: "\(String(describing: error)) filePath: \(filePath)"))
+        }
+        throw Abort(.internalServerError)
     }
     
     func uploadMedia(req: Request) async throws -> MediaContent {
@@ -79,29 +89,31 @@ final class MediaContentController: RouteCollection {
         }
         
         var streamedLength: Int64 = 0
-        let nioFileHandle = try NIOFileHandle(path: filePath, mode: .write)
-        defer {
-            do {
-                try nioFileHandle.close()
-            } catch {
-                req.logger.error("\(error.localizedDescription)")
-            }
-        }
+        let fileSystem = FileSystem.shared
+        let fileHandle = try await fileSystem.openFile(
+            forWritingAt: FilePath(.init(filePath)),
+            options: .modifyFile(createIfNecessary: true)
+        )
         
         for try await byteBuffer in req.body {
             guard streamedLength < maxUploadSize else {
+                try? await fileHandle.close()
                 throw Abort(.badRequest, reason: "Upload exceeds maximum")
             }
             
             do {
-                try await req.application.fileio.write(fileHandle: nioFileHandle,
-                                                       toOffset: streamedLength,
-                                                       buffer: byteBuffer,
-                                                       eventLoop: req.eventLoop).get()
+                try await fileHandle.write(contentsOf: byteBuffer,
+                                           toAbsoluteOffset: Int64(streamedLength))
                 streamedLength += Int64(byteBuffer.readableBytes)
             } catch {
+                try? await fileHandle.close()
                 req.logger.error("\(error.localizedDescription)")
             }
+        }
+        do {
+            try await fileHandle.close()
+        } catch {
+            req.logger.error("FileHandle failed to close for \(filePath)")
         }
         
         let media = try MediaContent(

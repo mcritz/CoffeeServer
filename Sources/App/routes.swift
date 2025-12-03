@@ -172,6 +172,6 @@ func routes(_ app: Application) throws {
     try app.register(collection: EventController())
     try app.register(collection: VenueController())
     
-    let mediaDirectoryPath = app.directory.publicDirectory.appending("media")
+    let mediaDirectoryPath = app.directory.publicDirectory
     try app.register(collection: MediaContentController(mediaPath: mediaDirectoryPath))
 }
