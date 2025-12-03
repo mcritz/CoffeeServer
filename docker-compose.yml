@@ -57,7 +57,7 @@ services:
     restart: unless-stopped
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
     volumes:
-     - ./Public:/app/Public
+     - ./Public:/app/Public:rw
   migrate:
     image: coffee-server:latest
     build:
@@ -94,3 +94,4 @@ services:
       POSTGRES_DB: ${DATABASE_NAME}
     ports:
       - '5432:5432'
+
