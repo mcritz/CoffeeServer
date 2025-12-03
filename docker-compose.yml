@@ -16,10 +16,9 @@
 #
 volumes:
   db_data:
-  # note that you’ll need to use `docker volume create caddy_data` before running `docker compose up`
   caddy_data:
-#    external: true
   caddy_config:
+  app_media:
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
@@ -57,7 +56,7 @@ services:
     restart: unless-stopped
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
     volumes:
-     - ./Public:/app/Public:rw
+        - app_media:/app/Public/media:rw
   migrate:
     image: coffee-server:latest
     build:
