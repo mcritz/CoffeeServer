@@ -4,12 +4,10 @@ import Foundation
 struct EventSummaryView: Component {
     let event: EventData
     
-    private let formatter = DateFormatter()
-    
     var body: Component {
         Div {
             Div {
-                Text(formatter.string(from: event.startAt))
+                Text(event.startAt.formattedWith())
             }
             Text(event.name)
             Div {

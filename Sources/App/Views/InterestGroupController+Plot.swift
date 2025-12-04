@@ -22,10 +22,10 @@ extension InterestGroupController {
             .with(\.$events)
             .all()
             .sorted { prevGroup, thisGroup in
-                if let prevStart = prevGroup.events.last?.startAt,
-                   let thisStart = thisGroup.events.last?.startAt {
-                        return prevStart >= thisStart
-                    }
+                if let prevStart = prevGroup.events.map(\.startAt).max(),
+                   let thisStart = thisGroup.events.map(\.startAt).max() {
+                    return prevStart > thisStart
+                }
                 return false
             }
         let groupEvents: [(InterestGroup, [EventData])] = try await withThrowingTaskGroup(
@@ -68,10 +68,7 @@ extension InterestGroupController {
             return sortedGroupEvents
         }
         
-        let sortedGroupEvents =  groupEvents.sorted(by: { lhs, rhs in
-            lhs.0.name < rhs.0.name
-        })
-        return sortedGroupEvents
+        return groupEvents
     }
     
     func webView(req: Request) async throws -> Response {
@@ -178,8 +175,7 @@ extension InterestGroupController {
                     Div {
                         Div {
                             Paragraph(
-                                event.startAt
-                                    .formatted(date: .abbreviated, time: .shortened)
+                                event.startAt.formattedWith(timeStyle: .short)
                             )
                             H4(event.venue.name)
                             if let locationDescription = event.venue.location?.title {
