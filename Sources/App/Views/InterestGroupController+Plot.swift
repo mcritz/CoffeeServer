@@ -68,9 +68,6 @@ extension InterestGroupController {
             return sortedGroupEvents
         }
         
-//        let sortedGroupEvents =  groupEvents.sorted(by: { lhs, rhs in
-//            lhs.0.name < rhs.0.name
-//        })
         return groupEvents
     }
     
