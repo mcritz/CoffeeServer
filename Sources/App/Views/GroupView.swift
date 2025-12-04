@@ -28,9 +28,7 @@ struct GroupView: Component {
                     Div {
                         H3(nextEvent.name)
                         Paragraph(
-                            nextEvent.startAt
-                                .formatted(date: .abbreviated,
-                                           time: .shortened)
+                            nextEvent.startAt.formattedWith()
                         )
                     }
                     .class("bar")
