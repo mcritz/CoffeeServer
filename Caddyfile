@@ -6,6 +6,6 @@ coffeecoffee.world, www.coffeecoffee.world {
     reverse_proxy app:8080
 }
 
-coffeecoffeecoffee.coffee {
+coffeecoffeecoffee.coffee, www.coffeecoffeecoffee.coffee {
     reverse_proxy app:8080
 }
