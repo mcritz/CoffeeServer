@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    public func formattedWith(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .short, timeZone: TimeZone = TimeZone(identifier: "America/Los_Angeles")!) -> String {
+    public func formattedWith(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .short, timeZone: TimeZone = TimeZone(identifier: "America/Los_Angeles") ?? .current) -> String {
         var calendar = Foundation.Calendar(identifier: .gregorian)
         calendar.timeZone = timeZone
 
