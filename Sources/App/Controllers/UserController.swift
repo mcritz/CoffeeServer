@@ -13,8 +13,10 @@ struct UserController: RouteCollection {
         
         protectedUsers.get(use: index)
         protectedUsers.get(":userID", use: fetch)
+        protectedUsers.put(":userID", use: updateUser)
         protectedUsers.delete(":userID", use: delete)
         protectedUsers.get("me", use: fetchSelf)
+        protectedUsers.put("me", use: updateSelf)
         protectedUsers.get(":userID", "tags", use: getTags)
     }
     
@@ -61,6 +63,52 @@ struct UserController: RouteCollection {
         guard let user = try await User.find(payload.userId, on: req.db) else {
             throw Abort(.badRequest)
         }
+        return user.privateValue()
+    }
+    
+    /// Admin authorized user updating
+    /// - Parameter req: Admin-authorized `Request` containing ``User.Create`` payload
+    /// - Returns: ``User.Private``
+    func updateUser(_ req: Request) async throws -> User.Private {
+        guard try await req.isAdmin() else {
+            req.logger.warning("Attempt to update")
+            throw Abort(.unauthorized)
+        }
+        guard let newUser = try? req.content.decode(User.Create.self) else {
+            throw Abort(.badRequest, reason: "Invalid user data")
+        }
+        guard newUser.password == newUser.confirmPassword else {
+            throw Abort(.badRequest, reason: "Passwords do not match")
+        }
+        guard let existingUser = try await User.find(req.parameters.get("userID"), on: req.db) else {
+            throw Abort(.notFound)
+        }
+        existingUser.name = newUser.name
+        existingUser.email = newUser.email
+        existingUser.passwordHash = try Bcrypt.hash(newUser.password)
+        try await existingUser.update(on: req.db)
+        return existingUser.privateValue()
+    }
+    
+    /// Self-service ``User`` updating.
+    /// Only the signed-in ``User`` can authorize their own updated values on this route. Admins should use the ``updateUser(_ req:)``
+    /// method to update another ``User``.
+    /// - Parameter req: ``User`` with valid session and ``User.Create`` payload
+    /// - Returns: ``User.Private``
+    func updateSelf(_ req: Request) async throws -> User.Private {
+        let payload = try req.jwt.verify(as: SessionJWTToken.self)
+        guard let user = try await User.find(payload.userId, on: req.db) else {
+            req.logger.warning("Attempt to update non-existent user")
+            throw Abort(.notFound, reason: "Could not find user")
+        }
+        let newUpdates = try req.content.decode(User.Create.self)
+        guard newUpdates.password == newUpdates.confirmPassword else {
+            throw Abort(.badRequest, reason: "Passwords don’t match")
+        }
+        user.name = newUpdates.name
+        user.email = newUpdates.email
+        user.passwordHash = try Bcrypt.hash(newUpdates.password)
+        try await user.update(on: req.db)
         return user.privateValue()
     }
     
