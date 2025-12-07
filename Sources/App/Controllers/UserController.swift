@@ -28,16 +28,21 @@ struct UserController: RouteCollection {
         return users.map { $0.publicValue() }
     }
     
+    private func assertUnique(_ email: String, db: Database) async throws -> Bool {
+        let maybeExistingUser = try await User.query(on: db)
+            .filter(\.$email == email)
+            .first()
+        return maybeExistingUser == nil ? true : false
+    }
+    
     func create(_ req: Request) async throws -> User.Public {
         try User.Create.validate(content: req)
         let create = try req.content.decode(User.Create.self)
         guard create.password == create.confirmPassword else {
             throw Abort(.badRequest, reason: "Passwords did not match")
         }
-        let maybeExistingUser = try await User.query(on: req.db)
-            .filter(\.$email == create.email)
-            .first()
-        guard maybeExistingUser == nil else {
+        guard let isUnique = try? await assertUnique(create.email, db: req.db),
+              isUnique else {
             req.logger.warning("A user with this email address exists: \(create.email)")
             throw Abort(.badRequest)
         }
@@ -66,52 +71,6 @@ struct UserController: RouteCollection {
         return user.privateValue()
     }
     
-    /// Admin authorized user updating
-    /// - Parameter req: Admin-authorized `Request` containing ``User.Create`` payload
-    /// - Returns: ``User.Private``
-    func updateUser(_ req: Request) async throws -> User.Private {
-        guard try await req.isAdmin() else {
-            req.logger.warning("Attempt to update")
-            throw Abort(.unauthorized)
-        }
-        guard let newUser = try? req.content.decode(User.Create.self) else {
-            throw Abort(.badRequest, reason: "Invalid user data")
-        }
-        guard newUser.password == newUser.confirmPassword else {
-            throw Abort(.badRequest, reason: "Passwords do not match")
-        }
-        guard let existingUser = try await User.find(req.parameters.get("userID"), on: req.db) else {
-            throw Abort(.notFound)
-        }
-        existingUser.name = newUser.name
-        existingUser.email = newUser.email
-        existingUser.passwordHash = try Bcrypt.hash(newUser.password)
-        try await existingUser.update(on: req.db)
-        return existingUser.privateValue()
-    }
-    
-    /// Self-service ``User`` updating.
-    /// Only the signed-in ``User`` can authorize their own updated values on this route. Admins should use the ``updateUser(_ req:)``
-    /// method to update another ``User``.
-    /// - Parameter req: ``User`` with valid session and ``User.Create`` payload
-    /// - Returns: ``User.Private``
-    func updateSelf(_ req: Request) async throws -> User.Private {
-        let payload = try req.jwt.verify(as: SessionJWTToken.self)
-        guard let user = try await User.find(payload.userId, on: req.db) else {
-            req.logger.warning("Attempt to update non-existent user")
-            throw Abort(.notFound, reason: "Could not find user")
-        }
-        let newUpdates = try req.content.decode(User.Create.self)
-        guard newUpdates.password == newUpdates.confirmPassword else {
-            throw Abort(.badRequest, reason: "Passwords don’t match")
-        }
-        user.name = newUpdates.name
-        user.email = newUpdates.email
-        user.passwordHash = try Bcrypt.hash(newUpdates.password)
-        try await user.update(on: req.db)
-        return user.privateValue()
-    }
-    
     func delete(_ req: Request) async throws -> HTTPStatus {
         let payload = try req.jwt.verify(as: SessionJWTToken.self)
         guard let requestingUser = try await User.find(payload.userId, on: req.db) else {
@@ -135,6 +94,60 @@ struct UserController: RouteCollection {
         }
         req.logger.info("Unauthorized attempt to delete user\n\(req)")
         return .unauthorized
+    }
+}
+
+// MARK: - Update User
+extension UserController {
+    private func parseAndSave(_ user: User, req: Request) async throws -> User.Private {
+        do {
+            try User.Create.validate(content: req)
+        } catch {
+            req.logger.info("User Validation failed: \(String(describing: error))")
+            throw Abort(.badRequest, reason: "Invalid user data: \(String(describing: error))")
+        }
+        let newUpdates = try req.content.decode(User.Create.self)
+        guard newUpdates.password == newUpdates.confirmPassword else {
+            throw Abort(.badRequest, reason: "Passwords did not match")
+        }
+        guard let isUnique = try? await assertUnique(newUpdates.email, db: req.db),
+              isUnique else {
+            req.logger.warning("A user with this email address exists: \(newUpdates.email)")
+            throw Abort(.badRequest)
+        }
+        user.name = newUpdates.name
+        user.email = newUpdates.email
+        user.passwordHash = try Bcrypt.hash(newUpdates.password)
+        try await user.update(on: req.db)
+        return user.privateValue()
+    }
+    
+    /// Admin authorized user updating
+    /// - Parameter req: Admin-authorized `Request` containing ``User.Create`` payload
+    /// - Returns: ``User.Private``
+    func updateUser(_ req: Request) async throws -> User.Private {
+        guard try await req.isAdmin() else {
+            req.logger.warning("Unauthorized attempt to update as admin")
+            throw Abort(.unauthorized)
+        }
+        guard let newUser = try await User.find(req.parameters.get("userID"), on: req.db) else {
+            throw Abort(.notFound)
+        }
+        return try await parseAndSave(newUser, req: req)
+    }
+    
+    /// Self-service ``User`` updating.
+    /// Only the signed-in ``User`` can authorize their own updated values on this route. Admins should use the ``updateUser(_ req:)``
+    /// method to update another ``User``.
+    /// - Parameter req: ``User`` with valid session and ``User.Create`` payload
+    /// - Returns: ``User.Private``
+    func updateSelf(_ req: Request) async throws -> User.Private {
+        let payload = try req.jwt.verify(as: SessionJWTToken.self)
+        guard let user = try await User.find(payload.userId, on: req.db) else {
+            req.logger.warning("Attempt to update non-existent user")
+            throw Abort(.notFound, reason: "Could not find user")
+        }
+        return try await parseAndSave(user, req: req)
     }
 }
 

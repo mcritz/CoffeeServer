@@ -104,7 +104,7 @@ extension InterestGroupController {
         let group = try await fetch(req: req)
         let futureEvents = try await group.$events
             .query(on: req.db)
-            .sort(\.$startAt, .descending)
+            .sort(\.$startAt, .ascending)
             .filter(\.$endAt > now)
             .with(\.$venue)
             .all()
