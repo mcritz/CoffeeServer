@@ -10,13 +10,14 @@ struct UserController: RouteCollection {
         usersAPI.post(use: create)
         
         basicProtected.post("login", use: login)
-        
+
+        protectedUsers.get("me", use: fetchSelf)
+        protectedUsers.put("me", use: updateSelf)
+
         protectedUsers.get(use: index)
         protectedUsers.get(":userID", use: fetch)
         protectedUsers.put(":userID", use: updateUser)
         protectedUsers.delete(":userID", use: delete)
-        protectedUsers.get("me", use: fetchSelf)
-        protectedUsers.put("me", use: updateSelf)
         protectedUsers.get(":userID", "tags", use: getTags)
     }
     
@@ -110,10 +111,12 @@ extension UserController {
         guard newUpdates.password == newUpdates.confirmPassword else {
             throw Abort(.badRequest, reason: "Passwords did not match")
         }
-        guard let isUnique = try? await assertUnique(newUpdates.email, db: req.db),
-              isUnique else {
-            req.logger.warning("A user with this email address exists: \(newUpdates.email)")
-            throw Abort(.badRequest)
+        if user.$email.wrappedValue != newUpdates.email {
+            guard let isUnique = try? await assertUnique(newUpdates.email, db: req.db),
+                  isUnique else {
+                req.logger.warning("A user with this email address exists: \(newUpdates.email)")
+                throw Abort(.badRequest)
+            }
         }
         user.name = newUpdates.name
         user.email = newUpdates.email
