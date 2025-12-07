@@ -43,11 +43,6 @@ func routes(_ app: Application) throws {
         }
         
         os = ProcessInfo.processInfo.operatingSystemVersionString
-        environment = ProcessInfo.processInfo.environment.reduce("") { key, value in
-            """
-            \(key): \(value)\n
-            """
-        }
         processName = String(ProcessInfo.processInfo.globallyUniqueString)
         
         
@@ -90,9 +85,6 @@ func routes(_ app: Application) throws {
        
        OS
        Version: \(os)
-       
-       ENV:
-       \(environment)
        """
     }
     
