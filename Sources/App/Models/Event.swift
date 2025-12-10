@@ -1,9 +1,10 @@
+import CoffeeKit
 import Fluent
 import Vapor
 
 public typealias ImageURL = String
 
-final class Event: Model, Content, @unchecked Sendable {
+final class Event: EventRepresentable, Model, Content, @unchecked Sendable {
     static let schema = "events"
     
     @ID(key: .id)

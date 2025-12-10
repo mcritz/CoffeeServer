@@ -1,3 +1,4 @@
+import CoffeeKit
 import Plot
 import Vapor
 

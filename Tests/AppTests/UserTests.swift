@@ -1,59 +1,106 @@
+import CoffeeKit
+import Testing
+import VaporTesting
+
 @testable import App
-import XCTVapor
 
-final class UserTests: XCTestCase {
+@Suite("User Tests")
+final class UserTests {
 
-    var app = Application(.testing)
+    var userJWT = "NOT SET"
     
-    let userNameGood = "Test McTesterface"
-    let userEmailGood = "mctesterface@example.com"
-    let passwordGood = "Super 5trong passw0rd!"
-    var userJWT: String?
-    var headers = HTTPHeaders(dictionaryLiteral: ("Content-Type", "application/json"))
-    
-    override func setUpWithError() throws {
-        app = Application(.testing)
-        try configure(app)
-    }
+    let createdUser = UserCreate(
+        name: "Edgar A. Poe",
+        email: "ellanore@nevermore.com",
+        password: "T1ck T0ck Horrible Heart!",
+        confirmPassword: "T1ck T0ck Horrible Heart!"
+    )
 
-    override func tearDownWithError() throws {
-        app.shutdown()
-        headers = HTTPHeaders(dictionaryLiteral: ("Content-Type", "application/json"))
-    }
-
-    func testCreateUser() throws {
-        let testUser = User.Create(name: userNameGood, email: userEmailGood, password: passwordGood, confirmPassword: passwordGood)
-        let body = try JSONEncoder().encode(testUser)
-        
-        try app.test(.POST, "api/v2/users", headers: headers, body: ByteBuffer(data: body)) { res in
-            XCTAssertEqual(res.status, .ok)
-            let result = try res.content.decode(User.Public.self)
-            XCTAssertEqual(result.name, userNameGood)
-        }
-        try login()
-        try getSelf()
-    }
-    
-    func login() throws {
-        let basicAuth = BasicAuthorization(username: userEmailGood, password: passwordGood)
-        headers.basicAuthorization = basicAuth
-        try app.test(.GET, "api/v2/users/login", headers: headers) { res in
-            XCTAssertEqual(res.status, .ok)
-            let resultBody = try res.content.decode([String : String].self)
-            XCTAssertEqual(resultBody["error"], "false")
-            userJWT = resultBody["jwt-token"]
-            XCTAssertNotNil(userJWT)
+    @Test("User Create")
+    func userCreate() async throws {
+        try await withApp(configure: configure) { app in
+            let createUserData = try JSONEncoder().encode(createdUser)
+            let createUserBody = ByteBuffer(data: createUserData)
+            try await app.testing().test(
+                .POST,
+                "/api/v2/users",
+                headers: ["Content-Type": "application/json"],
+                body: createUserBody
+            ) { res async in
+                #expect(res.status == .created, "expected HTTP 201 Created")
+                let bodyData = Data(buffer: res.body)
+                let user = try? JSONDecoder().decode(UserPublic.self, from: bodyData)
+                #expect(user != nil)
+                #expect(user?.id != nil)
+            }
         }
     }
     
-    func getSelf() throws {
-        let jwtAuth = BearerAuthorization(token: userJWT!)
-        headers = HTTPHeaders()
-        headers.bearerAuthorization  = jwtAuth
-        try app.test(.GET, "users/me", headers: headers) { res in
-            XCTAssertEqual(res.status, .ok)
-            let publicUser = try res.content.decode(User.Public.self)
-            XCTAssertEqual(publicUser.name, userNameGood)
+    @Test("User Login")
+    func userLogin() async throws {
+        try await withApp(configure: configure) { app in
+            let createUserData = try JSONEncoder().encode(createdUser)
+            let createUserBody = ByteBuffer(data: createUserData)
+            try await app.testing().test(
+                .POST,
+                "/api/v2/users",
+                headers: ["Content-Type": "application/json"],
+                body: createUserBody
+            ) { res async in
+                #expect(res.status == .created, "expected HTTP 201 Created")
+                let bodyData = Data(buffer: res.body)
+                let user = try? JSONDecoder().decode(UserPublic.self, from: bodyData)
+                #expect(user != nil)
+                #expect(user?.id != nil)
+            }
+            
+            let badEncodedPassword = Data("WRONG PASSWORD".utf8).base64EncodedString()
+            try await app.testing().test(
+                .POST,
+                "/api/v2/users/login",
+                headers: [
+                    "Authorization" : "Basic \(badEncodedPassword)"
+                ]) { res in
+                    #expect(res.status == .unauthorized, "Responds `unauthorized` for bad passwords")
+                }
+            
+            let encodedLogin = Data("\(createdUser.email):\(createdUser.password)".utf8)
+                .base64EncodedString()
+            try await app.testing().test(
+                .POST,
+                "/api/v2/users/login",
+                headers: [
+                    "Authorization" : "Basic \(encodedLogin)"
+                ]) { res in
+                    #expect(res.status == .ok, "Responds `ok` for valid login")
+                    let responseBodyData = Data(buffer: res.body)
+                    let responseJSON: [String: String] = try JSONDecoder().decode(
+                        [String: String].self,
+                        from: responseBodyData
+                    )
+                    #expect(!responseJSON.isEmpty, "Response is a valid JSON object")
+                    let jwtToken = responseJSON["jwt-token"]
+                    #expect(jwtToken != nil, "Response JSON includes `jwt-token`")
+                    self.userJWT = jwtToken!
+                }
+            
+            try await app.testing().test(
+                .GET,
+                "/api/v2/users/me",
+                headers: [
+                    "Authorization" : "Bearer \(self.userJWT)"
+                ]) { res async in
+                    #expect(res.status == .ok, "Responds `ok` for fetching self")
+                    
+                    let responseData = Data(buffer: res.body)
+                    let user: UserPublic? = try? JSONDecoder().decode(UserPublic.self, from: responseData)
+                    guard let user else {
+                        #expect(true == false, "Response did not include `UserPublic` response")
+                        return
+                    }
+                    #expect(user.id != nil, "User has an .id")
+                    #expect(user.name == createdUser.name, "User's name matches created user")
+                }
         }
     }
 }

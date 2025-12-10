@@ -1,3 +1,4 @@
+import CoffeeKit
 import Fluent
 import Vapor
 
@@ -30,37 +31,19 @@ final class User: Model, Content, @unchecked Sendable {
 }
 
 extension User {
-    struct Create: Content {
-        var name: String
-        var email: String
-        var password: String
-        var confirmPassword: String
-    }
-    
-    struct Public: Content {
-        var id: UUID? = nil
-        var name: String
-    }
-    
-    struct Private: Content {
-        var id: UUID?
-        var name: String
-        var email: String
-    }
-    
-    func publicValue() -> User.Public {
+    func publicValue() -> UserPublic {
         .init(id: self.id, name: self.name)
     }
     
-    func privateValue() -> User.Private {
+    func privateValue() -> UserPrivate {
         .init(id: self.id, name: self.name, email: self.email)
     }
 }
 
 extension User: Authenticatable { }
 
-extension User.Create: Validatable {
-    static func validations(_ validations: inout Validations) {
+extension UserCreate: @retroactive Validatable {
+    public static func validations(_ validations: inout Validations) {
         validations.add("name", as: String.self, is: !.empty)
         validations.add("email", as: String.self, is: .email)
         validations.add("password", as: String.self, is: .count(8...))

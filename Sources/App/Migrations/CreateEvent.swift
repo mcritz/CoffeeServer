@@ -5,7 +5,7 @@ struct CreateEvent: AsyncMigration {
         try await database.schema(Event.schema)
             .id()
             .field("name", .string, .required)
-            .field("image_url", .json)
+            .field("image_url", .string)
             .field("start_at", .datetime, .required)
             .field("end_at", .datetime, .required)
             .field("group_id", .uuid, .required, .references(InterestGroup.schema, "id"))
