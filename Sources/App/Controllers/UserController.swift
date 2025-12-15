@@ -179,7 +179,10 @@ extension UserController {
                 "jwt-token": signedToken,
             ].encodeResponse(status: .ok, for: req)
         } catch {
-            req.logger.warning("Login failure \(req)")
+            req.logger
+                .warning(
+                    "Login failure: method=\(req.method.rawValue) path=\(req.url.path) remoteAddress=\(req.remoteAddress?.description ?? "unknown")"
+                )
             return try await [
                 "error": "true",
                 "message": error.localizedDescription,
