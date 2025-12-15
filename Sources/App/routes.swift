@@ -1,3 +1,4 @@
+import CoffeeKit
 import Fluent
 import Vapor
 
@@ -24,7 +25,6 @@ func routes(_ app: Application) throws {
         }
         
         var os = ""
-        var environment = ""
         let uptimeFormatted = UptimeFormatter.formattedUptime(from: ProcessInfo.processInfo.systemUptime)
         let processorCount = String(ProcessInfo.processInfo.processorCount)
         let processorActiveCount = String(ProcessInfo.processInfo.activeProcessorCount)

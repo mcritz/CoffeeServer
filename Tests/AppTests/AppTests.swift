@@ -1,28 +1,26 @@
 @testable import App
-import XCTVapor
+import VaporTesting
+import Testing
 
-@available(macOS 13.0, *)
-final class AppTests: XCTestCase {
-    func testHealthCheck() async throws {
-        let app = try await Application.make()
-        defer {
-            Task {
-                try await app.asyncShutdown()
+@Suite("App Tests")
+struct AppTests {
+    @Test("Healthcheck")
+    func healthcheck() async throws {
+        try await withApp(configure: configure) { app in
+            try await app.testing().test(.GET, "healthcheck") { res async in
+                #expect(res.status == .ok)
+                #expect(res.body.string.contains("OK"))
             }
         }
-        try configure(app)
-        
-        let res = try await app.performTest(
-            request: .init(
-                method: .GET,
-                url: "healthcheck",
-                headers: .defaultHeaders,
-                body: .init()
-            )
-        )
-        
-        XCTAssertEqual(res.status, .ok)
-        var expected = try Regex("OK")
-        XCTAssertTrue((res.body.string.firstMatch(of: expected) != nil))
+    }
+    
+    @Test("Homepage")
+    func homepage() async throws {
+        try await withApp(configure: configure) { app in
+            try await app.testing().test(.GET, "") { res async in
+                #expect(res.status == .ok)
+                #expect(res.body.string.contains("Coffee Coffee Coffee Coffee"))
+            }
+        }
     }
 }

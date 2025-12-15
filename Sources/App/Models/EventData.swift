@@ -1,14 +1,8 @@
-//
-//  EventData.swift
-//  CoffeeServer
-//
-//  Created by Michael Critz on 11/22/25.
-//
-
+import CoffeeKit
 import Fluent
 import Vapor
 
-struct EventData: Codable {
+struct EventData: EventRepresentable, Codable {
     var id: UUID?
     var name: String
     var groupID: UUID
