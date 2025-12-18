@@ -11,7 +11,11 @@ extension InterestGroupController {
         guard let group = try await InterestGroup.find(groupID, on: req.db) else {
             throw Abort(.notFound)
         }
-        let events = try await group.$events.query(on: req.db).all()
+        // Trying to optimize a bit to avoid lengthy queries. 50 events should be roughtly a year of events.
+        // TODO: Look into .with(.$venue) to avoid the extra db call in `icalEvents(for:_, req:_)`
+        let events = try await group.$events.query(on: req.db)
+            .limit(50)
+            .all()
         let iCalEvents = try await icalEvents(for: events, req: req)
         let calendarBody = ICalendar(events: iCalEvents).vEncoded
         let calHeaders = calendarHeaders(group: group)
