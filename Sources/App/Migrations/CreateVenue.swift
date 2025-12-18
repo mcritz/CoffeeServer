@@ -6,7 +6,7 @@ struct CreateVenue: AsyncMigration {
             .id()
             .field("name", .string, .required)
             .field("location", .json)
-            .field("url", .json)
+            .field("url", .string)
             .create()
     }
     

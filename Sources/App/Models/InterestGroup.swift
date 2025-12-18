@@ -1,7 +1,8 @@
+import CoffeeKit
 import Fluent
 import Vapor
 
-final class InterestGroup: Model, Content, @unchecked Sendable {
+final class InterestGroup: InterestGroupRepresentable, Model, Content, @unchecked Sendable {
     static let schema = "interestgroups"
     
     @ID(key: .id)

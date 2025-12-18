@@ -1,10 +1,3 @@
-//
-//  Media.swift
-//  CoffeeServer
-//
-//  Created by Michael Critz on 11/8/25.
-//
-
 import Fluent
 import Vapor
 

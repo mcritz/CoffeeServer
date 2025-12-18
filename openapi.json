@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "CoffeeServer.paw",
+    "title": "CoffeCoffeeCoffee.coffee",
     "description": "",
     "version": "1.0.0",
     "contact": {
       "name": "mcritz",
-      "email": "github@michaelcritz.com"
+      "email": "coffeecoffeecoffeecoffee@pixel.science"
     }
   },
   "servers": [

@@ -15,6 +15,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
         .package(url: "https://github.com/JohnSundell/Plot", .upToNextMajor(from: "0.14.0")),
         .package(url: "https://github.com/swift-calendar/icalendarkit.git", .upToNextMajor(from: "1.0.2")),
+        .package(url: "https://github.com/mcritz/CoffeeKit", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
         .target(
@@ -28,6 +29,7 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Plot", package: "Plot"),
                 .product(name: "ICalendarKit", package: "ICalendarKit"),
+                .product(name: "CoffeeKit", package: "CoffeeKit"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release)),
@@ -36,7 +38,8 @@ let package = Package(
         .executableTarget(name: "Run", dependencies: [.target(name: "App")]),
         .testTarget(name: "AppTests", dependencies: [
             .target(name: "App"),
-            .product(name: "XCTVapor", package: "vapor"),
+            .product(name: "CoffeeKit", package: "CoffeeKit"),
+            .product(name: "VaporTesting", package: "vapor"),
         ])
     ]
 )
